@@ -1,0 +1,312 @@
+---
+title: "Wastewater Surveillance Interlab Program Analytical Code Documentation"
+author: "YJ, JH"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+
+---
+```{r,  eval=FALSE, echo = FALSE}
+# to-do's
+# - set up repository ensure online viewability on interlabs github - JH
+# - get comfortable authoring in quarto - both to complete online workshop https://rstudio-conf-2022.github.io/get-started-quarto/
+# - insert inventory tables & flow chart images - YH
+# - edit tables & images as needed - JH
+# - Github section - YH to learn+teach in section
+```
+
+
+```{r, eval=FALSE, echo = FALSE}
+#for rendering in other formats
+#format:
+#  docx:
+#    toc: true
+#    number-sections: true
+#    highlight-style: github
+
+#format:
+#  html:
+#    toc: true
+#    html-math-method: katex
+```
+
+```{r setup}
+#library(kableExtra)#for dataframe generated tables
+library(networkD3) #for flowcharts
+library(reticulate)#to run python in this file
+```
+
+
+## Introduction
+
+Within the interlabs program, R code performs data processing, plots and statistics generation. As an aside, an ancillary collection of spreadsheets with Excel code and python code are used in sample preparation and pre-processing.
+
+The R code ("base code") continues to evolve to serve the new requirements and exploratory analysis in the interlabs program. With the rapid advancement and frequent customizations, it was recognized the analysis process would benefit from comprehensive code tidying. As a rule-of-thumb, with each new feature development, teams should allocate a further 15-20% of time to resolve technical debts. There is currently no established tracking of technical debts besides some in-code comments and team members recollection.
+
+The purpose of this document is:
+1. To serve as documentation accompanying the code, and to be continually updated as the code evolves  
+2. Set out practice standards for team to collectively continue hygienic data handling & coding following the refactoring project in 2023; serve as on-boarding training for new team members
+
+## External File Structure
+
+```{r}
+### I. Code Documentation
+#1.  Inventory existing external file dependencies and working procedures outside of main codebase, e.g. the python snippets, address books, flow of sample notes, raw, and clean data *(4 weeks / July 2023)*\
+```
+
+
+An inventory of file and code relationships external to the main codebase is currently is shown in Table 1 and Figure 1 below.
+
+#### Table 1: Spreadsheets Inventory
+```{r}
+#Yuhan - please load into your excel table as df, then use kable package to format it 
+```
+: Existing Spreadsheets
+
+
+
+
+### Code Internal Structure and Dependency
+```{r}
+#Jane to insert Packages/Libraries, version Listing *(1 week, July 2023)*
+
+```
+
+
+#### Figure 1: Intra-base code relationships
+```{r}
+#Yuhan to insert flowchart code and execute the code to show figure
+#*Deliverable: Inventory & flowchart of external relationships*
+#2.  Inventory existing internal code dependencies and timelines (in-progress work shown in Figure 1) *(4 weeks / July 2023)*\
+# **Deliverable: Inventory & flowchart of intra-basecode relationships**
+```
+: Intra-base code relationships
+
+    
+4.  Extract and analyze relevance of in-code comments *(4 weeks / July 2023)*  
+    **Deliverable: Code Documentation, interim**
+
+### Environment (Package Dependencies & Software Versions)
+All work must be done on OCWA-provided laptops.  Overall restrictions applicable to OCWA operating environment will restrict software installation - manager approvals as well as IT "white-list".  The 
+
+#### R
+##### Version Check
+- To check your installed version of RStudio and R, respectively, either use the GUI's or by inputting:
+```r
+RStudio.Version()
+```
+
+```{r}
+#| echo: fenced
+version
+```
+
+
+
+- To check your package versions, refer to the package window in the corner of RStudio or input:
+```{r}
+#| echo: fenced
+print(head
+      (tibble::tibble(
+     Package = names(installed.packages()[,3]),
+     Version = unname(installed.packages()[,3])
+     ), n=600 #where n = an appropriately large value to capture all your packages
+      )
+     )
+```
+
+#### R Packages version alignment
+```{r}
+#https://github.com/rstudio/renv/issues/1070
+```
+
+renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using *reticulate*).  
+
+The general workflow when working with renv is:  
+1. Call renv::init() to initialize a new project-local environment with a private R library  
+2. Work in the project as normal, installing and removing new R packages as they are needed in the project  
+3. Call renv::snapshot() to save the state of the project library to the lockfile (called renv.lock)  
+4. Continue working on your project, installing and updating R packages as needed  
+5.Call renv::snapshot() again to save the state of your project library if your attempts to update R packages were successful, or call renv::restore() to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.  
+  
+When renv’s Python integration is active, a couple extra features will activate:  
+- renv will instruct reticulate to load your project-local version of Python by default, avoiding some of the challenges with finding and selecting an appropriate version of Python on the system.  
+- Calling reticulate::py_install() will install packages into the project’s Python environment by default.  
+- When renv::snapshot() is called, your project’s Python library will also be captured into requirements.txt (for virtual environments) / environment.yml (for Conda environments).  
+- Similarly, renv::restore() will also attempt to restore your Python environment, as encoded in requirements.txt / environment.yml from a previous snapshot.  
+
+#### Python
+- To check your version of python, use command line or in python:
+```{python}
+import sys
+print(sys.version)
+```
+
+
+
+Metric of raised issues
+
+## Version Control
+```{r}
+#Yuhan's section
+#### II. Training/Establishing Guidelines
+
+#1.  Acquire training on and establish version control on Github *(2 weeks/July 2023)* *Deliverable: Training/Guidance document section, specifically method for & train team as soon as possible on version control/change management**\
+
+### III. Preparatory Version Control & Unit Tests
+
+#1.  Establish version control on Github. All team members to abide by training guidelines when introducing changes to main code base *(2 weeks/July 2023)*\
+#    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\
+```
+
+
+## Linting / Style Guide
+```{r}
+#Jane
+#4.  Investigate linting (tools to analyze & flag programming and stylistic errors) for the future, e.g. the lintr and styler packages for R *(2 weeks, July 2023)*\
+#    **Deliverable: Training/Guidance document section**
+```
+
+2.  Acquire basic understanding of refactoring and unit testing approaches & practices *(3 weeks)*\
+    **Deliverable: Training/Guidance document section**
+3.  Investigate automation options and supporting tools for refactoring and unit testing *(2 weeks)*\
+    **Deliverable: Training/Guidance document section**
+
+5.  Investigate issues-tracking method - track technical debt *(2 weeks)*\
+    **Deliverable: Training/Guidance document section**
+6.  Establish naming convention and code style format *(1 week)*\
+    **Deliverable: Training/Guidance document section**
+7.  Document the procedures for above practices and create training presentations for the team *(3 weeks)*\
+    **Deliverable: Training/Guidance document**\
+    **Deliverable: Training session**
+
+## Unit Testing Framework
+2.  Set up formal testing, enabling validation of no-loss-of-function and establishing built-in "bases" during refactoring. *(August 2023)* **Deliverable: Test framework & test-suite code**
+
+Cursory review in June 2023 found that base code functions (more suitable for testing) are few and generally used to generate plots (unsuitable for testing). Testing may be adapted to instead inspect dataframe size & output value spot-check.
+
+-------------------------------
+
+1.  Packages/Libraries organization *(3 weeks / July 2023)*:
+    1.  create reference document of package purpose/usage in the program (including any removed but potentially useful)
+    2.  remove any currently unused packages, narrowing list/call to just the necessary ones
+    3.  create packrat compilation or Docker of used packages to preserve running versions\
+        **Metric: Number of superfluous packages/libraries, number TBD to 0**\
+        **Deliverable: One packrat / docker with all in-use packages including versions**
+2.  Linting for consistent style *(1 week; August 2023)*\
+    **Deliverable: Commit \[track number\]**\
+3.  Refactoring cycle, which will be repeated for each issue/potential improvment. As adapted from Fowler: 0.1 Select issue/potential improvement to work on. Create branch on version control 0.2 Introduce comments/pseudo-code for changes. Obtain consensus with *reviewer*  
+**Deliverable: Branch & Commit \[track number\]**
+    1.  Create getters and setters for the field\
+    2.  Locate all references: replace access with calls to the getter, and changes to the field with calls to the setter\
+    3.  Compile and test after changing each reference\
+    4.  Declare the field as private\
+    5.  Compile and test. Switch to light mode for coder & reviewer\
+    6.  *Reviewer* checks pull request, code and merge. Light mode for all users\
+        **Deliverable: Commit \[track number\]**
+4.  Documentation updates  
+**Deliverable: Code & Guidance Documentation Updates, Inventory of updated intra/external code relationships **
+
+
+### Table 3 - Milestone Deliverables & Tentative Schedule
+| Deliverable                                                     | Timeline [In Progress/Completed] | Resp./Review |
+| --------------------------------------------------------------- | -------------------------------- | ------- |
+| Code Documentation                                              |                                  |         |
+| 1.Inventory & flowchart of external relationships               | Summer 2023 / July 2023          |         |
+| 2.Inventory & flowchart of intra-basecode relationships         | Summer 2023 / July 2023          |         |
+| 3.Packages/Libraries Listing                                    | Summer 2023 / July 2023          |         |
+| 4.Code Documentation - existing code comments archival          | Summer 2023 / July 2023          |         |
+| 5.Kaban battle board (initial version)                          | Summer 2023 / July 2023          |         |
+| Training/Guidelines                                             |                                  |         |
+| 6a.Guidance Documentation - Version Control & Issues resolution | Summer 2023 / July 2023          |         |
+| 6b.Guidance Documentation - Refactoring & Unit Testing          | Summer 2023 / August 2023        |         |
+| 6c.Guidance Documentation - Linting, Selected Style             | Summer 2023 / July 2023          |         |
+| Preparatory Staging                                             |                                  |         |
+| 7.Version control established, team training session            | August 2023                      |         |
+| 8.Testing framework                                             | August / September 2023          |         |
+| Refactoring                                                     |                                  |         |
+| 9.Refactoring cycles                                            | Autumn 2023 / November 2023?     |         |
+| 10a.Code & Guidance Documentation Updates                       | Autumn 2023 / November 2023?     |         |
+| 10b.Inventory of updated intra/external relationships, packages | Ongoing / December 2023          |         |
+| 11.Training sessions, monthly                                   | Ongoing                          |         |
+| 12.Project Completion Memo, performance metric                  | January 2023                     |         |
+|                                                                 |                                  |         |
+
+
+
+# References
+
+*WWS Working Platforms*\
+https://github.com/InterlabsOCWA\
+https://www.goodday.work/p/GKN7K9
+
+*Inventory/Code Profiling* https://bookdown.org/csgillespie/efficientR/performance.html#performance-profvis\
+https://github.com/lewinfox/foodwebr https://www.researchgate.net/publication/305738639_A\_Proposal_of_Refactoring_Method_for_Existing_Program_Using_Code_Clone_Detection_and_Impact_Analysis_Method
+https://rstudio.github.io/packrat/walkthrough.html  
+
+*Unit Testing*\
+https://r-pkgs.org/testing-design.html
+
+https://webcache.googleusercontent.com/search?q=cache:q9QbZVfMwtQJ:https://www.r-bloggers.com/2019/11/automated-testing-with-testthat-in-practice/&cd=14&hl=en&ct=clnk&gl=ca
+
+*Refactoring*\
+Lemaire, 2020. *Refactoring at Scale*\
+https://learning.oreilly.com/library/view/refactoring-workbook/0321109295/
+
+*Version Control* (add existing RStudio project to Github): https://happygitwithr.com/index.html
+
+https://hansenjohnson.org/post/sync-github-repository-with-existing-r-project/
+
+# Appendix/Reference Extracts
+## Dark Mode/Light Mode Technique
+
+(extract from Lemaire, 2020. *Refactoring at Scale*)\
+Dark Mode / Light Mode : We can compare pre-refactor and post-refactor behavior by employing what we've coined at Slack as the light/dark technique\
+Dark mode : Both implementations are called\
+The results are compared\
+The results from the old implementation are returned
+
+Light mode :\
+Both implementations are called\
+The results are compared\
+The results from the new implementation are returned
+
+How To ?\
+Once the abstraction has been properly put in place\
+Start enabling dark mode\
+Monitor any differences being logged between the two result sets\
+Track down and fix any potential bugs in the new implementation causing those discrepancies\
+Repeat this process until you've properly handled all discrepancies, Enabling dark mode to broader groups of users
+
+Once all users have been opted in to dark mode\
+Continue logging any differences in the result sets\
+Continue to opt broader groups of users into light mode, until everyone is successfully processing results from the new implementation.
+
+Disable execution of both code paths\
+Remove the old logic altogether : only the new implementation should remain
+
+## Typical Code Issues & Correspondent Refactoring
+
+### Refactoring methods
+
+a.  Extraction: breaking code into chunks or utilizing existing chunks for isolation into separate functions and replaced with a call to the functions. Change patterns into abstraction. Similarly for variables
+b.  Inline refactoring: finding functions calls and replacing them with the function content (opposite of extraction)
+c.  Simplifying methods logic: consolidate conditional fragments and using polymorphism instead of conditionals
+d.  Simplifying method calls: examining parameters involved and adding/replacing as needed
+
+## Handling Commented-out code
+\## stuff to incorp. COMMENTED-OUT CODE In the case of commented-out code, it's pretty obvious that the code is unused. I always recommend that developers who are tempted to comment-out code instead simply delete it if the code is tracked using version control. If you need it again someday, you can easily recover it by going back through your commit history.
+
+new function to help mitigate code degradation. Let's say we write up a simple helper to encapsulate all the logic for validating a user object; we'll call it validateUser
+
+A NOTE ABOUT COUNTING LINES OF COMMENTS By and large, ignoring comments is good practice when counting lines of code. Docblocks and inlined TODOs do not affect the behavior of our programs, so including them in our size calculations would not help us better characterize a program's complexity. In practice, however, I've noticed that you can easily pinpoint some rather perplexing sections of code by counting the number of inline comments at the function level. In general, developers tend to leave inline code comments when the surrounding logic is difficult to follow. Whether that's because the code is dealing with a complicated piece of business logic or it has just become gradually more convoluted over time, we tend to leave some pointers to others who come after us when modifying exceptionally tricky code. Therefore, we can use the quantity of inline comments within a single function, whether short or long, as a possible warning sign.
+
+When we're working to improve an existing implementation, whatever the extent of our endeavor, we want to be sure that we're correctly retaining its behavior. We can safely assert that our new solution continues to work identically to the old by relying on the original implementation's test suite. Because we are relying on the test coverage to warn us about potential regressions, we need to verify two things before beginning our refactoring effort: first, confirm that the original implementation has test coverage and, second, determine whether that test coverage is adequate.\
+refactoring requires us to be able to ensure that behavior remains identical at every iteration. We can increase our confidence that nothing has changed by writing a suite of tests (unit, integration, end to end), and we should not seriously consider moving forward with any refactoring effort until we've established sufficient test coverage.
+
+## Unit testing notes
+
+-   Set a canary test (it checks if the test framework works)
+
+-   Add few (automated) tests. Start with code candidate to change first. If code wasn't designed to be testable, don't change it yet. Make your best to test it as is. This is very important.
