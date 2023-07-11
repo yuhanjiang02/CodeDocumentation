@@ -83,6 +83,35 @@ An inventory of file and code relationships external to the main codebase is cur
 ```
 : Intra-base code relationships
 
+```{r}
+nodes = data.frame("name" = 
+                     c("Emails",                                # 0
+                       "Raw data",                              # 1
+                       "Clean data",                            # 2
+                       "20230529_Sample_Notes.xlsm",            # 3
+                       "WBE_Sample_Phasma-CA_20230511.Rmd",     # 4
+                       "plots",                                 # 5
+                       "dataframe",                             # 6
+                       "report"))                               # 7
+
+links = as.data.frame(matrix(c(
+  0, 1, 1, # Each row represents a link. The first number
+  1, 2, 1, # represents the node being conntected from. 
+  2, 3, 1, # the second number represents the node connected to.
+  2, 4, 1, # The third number is the value of the node
+  4, 5, 1,
+  4, 6, 1,
+  5, 7 ,1,
+  6, 7, 1),
+  byrow = TRUE, ncol = 3))
+
+names(links) = c("source", "target", "value")
+sankeyNetwork(Links = links, Nodes = nodes,
+              Source = "source", Target = "target",
+              Value = "value", NodeID = "name",
+              fontSize= 12, nodeWidth = 30)
+```
+
     
 4.  Extract and analyze relevance of in-code comments *(4 weeks / July 2023)*  
     **Deliverable: Code Documentation, interim**
