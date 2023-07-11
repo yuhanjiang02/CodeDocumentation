@@ -68,6 +68,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="InterlabsCodeGuidance_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="InterlabsCodeGuidance_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="InterlabsCodeGuidance_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="InterlabsCodeGuidance_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="InterlabsCodeGuidance_files/libs/d3-4.5.0/d3.min.js"></script>
+<script src="InterlabsCodeGuidance_files/libs/sankey-1/sankey.js"></script>
+<script src="InterlabsCodeGuidance_files/libs/sankeyNetwork-binding-0.4/sankeyNetwork.js"></script>
 
 
 </head>
@@ -88,6 +92,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a></li>
   <li><a href="#linting-style-guide" id="toc-linting-style-guide" class="nav-link" data-scroll-target="#linting-style-guide">Linting / Style Guide</a></li>
+  <li><a href="#refactoring" id="toc-refactoring" class="nav-link" data-scroll-target="#refactoring">Refactoring</a></li>
+  <li><a href="#unit-testing-approaches-practices" id="toc-unit-testing-approaches-practices" class="nav-link" data-scroll-target="#unit-testing-approaches-practices">unit testing approaches &amp; practices</a></li>
+  <li><a href="#issues-tracking-method" id="toc-issues-tracking-method" class="nav-link" data-scroll-target="#issues-tracking-method">Issues-tracking method</a></li>
   <li><a href="#unit-testing-framework" id="toc-unit-testing-framework" class="nav-link" data-scroll-target="#unit-testing-framework">Unit Testing Framework</a>
   <ul class="collapse">
   <li><a href="#table-3---milestone-deliverables-tentative-schedule" id="toc-table-3---milestone-deliverables-tentative-schedule" class="nav-link" data-scroll-target="#table-3---milestone-deliverables-tentative-schedule">Table 3 - Milestone Deliverables &amp; Tentative Schedule</a></li>
@@ -171,6 +178,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># **Deliverable: Inventory &amp; flowchart of intra-basecode relationships**</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>: Intra-base code relationships</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nodes <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">"name"</span> <span class="ot">=</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">c</span>(<span class="st">"Emails"</span>,                                <span class="co"># 0</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Raw data"</span>,                              <span class="co"># 1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Clean data"</span>,                            <span class="co"># 2</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"20230529_Sample_Notes.xlsm"</span>,            <span class="co"># 3</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"WBE_Sample_Phasma-CA_20230511.Rmd"</span>,     <span class="co"># 4</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"plots"</span>,                                 <span class="co"># 5</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"dataframe"</span>,                             <span class="co"># 6</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"report"</span>))                               <span class="co"># 7</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>links <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="co"># Each row represents a link. The first number</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="co"># represents the node being conntected from. </span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="co"># the second number represents the node connected to.</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="co"># The third number is the value of the node</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">5</span>, <span class="dv">7</span> ,<span class="dv">1</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">1</span>),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(links) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"source"</span>, <span class="st">"target"</span>, <span class="st">"value"</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sankeyNetwork</span>(<span class="at">Links =</span> links, <span class="at">Nodes =</span> nodes,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">Source =</span> <span class="st">"source"</span>, <span class="at">Target =</span> <span class="st">"target"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2efdc6026ef2ee59faf3" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-2efdc6026ef2ee59faf3">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 <ol start="4" type="1">
 <li>Extract and analyze relevance of in-code comments <em>(4 weeks / July 2023)</em><br>
 <strong>Deliverable: Code Documentation, interim</strong></li>
@@ -187,11 +226,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>To check your installed version of RStudio and R, respectively, either use the GUI’s or by inputting:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>version</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>version</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               _                                
 platform       x86_64-w64-mingw32               
@@ -215,98 +254,33 @@ nickname       Shortstop Beagle                 </code></pre>
 <li>To check your package versions, refer to the package window in the corner of RStudio or input:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">Package =</span> <span class="fu">names</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>]),</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">Version =</span> <span class="fu">unname</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>])</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>     ), <span class="at">n=</span><span class="dv">600</span> <span class="co">#where n = an appropriately large value to capture all your packages</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>     )</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(head</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>      (tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">Package =</span> <span class="fu">names</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>]),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Version =</span> <span class="fu">unname</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>])</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      ), <span class="at">n=</span><span class="dv">600</span> <span class="co">#where n = an appropriately large value to capture all your packages</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 81 × 2
-   Package     Version 
-   &lt;chr&gt;       &lt;chr&gt;   
- 1 base64enc   0.1-3   
- 2 bslib       0.5.0   
- 3 cachem      1.0.8   
- 4 cli         3.6.1   
- 5 commonmark  1.9.0   
- 6 cpp11       0.4.4   
- 7 digest      0.6.31  
- 8 ellipsis    0.3.2   
- 9 evaluate    0.21    
-10 fansi       1.0.4   
-11 fastmap     1.1.1   
-12 fontawesome 0.5.1   
-13 fs          1.6.2   
-14 glue        1.6.2   
-15 here        1.0.1   
-16 highr       0.10    
-17 htmltools   0.5.5   
-18 htmlwidgets 1.6.2   
-19 igraph      1.5.0   
-20 jquerylib   0.1.4   
-21 jsonlite    1.8.5   
-22 kableExtra  1.3.4   
-23 knitr       1.43    
-24 lifecycle   1.0.3   
-25 magrittr    2.0.3   
-26 markdown    1.7     
-27 memoise     2.0.1   
-28 mime        0.12    
-29 networkD3   0.4     
-30 pillar      1.9.0   
-31 pkgconfig   2.0.3   
-32 png         0.1-8   
-33 R6          2.5.1   
-34 rappdirs    0.3.3   
-35 Rcpp        1.0.10  
-36 RcppTOML    0.2.2   
-37 renv        0.17.3  
-38 reticulate  1.30    
-39 rlang       1.1.1   
-40 rmarkdown   2.23    
-41 rprojroot   2.0.3   
-42 rstudioapi  0.14    
-43 sass        0.4.6   
-44 stringi     1.7.12  
-45 stringr     1.5.0   
-46 tibble      3.2.1   
-47 tinytex     0.45    
-48 utf8        1.2.3   
-49 vctrs       0.6.3   
-50 withr       2.5.0   
-51 xfun        0.39    
-52 yaml        2.3.7   
-53 base        4.2.3   
-54 boot        1.3-28.1
-55 class       7.3-21  
-56 cluster     2.1.4   
-57 codetools   0.2-19  
-58 compiler    4.2.3   
-59 datasets    4.2.3   
-60 foreign     0.8-84  
-61 graphics    4.2.3   
-62 grDevices   4.2.3   
-63 grid        4.2.3   
-64 KernSmooth  2.23-20 
-65 lattice     0.20-45 
-66 MASS        7.3-58.2
-67 Matrix      1.5-3   
-68 methods     4.2.3   
-69 mgcv        1.8-42  
-70 nlme        3.1-162 
-71 nnet        7.3-18  
-72 parallel    4.2.3   
-73 rpart       4.1.19  
-74 spatial     7.3-16  
-75 splines     4.2.3   
-76 stats       4.2.3   
-77 stats4      4.2.3   
-78 survival    3.5-3   
-79 tcltk       4.2.3   
-80 tools       4.2.3   
-81 utils       4.2.3   </code></pre>
+<pre><code>Error in readRDS(file) : unknown input format
+Error in readRDS(file) : unknown input format
+Error in readRDS(file) : unknown input format
+# A tibble: 392 × 2
+   Package      Version 
+   &lt;chr&gt;        &lt;chr&gt;   
+ 1 abind        1.4-5   
+ 2 anytime      0.3.9   
+ 3 askpass      1.1     
+ 4 assertthat   0.2.1   
+ 5 backports    1.4.1   
+ 6 base         4.2.3   
+ 7 base64enc    0.1-3   
+ 8 BH           1.81.0-1
+ 9 bigD         0.2.0   
+10 BiocGenerics 0.44.0  
+# ℹ 382 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -314,7 +288,7 @@ nickname       Shortstop Beagle                 </code></pre>
 <section id="r-packages-version-alignment" class="level4">
 <h4 class="anchored" data-anchor-id="r-packages-version-alignment">R Packages version alignment</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://github.com/rstudio/renv/issues/1070</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://github.com/rstudio/renv/issues/1070</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using <em>reticulate</em>).</p>
 <p>The general workflow when working with renv is:<br>
@@ -335,49 +309,63 @@ nickname       Shortstop Beagle                 </code></pre>
 <li>To check your version of python, use command line or in python:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3.10.9 | packaged by Anaconda, Inc. | (main, Mar  1 2023, 18:18:15) [MSC v.1916 64 bit (AMD64)]</code></pre>
 </div>
 </div>
-<p>Metric of raised issues</p>
 </section>
 </section>
 </section>
 <section id="version-control" class="level2">
 <h2 class="anchored" data-anchor-id="version-control">Version Control</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan's section</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### II. Training/Establishing Guidelines</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Acquire training on and establish version control on Github *(2 weeks/July 2023)* *Deliverable: Training/Guidance document section, specifically method for &amp; train team as soon as possible on version control/change management**\</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="do">### III. Preparatory Version Control &amp; Unit Tests</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Establish version control on Github. All team members to abide by training guidelines when introducing changes to main code base *(2 weeks/July 2023)*\</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan's section</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### II. Training/Establishing Guidelines</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Acquire training on and establish version control on Github *(2 weeks/July 2023)* *Deliverable: Training/Guidance document section, specifically method for &amp; train team as soon as possible on version control/change management**\</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">### III. Preparatory Version Control &amp; Unit Tests</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Establish version control on Github. All team members to abide by training guidelines when introducing changes to main code base *(2 weeks/July 2023)*\</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="linting-style-guide" class="level2">
 <h2 class="anchored" data-anchor-id="linting-style-guide">Linting / Style Guide</h2>
+<p><em>General</em> - camelCase - tab indentation <em>Linting - continuous integration</em> In RStudio IDE:<br>
+- some linting is included, however it is for errors only - selecting code and hitting Ctrl + I will re-indent code for you</p>
+<p>lintr:<br>
+lintr package will be set up with the main code to provide diagnostic linting (i.e.&nbsp;as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes. It will activate with github upload workflows following this set up command, which also creates a <strong>.github/workflows</strong> folder with <strong>lint.yaml</strong></p>
+<p>More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Jane</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#4.  Investigate linting (tools to analyze &amp; flag programming and stylistic errors) for the future, e.g. the lintr and styler packages for R *(2 weeks, July 2023)*\</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#    **Deliverable: Training/Guidance document section**</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"lint"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Setting active project to 'C:/Users/hoja/Documents/code/CodeDocumentation'
+✔ Saving 'r-lib/actions/examples/lint.yaml@v2' to '.github/workflows/lint.yaml'
+• Learn more at &lt;https://github.com/r-lib/actions/blob/v2/examples/README.md&gt;.</code></pre>
 </div>
-<ol start="2" type="1">
-<li><p>Acquire basic understanding of refactoring and unit testing approaches &amp; practices <em>(3 weeks)</em><br>
-<strong>Deliverable: Training/Guidance document section</strong></p></li>
-<li><p>Investigate automation options and supporting tools for refactoring and unit testing <em>(2 weeks)</em><br>
-<strong>Deliverable: Training/Guidance document section</strong></p></li>
-<li><p>Investigate issues-tracking method - track technical debt <em>(2 weeks)</em><br>
-<strong>Deliverable: Training/Guidance document section</strong></p></li>
-<li><p>Establish naming convention and code style format <em>(1 week)</em><br>
-<strong>Deliverable: Training/Guidance document section</strong></p></li>
-<li><p>Document the procedures for above practices and create training presentations for the team <em>(3 weeks)</em><br>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for context, check in console - vignette("continuous-integration")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>===================================</p>
+</section>
+<section id="refactoring" class="level2">
+<h2 class="anchored" data-anchor-id="refactoring">Refactoring</h2>
+<ul>
+<li>recommend every x period</li>
+<li>workflow</li>
+</ul>
+</section>
+<section id="unit-testing-approaches-practices" class="level2">
+<h2 class="anchored" data-anchor-id="unit-testing-approaches-practices">unit testing approaches &amp; practices</h2>
+</section>
+<section id="issues-tracking-method" class="level2">
+<h2 class="anchored" data-anchor-id="issues-tracking-method">Issues-tracking method</h2>
+<ol start="7" type="1">
+<li>Document the procedures for above practices and create training presentations for the team <em>(3 weeks)</em><br>
 <strong>Deliverable: Training/Guidance document</strong><br>
-<strong>Deliverable: Training session</strong></p></li>
+<strong>Deliverable: Training session</strong></li>
 </ol>
 </section>
 <section id="unit-testing-framework" class="level2">

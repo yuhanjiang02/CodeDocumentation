@@ -138,11 +138,11 @@ version
 #| echo: fenced
 print(head
       (tibble::tibble(
-     Package = names(installed.packages()[,3]),
-     Version = unname(installed.packages()[,3])
-     ), n=600 #where n = an appropriately large value to capture all your packages
+        Package = names(installed.packages()[,3]),
+        Version = unname(installed.packages()[,3])
+      ), n=600 #where n = an appropriately large value to capture all your packages
       )
-     )
+)
 ```
 
 #### R Packages version alignment
@@ -173,9 +173,6 @@ print(sys.version)
 ```
 
 
-
-Metric of raised issues
-
 ## Version Control
 ```{r}
 #Yuhan's section
@@ -191,21 +188,37 @@ Metric of raised issues
 
 
 ## Linting / Style Guide
+*General*
+- camelCase 
+- tab indentation
+*Linting - continuous integration*
+In RStudio IDE:  
+- some linting is included, however it is for errors only
+- selecting code and hitting Ctrl + I will re-indent code for you
+  
+lintr:  
+lintr package will be set up with the main code to provide diagnostic linting (i.e. as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes.  It will activate with github upload workflows following this set up command, which also creates a **.github/workflows** folder with **lint.yaml**
+  
+More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/ 
 ```{r}
-#Jane
-#4.  Investigate linting (tools to analyze & flag programming and stylistic errors) for the future, e.g. the lintr and styler packages for R *(2 weeks, July 2023)*\
-#    **Deliverable: Training/Guidance document section**
+usethis::use_github_action("lint")
+# for context, check in console - vignette("continuous-integration")
+
 ```
 
-2.  Acquire basic understanding of refactoring and unit testing approaches & practices *(3 weeks)*\
-    **Deliverable: Training/Guidance document section**
-3.  Investigate automation options and supporting tools for refactoring and unit testing *(2 weeks)*\
-    **Deliverable: Training/Guidance document section**
 
-5.  Investigate issues-tracking method - track technical debt *(2 weeks)*\
-    **Deliverable: Training/Guidance document section**
-6.  Establish naming convention and code style format *(1 week)*\
-    **Deliverable: Training/Guidance document section**
+
+===================================
+
+## Refactoring 
+- recommend every x period
+- workflow
+
+## unit testing approaches & practices 
+
+##  Issues-tracking method
+
+
 7.  Document the procedures for above practices and create training presentations for the team *(3 weeks)*\
     **Deliverable: Training/Guidance document**\
     **Deliverable: Training session**
