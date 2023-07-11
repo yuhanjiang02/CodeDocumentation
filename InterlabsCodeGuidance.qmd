@@ -186,6 +186,57 @@ print(sys.version)
 #    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\
 ```
 
+### Training/Establishing Guidelines
+#### Installation and setup
+
+1. Install Git from website https://gitforwindows.org/
+
+2. Running on terminal
+    - Go to the Start menu
+    - In the Search or Run line type ”cmd”and press enter
+    
+    Check git version: `git --version`
+    Update git version if have git but not the latest version:`git update-git-for-windows`
+    
+3. Introduce yourself to Git
+    - Type the following in cmd:
+    `git config --global user.email "you@youremail.com"`
+    `git config --global user.name "Your Name"`
+    
+    See result: `git config --global --list`
+    Note: This **must** be the email associated with your GitHub account.
+
+#### Connect to Git, GitHub and RStudio
+
+4. Setup a new remote repository in GitHub
+
+5. Connect Rstudio to Git
+
+6. Detect Git from RStudio
+    - Type `where git` in cmd to get the git executable path
+    - From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to your Git executable.
+
+#### Git Fundamentals
+7. Make changes and commit 
+    - click on the **Git** tab in RStudio. You’ll notice that there’s only one file listed, since RStudio only lists files that have changed in its git interface.
+    - Click on the **Staged** check box to stage your change. Now click on **Diff**(next to **Commit**) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red.
+    - Add a commit message and click on **Commit**. Every time make a commit, must also write a short **commit message**.
+    - In the **Git** tab of RStudio, click on **Diff** and then **History**. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.
+    
+8. Push & Pull
+- To start working on a project,**Pull** any new changes to update local copy.
+- When you are finished and committed, to **Push** these changes to the remote repository (e.g., GitHub). Should see below image.
+9. Branch
+**Branching** is the way to work on different versions of a repository at one time. By default your repository has one branch named`master`which is considered to be the definitive branch.
+    
+When you create a branch off the `master` branch, you’re making a copy, or snapshot, of `master` as it was at that point in time. This is particularly useful when you are working on a collaborative project. For example, if someone else made changes to the `master` branch while you were working on your branch, you could pull in those updates.
+    - Create a new branch on GitHub/RStudio/shell
+    
+10. Pull Request and Merge Chances
+    - You will notice that at the top of all you files there is a new section that says: **Your recently pushed branches:**. The changes you made to your script have been pushed to your online copy of the project and are now in the branch `NewPlot`. In order to merge them into your `master` branch we need to create a pull request. Click on the button that says *Compare and pull request*.
+    - In the **Open a pull request** page click on **Create pull request**.
+    - GitHub has now compared the two versions of your project that are in the two branches, `master` and `Newplot`and it is telling us that there are no conflicts between the two versions.
+    - Now it’s time to bring your changes together – merging your `Newplot` branch into the `master` branch. Click the green **Merge pull request** button to merge the changes into master. Click **Confirm merge**. Go ahead and delete the branch, since its changes have been incorporated, with the **Delete branch** button in the purple box.
 
 ## Linting / Style Guide
 *General*
