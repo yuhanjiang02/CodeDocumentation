@@ -9,11 +9,13 @@ format:
 ---
 ```{r,  eval=FALSE, echo = FALSE}
 # to-do's
-# - set up repository ensure online viewability on interlabs github - JH
-# - get comfortable authoring in quarto - both to complete online workshop https://rstudio-conf-2022.github.io/get-started-quarto/
+# - Try to run base code - JH
+# - Github section - YH to learn+teach in section
+# - Put on GitHub - YH
 # - insert inventory tables & flow chart images - YH
 # - edit tables & images as needed - JH
-# - Github section - YH to learn+teach in section
+# - Linting procedure - JH
+# - Packaging versions - JH
 ```
 
 
