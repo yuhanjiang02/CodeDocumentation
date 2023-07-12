@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.323">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,7 +90,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#code-internal-structure-and-dependency" id="toc-code-internal-structure-and-dependency" class="nav-link" data-scroll-target="#code-internal-structure-and-dependency">Code Internal Structure and Dependency</a></li>
   <li><a href="#environment-package-dependencies-software-versions" id="toc-environment-package-dependencies-software-versions" class="nav-link" data-scroll-target="#environment-package-dependencies-software-versions">Environment (Package Dependencies &amp; Software Versions)</a></li>
   </ul></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a>
+  <ul class="collapse">
+  <li><a href="#trainingestablishing-guidelines" id="toc-trainingestablishing-guidelines" class="nav-link" data-scroll-target="#trainingestablishing-guidelines">Training/Establishing Guidelines</a></li>
+  </ul></li>
   <li><a href="#linting-style-guide" id="toc-linting-style-guide" class="nav-link" data-scroll-target="#linting-style-guide">Linting / Style Guide</a></li>
   <li><a href="#refactoring" id="toc-refactoring" class="nav-link" data-scroll-target="#refactoring">Refactoring</a></li>
   <li><a href="#unit-testing-approaches-practices" id="toc-unit-testing-approaches-practices" class="nav-link" data-scroll-target="#unit-testing-approaches-practices">unit testing approaches &amp; practices</a></li>
@@ -140,8 +143,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(kableExtra)#for dataframe generated tables</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(networkD3) <span class="co">#for flowcharts</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)<span class="co">#to run python in this file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(networkD3) <span class="co">#for flowcharts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'networkD3' was built under R version 4.3.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)<span class="co">#to run python in this file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'reticulate' was built under R version 4.3.1</code></pre>
+</div>
 </div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
@@ -153,61 +162,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="external-file-structure" class="level2">
 <h2 class="anchored" data-anchor-id="external-file-structure">External File Structure</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### I. Code Documentation</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Inventory existing external file dependencies and working procedures outside of main codebase, e.g. the python snippets, address books, flow of sample notes, raw, and clean data *(4 weeks / July 2023)*\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### I. Code Documentation</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Inventory existing external file dependencies and working procedures outside of main codebase, e.g. the python snippets, address books, flow of sample notes, raw, and clean data *(4 weeks / July 2023)*\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>An inventory of file and code relationships external to the main codebase is currently is shown in Table 1 and Figure 1 below.</p>
 <section id="table-1-spreadsheets-inventory" class="level4">
 <h4 class="anchored" data-anchor-id="table-1-spreadsheets-inventory">Table 1: Spreadsheets Inventory</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan - please load into your excel table as df, then use kable package to format it </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan - please load into your excel table as df, then use kable package to format it </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>: Existing Spreadsheets</p>
 </section>
 <section id="code-internal-structure-and-dependency" class="level3">
 <h3 class="anchored" data-anchor-id="code-internal-structure-and-dependency">Code Internal Structure and Dependency</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Jane to insert Packages/Libraries, version Listing *(1 week, July 2023)*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Jane to insert Packages/Libraries, version Listing *(1 week, July 2023)*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="figure-1-intra-base-code-relationships" class="level4">
 <h4 class="anchored" data-anchor-id="figure-1-intra-base-code-relationships">Figure 1: Intra-base code relationships</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan to insert flowchart code and execute the code to show figure</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#*Deliverable: Inventory &amp; flowchart of external relationships*</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#2.  Inventory existing internal code dependencies and timelines (in-progress work shown in Figure 1) *(4 weeks / July 2023)*\</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># **Deliverable: Inventory &amp; flowchart of intra-basecode relationships**</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan to insert flowchart code and execute the code to show figure</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#*Deliverable: Inventory &amp; flowchart of external relationships*</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#2.  Inventory existing internal code dependencies and timelines (in-progress work shown in Figure 1) *(4 weeks / July 2023)*\</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># **Deliverable: Inventory &amp; flowchart of intra-basecode relationships**</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>: Intra-base code relationships</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nodes <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">"name"</span> <span class="ot">=</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">c</span>(<span class="st">"Emails"</span>,                                <span class="co"># 0</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Raw data"</span>,                              <span class="co"># 1</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Clean data"</span>,                            <span class="co"># 2</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"20230529_Sample_Notes.xlsm"</span>,            <span class="co"># 3</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"WBE_Sample_Phasma-CA_20230511.Rmd"</span>,     <span class="co"># 4</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"plots"</span>,                                 <span class="co"># 5</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"dataframe"</span>,                             <span class="co"># 6</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"report"</span>))                               <span class="co"># 7</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>links <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="co"># Each row represents a link. The first number</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="co"># represents the node being conntected from. </span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="co"># the second number represents the node connected to.</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="co"># The third number is the value of the node</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>,</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>,</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">5</span>, <span class="dv">7</span> ,<span class="dv">1</span>,</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">1</span>),</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(links) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"source"</span>, <span class="st">"target"</span>, <span class="st">"value"</span>)</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sankeyNetwork</span>(<span class="at">Links =</span> links, <span class="at">Nodes =</span> nodes,</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">Source =</span> <span class="st">"source"</span>, <span class="at">Target =</span> <span class="st">"target"</span>,</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nodes <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">"name"</span> <span class="ot">=</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">c</span>(<span class="st">"Emails"</span>,                                <span class="co"># 0</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Raw data"</span>,                              <span class="co"># 1</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Clean data"</span>,                            <span class="co"># 2</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"20230529_Sample_Notes.xlsm"</span>,            <span class="co"># 3</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"WBE_Sample_Phasma-CA_20230511.Rmd"</span>,     <span class="co"># 4</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"plots"</span>,                                 <span class="co"># 5</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"dataframe"</span>,                             <span class="co"># 6</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"report"</span>))                               <span class="co"># 7</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>links <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="co"># Each row represents a link. The first number</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="co"># represents the node being conntected from. </span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="co"># the second number represents the node connected to.</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="co"># The third number is the value of the node</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">5</span>, <span class="dv">7</span> ,<span class="dv">1</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">1</span>),</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(links) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"source"</span>, <span class="st">"target"</span>, <span class="st">"value"</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sankeyNetwork</span>(<span class="at">Links =</span> links, <span class="at">Nodes =</span> nodes,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">Source =</span> <span class="st">"source"</span>, <span class="at">Target =</span> <span class="st">"target"</span>,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2efdc6026ef2ee59faf3" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-2efdc6026ef2ee59faf3">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b03d1719d5e326c1836f" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b03d1719d5e326c1836f">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ol start="4" type="1">
@@ -226,11 +235,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>To check your installed version of RStudio and R, respectively, either use the GUI’s or by inputting:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>version</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>version</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               _                                
 platform       x86_64-w64-mingw32               
@@ -240,47 +249,44 @@ crt            ucrt
 system         x86_64, mingw32                  
 status                                          
 major          4                                
-minor          2.3                              
+minor          3.0                              
 year           2023                             
-month          03                               
-day            15                               
-svn rev        83980                            
+month          04                               
+day            21                               
+svn rev        84292                            
 language       R                                
-version.string R version 4.2.3 (2023-03-15 ucrt)
-nickname       Shortstop Beagle                 </code></pre>
+version.string R version 4.3.0 (2023-04-21 ucrt)
+nickname       Already Tomorrow                 </code></pre>
 </div>
 </div>
 <ul>
 <li>To check your package versions, refer to the package window in the corner of RStudio or input:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(head</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>      (tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">Package =</span> <span class="fu">names</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>]),</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Version =</span> <span class="fu">unname</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>])</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      ), <span class="at">n=</span><span class="dv">600</span> <span class="co">#where n = an appropriately large value to capture all your packages</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(head</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>      (tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">Package =</span> <span class="fu">names</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>]),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Version =</span> <span class="fu">unname</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>])</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      ), <span class="at">n=</span><span class="dv">600</span> <span class="co">#where n = an appropriately large value to capture all your packages</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Error in readRDS(file) : unknown input format
-Error in readRDS(file) : unknown input format
-Error in readRDS(file) : unknown input format
-# A tibble: 392 × 2
+<pre><code># A tibble: 355 × 2
    Package      Version 
    &lt;chr&gt;        &lt;chr&gt;   
  1 abind        1.4-5   
- 2 anytime      0.3.9   
- 3 askpass      1.1     
- 4 assertthat   0.2.1   
- 5 backports    1.4.1   
- 6 base         4.2.3   
- 7 base64enc    0.1-3   
- 8 BH           1.81.0-1
- 9 bigD         0.2.0   
-10 BiocGenerics 0.44.0  
-# ℹ 382 more rows</code></pre>
+ 2 askpass      1.1     
+ 3 assertthat   0.2.1   
+ 4 backports    1.4.1   
+ 5 base         4.3.0   
+ 6 base64enc    0.1-3   
+ 7 BH           1.81.0-1
+ 8 bigD         0.2.0   
+ 9 BiocGenerics 0.46.0  
+10 BiocManager  1.30.21 
+# ℹ 345 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -288,7 +294,7 @@ Error in readRDS(file) : unknown input format
 <section id="r-packages-version-alignment" class="level4">
 <h4 class="anchored" data-anchor-id="r-packages-version-alignment">R Packages version alignment</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://github.com/rstudio/renv/issues/1070</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://github.com/rstudio/renv/issues/1070</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using <em>reticulate</em>).</p>
 <p>The general workflow when working with renv is:<br>
@@ -309,10 +315,10 @@ Error in readRDS(file) : unknown input format
 <li>To check your version of python, use command line or in python:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>3.10.9 | packaged by Anaconda, Inc. | (main, Mar  1 2023, 18:18:15) [MSC v.1916 64 bit (AMD64)]</code></pre>
+<pre><code>3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit (AMD64)]</code></pre>
 </div>
 </div>
 </section>
@@ -321,16 +327,87 @@ Error in readRDS(file) : unknown input format
 <section id="version-control" class="level2">
 <h2 class="anchored" data-anchor-id="version-control">Version Control</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan's section</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### II. Training/Establishing Guidelines</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Acquire training on and establish version control on Github *(2 weeks/July 2023)* *Deliverable: Training/Guidance document section, specifically method for &amp; train team as soon as possible on version control/change management**\</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">### III. Preparatory Version Control &amp; Unit Tests</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Establish version control on Github. All team members to abide by training guidelines when introducing changes to main code base *(2 weeks/July 2023)*\</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan's section</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### II. Training/Establishing Guidelines</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Acquire training on and establish version control on Github *(2 weeks/July 2023)* *Deliverable: Training/Guidance document section, specifically method for &amp; train team as soon as possible on version control/change management**\</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="do">### III. Preparatory Version Control &amp; Unit Tests</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Establish version control on Github. All team members to abide by training guidelines when introducing changes to main code base *(2 weeks/July 2023)*\</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="trainingestablishing-guidelines" class="level3">
+<h3 class="anchored" data-anchor-id="trainingestablishing-guidelines">Training/Establishing Guidelines</h3>
+<section id="installation-and-setup" class="level4">
+<h4 class="anchored" data-anchor-id="installation-and-setup">Installation and setup</h4>
+<ol type="1">
+<li><p>Install Git from website <a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a></p></li>
+<li><p>Running on terminal</p>
+<ul>
+<li>Go to the Start menu</li>
+<li>In the Search or Run line type ”cmd”and press enter</li>
+<li>Check git version: <code>git --version</code></li>
+<li>Update git version if have git but not the latest version:<code>git update-git-for-windows</code></li>
+</ul>
+<p><img src="src/versionUpdate.gif" class="img-fluid" alt="git">.</p></li>
+<li><p>Introduce yourself to Git</p>
+<ul>
+<li>Type the following in cmd: <code>git config --global user.email "you@youremail.com"</code> <code>git config --global user.name "Your Name"</code></li>
+<li>See result: <code>git config --global --list</code></li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note: This <strong>must</strong> be the email associated with your GitHub account.</p>
+</div>
+</div>
+</section>
+<section id="connect-to-git-github-and-rstudio" class="level4">
+<h4 class="anchored" data-anchor-id="connect-to-git-github-and-rstudio">Connect to Git, GitHub and RStudio</h4>
+<ol start="4" type="1">
+<li><p>Setup a new remote repository in GitHub <img src="src/SetRepo.gif" class="img-fluid" alt="repo">.</p></li>
+<li><p>Connect Rstudio to GitHub and clone the repo <img src="src/RStudioConnectGitHub.gif" class="img-fluid" alt="connect">.</p></li>
+<li><p>Detect Git from RStudio</p>
+<ul>
+<li>Type <code>where git</code> in cmd to get the git executable path</li>
+<li>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to your Git executable. <img src="src/detect.png" class="img-fluid" alt="detect">.</li>
+</ul></li>
+</ol>
+</section>
+<section id="git-fundamentals" class="level4">
+<h4 class="anchored" data-anchor-id="git-fundamentals">Git Fundamentals</h4>
+<ol start="7" type="1">
+<li><p>Make changes and commit</p>
+<ul>
+<li>click on the <strong>Git</strong> tab in RStudio. You’ll notice that there’s only one file listed, since RStudio only lists files that have changed in its git interface.</li>
+<li>Click on the <strong>Staged</strong> check box to stage your change. Now click on <strong>Diff</strong>(next to <strong>Commit</strong>) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red.</li>
+<li>Add a commit message and click on <strong>Commit</strong>. Every time make a commit, must also write a short <strong>commit message</strong>.</li>
+<li>In the <strong>Git</strong> tab of RStudio, click on <strong>Diff</strong> and then <strong>History</strong>. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.</li>
+</ul></li>
+<li><p>Push &amp; Pull</p>
+<ul>
+<li>To start working on a project,<strong>Pull</strong> any new changes to update local copy.</li>
+<li>When you are finished and committed, to <strong>Push</strong> these changes to the remote repository (e.g., GitHub). Should see below image.</li>
+</ul></li>
+<li><p>Branch</p>
+<p><strong>Branching</strong> is the way to work on different versions of a repository at one time. By default your repository has one branch named<code>master</code>which is considered to be the definitive branch.</p>
+<p>When you create a branch off the <code>master</code> branch, you’re making a copy, or snapshot, of <code>master</code> as it was at that point in time. This is particularly useful when you are working on a collaborative project. For example, if someone else made changes to the <code>master</code> branch while you were working on your branch, you could pull in those updates.</p>
+<ul>
+<li>Create a new branch on GitHub/RStudio/shell</li>
+</ul>
+<p>9.1. Pull Request and Merge Chances - You will notice that at the top of all you files there is a new section that says: <strong>Your recently pushed branches:</strong>. The changes you made to your script have been pushed to your online copy of the project and are now in the branch <code>NewPlot</code>. In order to merge them into your <code>master</code> branch we need to create a pull request. Click on the button that says <em>Compare and pull request</em>. - In the <strong>Open a pull request</strong> page click on <strong>Create pull request</strong>. - GitHub has now compared the two versions of your project that are in the two branches, <code>master</code> and <code>Newplot</code>and it is telling us that there are no conflicts between the two versions. - Now it’s time to bring your changes together – merging your <code>Newplot</code> branch into the <code>master</code> branch. Click the green <strong>Merge pull request</strong> button to merge the changes into master. Click <strong>Confirm merge</strong>. Go ahead and delete the branch, since its changes have been incorporated, with the <strong>Delete branch</strong> button in the purple box.</p></li>
+</ol>
+</section>
+</section>
 </section>
 <section id="linting-style-guide" class="level2">
 <h2 class="anchored" data-anchor-id="linting-style-guide">Linting / Style Guide</h2>
@@ -340,13 +417,13 @@ Error in readRDS(file) : unknown input format
 lintr package will be set up with the main code to provide diagnostic linting (i.e.&nbsp;as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes. It will activate with github upload workflows following this set up command, which also creates a <strong>.github/workflows</strong> folder with <strong>lint.yaml</strong></p>
 <p>More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"lint"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"lint"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ Setting active project to 'C:/Users/hoja/Documents/code/CodeDocumentation'
+<pre><code>✔ Setting active project to 'C:/Users/jiangyu/Documents/CodeDocumentation'
 ✔ Saving 'r-lib/actions/examples/lint.yaml@v2' to '.github/workflows/lint.yaml'
 • Learn more at &lt;https://github.com/r-lib/actions/blob/v2/examples/README.md&gt;.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for context, check in console - vignette("continuous-integration")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for context, check in console - vignette("continuous-integration")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>===================================</p>
 </section>
