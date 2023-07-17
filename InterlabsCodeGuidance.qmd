@@ -191,7 +191,7 @@ print(sys.version)
 ### Training/Establishing Guidelines
 #### Installation and setup
 
-1. Install Git from website <https://gitforwindows.org/>
+1. Install Git from website: <https://gitforwindows.org/>
 
 2. Running on terminal
     - Go to the Start menu
