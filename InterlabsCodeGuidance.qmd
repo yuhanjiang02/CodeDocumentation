@@ -9,13 +9,11 @@ format:
 ---
 ```{r,  eval=FALSE, echo = FALSE}
 # to-do's
-# - Try to run base code - JH
-# - Github section - YH to learn+teach in section
-# - Put on GitHub - YH
+# - set up repository ensure online viewability on interlabs github - JH
+# - get comfortable authoring in quarto - both to complete online workshop https://rstudio-conf-2022.github.io/get-started-quarto/
 # - insert inventory tables & flow chart images - YH
 # - edit tables & images as needed - JH
-# - Linting procedure - JH
-# - Packaging versions - JH
+# - Github section - YH to learn+teach in section
 ```
 
 
@@ -188,87 +186,35 @@ print(sys.version)
 #    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\
 ```
 
-### Training/Establishing Guidelines
-#### Installation and setup
-
-1. Install Git from website <https://gitforwindows.org/>
-
-2. Running on terminal
-    - Go to the Start menu
-    - In the Search or Run line type ”cmd”and press enter
-    - Check git version: `git --version`
-    - Update git version if have git but not the latest version:`git update-git-for-windows`
-    
-    ![git](src/versionUpdate.gif).
-    
-3. Introduce yourself to Git
-    - Type the following in cmd:
-    `git config --global user.email "you@youremail.com"` 
-    `git config --global user.name "Your Name"`
-    - See result: `git config --global --list`
-    
-::: {.callout-note}
-Note: This **must** be the email associated with your GitHub account.
-:::
-
-#### Connect to Git, GitHub and RStudio
-
-4. Setup a new remote repository in GitHub
-  ![repo](src/SetRepo.gif).
-  
-5. Connect Rstudio to GitHub and clone the repo
-  ![connect](src/RStudioConnectGitHub.gif).
-  
-6. Detect Git from RStudio
-    - Type `where git` in cmd to get the git executable path
-    - From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to your Git executable.
-  ![detect](src/detect.png).
-
-#### Git Fundamentals
-7. Make changes and commit 
-    - click on the **Git** tab in RStudio. You’ll notice that there’s only one file listed, since RStudio only lists files that have changed in its git interface.
-    - Click on the **Staged** check box to stage your change. Now click on **Diff**(next to **Commit**) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red.
-    - Add a commit message and click on **Commit**. Every time make a commit, must also write a short **commit message**.
-    - In the **Git** tab of RStudio, click on **Diff** and then **History**. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.
-    
-8. Push & Pull
-    - To start working on a project,**Pull** any new changes to update local copy.
-    - When you are finished and committed, to **Push** these changes to the remote repository (e.g., GitHub). Should see below image.
-
-9. Branch
-    
-    **Branching** is the way to work on different versions of a repository at one time. By default your repository has one branch named`master`which is considered to be the definitive branch.
-    
-    When you create a branch off the `master` branch, you’re making a copy, or snapshot, of `master` as it was at that point in time. This is particularly useful when you are working on a collaborative project. For example, if someone else made changes to the `master` branch while you were working on your branch, you could pull in those updates.
-    - Create a new branch on GitHub/RStudio/shell
-    
-    9.1. Pull Request and Merge Chances
-        - You will notice that at the top of all you files there is a new section that says: **Your recently pushed branches:**. The changes you made to your script have been pushed to your online copy of the project and are now in the branch `NewPlot`. In order to merge them into your `master` branch we need to create a pull request. Click on the button that says *Compare and pull request*.
-        - In the **Open a pull request** page click on **Create pull request**.
-        - GitHub has now compared the two versions of your project that are in the two branches, `master` and `Newplot`and it is telling us that there are no conflicts between the two versions.
-        - Now it’s time to bring your changes together – merging your `Newplot` branch into the `master` branch. Click the green **Merge pull request** button to merge the changes into master. Click **Confirm merge**. Go ahead and delete the branch, since its changes have been incorporated, with the **Delete branch** button in the purple box.
 
 ## Linting / Style Guide
 *General*
-- camelCase 
-- tab indentation
+The ![tidyverse style](https://style.tidyverse.org/) will be the default style, and aligns with the lintr package used below.  It is recommended for all users to review the guide.  Some general format rules include:  
+- camelCase recommended (note tidyverse style guide prefers snake case but both are acceptable)
+- tab indentation by two spaces
 *Linting - continuous integration*
 In RStudio IDE:  
 - some linting is included, however it is for errors only
 - selecting code and hitting Ctrl + I will re-indent code for you
   
 lintr:  
-lintr package will be set up with the main code to provide diagnostic linting (i.e. as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes.  It will activate with github upload workflows following this set up command, which also creates a **.github/workflows** folder with **lint.yaml**
+lintr package will be set up with the main code to provide diagnostic linting (i.e. as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes.  It will activate with github upload workflows following this set up command, which also creates a **.github/workflows** folder with **lint.yaml**  
   
-More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/ 
 ```{r}
+#| eval: FALSE
 usethis::use_github_action("lint")
 # for context, check in console - vignette("continuous-integration")
 
 ```
 
+Once lintr is installed, it can be accessed in RStudio.  In order to see the diagnostic results, first enable the "Markers" pane by  > “Tools” > “Global Options…” > go to “Code” on the left-hand-side > “Diagnostics” tab > check “Show diagnostics for R”.  The Markers pane will then be available tabbed next to Console/Terminal/Background Jobs to display lint results.  
 
+To run lintr, open Tools > Addins. From the pop-up window, select lintr from the addin's list and execute on the open code file.  
+![](img/lintrRStudio.png)
 
+*N.B. You can bind this linting process to a keyboard shortcut in RStudio in the addin's window, with Shift+Alt+L recommended *
+
+The user may then use the lintr result in the Markers pane as a guide to modify code format.  Automated linting (e.g. styler package) is not recommended at this point.  More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/ 
 ===================================
 
 ## Refactoring 
