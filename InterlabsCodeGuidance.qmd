@@ -197,7 +197,7 @@ In RStudio IDE:
 - some linting is included, however it is for errors only
 - selecting code and hitting Ctrl + I will re-indent code for you
   
-lintr:  
+*lintr*:  
 lintr package will be set up with the main code to provide diagnostic linting (i.e. as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes.  It will activate with github upload workflows following this set up command, which also creates a **.github/workflows** folder with **lint.yaml**  
   
 ```{r}
