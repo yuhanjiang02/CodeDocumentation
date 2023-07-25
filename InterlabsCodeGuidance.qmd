@@ -322,19 +322,21 @@ When to reconsider stage: this will all go to GitHub. Consider if that is approp
     
     - Best case, no-merge-conflicts version of git pull
     
-    - Have Conflict:
-      'CONFLICT (content): Merge conflict in file
-      Automatic merge failed; fix conflicts and then commit the result.'
+    - If have Conflict in the file will show below :
     
-      For Local work is committed (A--B--D): 
+      + For Local work is committed (A--B--D): 
+      
+      ![conflict](src/conflict.png)
       
       Literally, at each locus of conflict, pick one version or the other (upstream or local) or create a hybrid yourself. Remove the all the markers inserted to demarcate the conflicts. Save.
       
-      For Local work is uncommitted (A--B--(uncommitted changes)):
+      + For Local work is uncommitted (A--B--(uncommitted changes)):
       
-      - commit them and follow previous committed solution or
+      ![conflict2](src/conflict2.png)
       
-      - use `git stash` to temporarily store some changes
+         - commit them first and follow previous committed solution (Recommand) **or**
+      
+         - use `git stash` to temporarily store some changes
         ![stash](src/stash.png)
     
 #### Version control workflow
