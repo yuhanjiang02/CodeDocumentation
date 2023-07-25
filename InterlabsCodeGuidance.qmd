@@ -1,6 +1,7 @@
 ---
 title: "Wastewater Surveillance Interlab Program Analytical Code Documentation"
 author: "YJ, JH"
+number-sections: true
 format:
   html:
     toc: true
@@ -48,13 +49,14 @@ The purpose of this document is:
 1. To serve as documentation accompanying the code, and to be continually updated as the code evolves  
 2. Set out practice standards for team to collectively continue hygienic data handling & coding following the refactoring project in 2023; serve as on-boarding training for new team members
 
+# Environment Structure
+
 ## External File Structure
 
 ```{r}
 ### I. Code Documentation
 #1.  Inventory existing external file dependencies and working procedures outside of main codebase, e.g. the python snippets, address books, flow of sample notes, raw, and clean data *(4 weeks / July 2023)*\
 ```
-
 
 An inventory of file and code relationships external to the main codebase is currently is shown in Table 1 and Figure 1 below.
 
@@ -66,13 +68,8 @@ An inventory of file and code relationships external to the main codebase is cur
 
 
 
-
-### Code Internal Structure and Dependency
-```{r}
-#Jane to insert Packages/Libraries, version Listing *(1 week, July 2023)*
-
-```
-
+## Code Internal Structure
+The base code is in the Rmarkdown format with the process and optional analysis codes segmented as chunks.  Explanatory notes are primarily written in markdown prefacing each chunk of code, alongside minor comments in-line within the code chunk.  The chunks should be run from top-down to ensure that prerequisite objects are generated; part of the explanatory notes prefacing each chunk details the prerequisite requirements, and is summarized below.
 
 #### Figure 1: Intra-base code relationships
 ```{r}
@@ -113,52 +110,104 @@ sankeyNetwork(Links = links, Nodes = nodes,
 ```
 
     
-4.  Extract and analyze relevance of in-code comments *(4 weeks / July 2023)*  
-    **Deliverable: Code Documentation, interim**
 
-### Environment (Package Dependencies & Software Versions)
-All work must be done on OCWA-provided laptops.  Overall restrictions applicable to OCWA operating environment will restrict software installation - manager approvals as well as IT "white-list".  The 
+# Operating Environment
 
-#### R
-##### Version Check
-- To check your installed version of RStudio and R, respectively, either use the GUI's or by inputting:
-```r
-RStudio.Version()
-```
+All work must be done on OCWA-provided Windows laptops in conformance with public service technology policies.  Overall restrictions applicable to OCWA operating environment will restrict software installation - manager approvals as well as IT "white-list" may be required.  
 
+Working file may be located in the users OCWA laptop local drive, but also available in the Wastewater surveillance team network folder, which is backed-up by IT:   
+[//ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance](//ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance)
+
+::: .call-out-note
+To avoid issues, the whole path to local working project directory and names of script files should not have empty spaces.  (The configuration of the base network directory preceding "WasteWater Surveillance" cannot be changed unfortunately)
+:::
+
+## Software
+
+|Software|Purpose|Min. Version (Extensions)|
+|--------|-------|------------------------|
+|Notepad ++| version control: pre-merging manual comparison|v8.5, Plugin: Compare v2|
+:  Software and Versions used {#software-version}
+
+#### R Environment
+
+A reproducible environment for the project inside R is managed using the renv package.  renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using *reticulate*).  Detailed initial set-up [steps](#renv-setup) should be executed by authorized lead only.  All other users can make use of the *renv.lock* file and project library *renv/library* to align with the working R and package versions.  Different project and branches may use different versions of packages without affecting each other.    
+
+### Package Dependencies
+Based on line-by-line run of the ![base code ](https://github.com/InterlabsOCWA/Base_code/commit/1a4da2e5cbb78f3b97cf4cabb2dd783d574a163e), otherwise named as "WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd", the necessary packages were determined to be (flag jh - maybe take from renv.lock/github main):
+(ggplot2)
+(tidyverse)
+(fs)
+(janitor)
+(readxl)
+(ggh4x)
+(RColorBrewer)
+(scales)
+(writexl)
+(devEMF)
+(DescTools)
+(ggpubr)
+(officer)
+
+The following steps are referenced from ![](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv).  
+
+* N.B. it is highly recommended for any package update as well as the initial set-up to be done collectively with the team, as it may force update of certain packages if the versions logged in the controlled lock file are no longer available from the download source (https://stackoverflow.com/questions/60779096/error-installing-packages-using-renvrestore) *
+
+1) Check your version of R matches the below [flag to update periodically], using the GUI's or by inputting:
 ```{r}
 #| echo: fenced
 version
+# not as necessary, but the IDE version can be checked using RStudio.Version()
+```
+2) Make sure you have the renv installed to allow usage of renv commands below.  Version 1.0.0 recommended (this version is also logged in the lockfile)  
+
+3) As part of cloning the project from version controlled branch you are working on, the *renv.lock* (as well as the renv/library, .Rprofile, renv/settings.json, and renv/activate.R files) should be found in your local repository location.   Opening the cloned project at the new location, by executing the below, renv will install/compile what is needed on the system, as long as the same version of R exists between systems:
+```{r, eval=FALSE}
+## Reproduce environment
+renv::restore()
+renv::init()
 ```
 
-
-
-- To check your package versions, refer to the package window in the corner of RStudio or input:
-```{r}
-#| echo: fenced
-print(head
-      (tibble::tibble(
-        Package = names(installed.packages()[,3]),
-        Version = unname(installed.packages()[,3])
-      ), n=600 #where n = an appropriately large value to capture all your packages
-      )
-)
+4) If package versions in project lockfile do not match the your local library, you can follow the console instruction to generate a list of packages out of sync:  
+```{r, eval=FALSE}
+renv::status() 
 ```
 
-#### R Packages version alignment
-```{r}
-#https://github.com/rstudio/renv/issues/1070
-```
+If your work results in changing versions of or adding packages, please refer to [steps](#renv-setup) steps 2 and 3 as well as consult the team in a timely manner.    
 
-renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using *reticulate*).  
 
-The general workflow when working with renv is:  
-1. Call renv::init() to initialize a new project-local environment with a private R library  
-2. Work in the project as normal, installing and removing new R packages as they are needed in the project  
-3. Call renv::snapshot() to save the state of the project library to the lockfile (called renv.lock)  
-4. Continue working on your project, installing and updating R packages as needed  
-5.Call renv::snapshot() again to save the state of your project library if your attempts to update R packages were successful, or call renv::restore() to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.  
-  
+::: {#renv-setup .callout-note collapse="true"}
+## Set up / Package library updates
+
+The general workflow for the technical lead to initially set up with renv is:  
+
+1. Call renv::init() to initialize a new project-local environment with a private R library.  The console should report back it has linked packages into the project library and written the renv.lock lockfile.  Three new files and directories are created:  
+
+- i. renv/library containing all packages used by the project.  Each project refers to its own isolated library rather than using a common library  
+- ii. the lockfile *renv.lock* recording metadata about every package to enable re-installation on other machines  
+- iii. the project R profile *.Rprofile* which auto-runs when the project is started in R as a configuration file.  
+
+2. As the project progress, new R packages may be installed, removed or updated.  After validated package changes, call renv::snapshot() to save the state of the project library to the lockfile.  
+
+Option - call renv::restore() to revert to the previous state as encoded in the lockfile if the package change introduced some new problems*
+
+3. A new commit should be made on github so that the team can update their respective local project environment.   These three components must be committed to version control:  
+- i) renv.lock 
+- ii) .Rprofile
+- iii) renv/settings.json 
+- iv) renv/activate.R    
+A git-ignore file within the renv subdirectory instructs all other non-necessary files **not** to be saved to version control  
+:::
+
+
+
+
+For troubleshooting requiring package version check, besides cross-checking renv.lock files, refer to the package window in the corner of RStudio. 
+
+
+
+
+=====  
 When renv’s Python integration is active, a couple extra features will activate:  
 - renv will instruct reticulate to load your project-local version of Python by default, avoiding some of the challenges with finding and selecting an appropriate version of Python on the system.  
 - Calling reticulate::py_install() will install packages into the project’s Python environment by default.  
@@ -186,6 +235,67 @@ print(sys.version)
 #    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\
 ```
 
+### Training/Establishing Guidelines
+#### Installation and setup
+
+1. Install Git from website: <https://gitforwindows.org/>
+
+2. Running on terminal
+    - Go to the Start menu
+    - In the Search or Run line type ”cmd”and press enter
+    - Check git version: `git --version`
+    - Update git version if have git but not the latest version:`git update-git-for-windows`
+    
+    ![git](src/versionUpdate.gif).
+    
+3. Introduce yourself to Git
+    - Type the following in cmd:
+    `git config --global user.email "you@youremail.com"` 
+    `git config --global user.name "Your Name"`
+    - See result: `git config --global --list`
+    
+::: {.callout-note}
+Note: This **must** be the email associated with your GitHub account.
+:::
+
+#### Connect to Git, GitHub and RStudio
+
+4. Setup a new remote repository in GitHub
+  ![repo](src/SetRepo.gif).
+  
+5. Connect Rstudio to GitHub and clone the repo
+  ![connect](src/RStudioConnectGitHub.gif).
+  
+6. Detect Git from RStudio
+    - Type `where git` in cmd to get the git executable path
+    - From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to your Git executable.
+  ![detect](src/detect.png).
+
+#### Git Fundamentals
+7. Make changes and commit 
+    - click on the **Git** tab in RStudio. You’ll notice that there’s only one file listed, since RStudio only lists files that have changed in its git interface.
+    - Click on the **Staged** check box to stage your change. Now click on **Diff**(next to **Commit**) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red.
+    - Add a commit message and click on **Commit**. Every time make a commit, must also write a short **commit message**.
+    - In the **Git** tab of RStudio, click on **Diff** and then **History**. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.
+    
+8. Push & Pull
+    - To start working on a project,**Pull** any new changes to update local copy.
+    - When you are finished and committed, to **Push** these changes to the remote repository (e.g., GitHub). Should see below image.
+
+9. Branch
+    
+    **Branching** is the way to work on different versions of a repository at one time. By default your repository has one branch named`master`which is considered to be the definitive branch.
+    
+    When you create a branch off the `master` branch, you’re making a copy, or snapshot, of `master` as it was at that point in time. This is particularly useful when you are working on a collaborative project. For example, if someone else made changes to the `master` branch while you were working on your branch, you could pull in those updates.
+    - Create a new branch on GitHub/RStudio/shell
+    
+    9.1. Pull Request and Merge Chances
+        - You will notice that at the top of all you files there is a new section that says: **Your recently pushed branches:**. The changes you made to your script have been pushed to your online copy of the project and are now in the branch `NewPlot`. In order to merge them into your `master` branch we need to create a pull request. Click on the button that says *Compare and pull request*.
+        - In the **Open a pull request** page click on **Create pull request**.
+        - GitHub has now compared the two versions of your project that are in the two branches, `master` and `Newplot`and it is telling us that there are no conflicts between the two versions.
+        - Now it’s time to bring your changes together – merging your `Newplot` branch into the `master` branch. Click the green **Merge pull request** button to merge the changes into master. Click **Confirm merge**. Go ahead and delete the branch, since its changes have been incorporated, with the **Delete branch** button in the purple box.
+
+![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png)
 
 ## Linting / Style Guide
 *General*
@@ -222,7 +332,27 @@ The user may then use the lintr result in the Markers pane as a guide to modify 
 - workflow
 
 ## unit testing approaches & practices 
+*At the minimum, we should aim to write tests for the "happy path" of our application.
 
+What is a "happy path" test? "Happy path" tests are very useful, because they catch the most critical bugs, but are definitely not sufficient for building reliable and robust applications.* https://effectivecio.com/2009/11/02/the-happy-path/
+
+The happy path is the path through a system where everything works, the data is correct, the system stays up, and the users are well-behaved.  We tend to test the happy path first because we understand how the system should function and want to ensure that the basic features should work.  We need to move off the happy path and wander in the weeds.  What if the quantity exceeds stock on hand? What if the user enters too few digits from their credit card? Or too many? Or adds a space, or a dash? What if the zip code doesn’t match the state? What if? What if? What if?
+
+It doesn’t take long to test the happy path.  It takes forever to test everything off the happy path. You need to spend a lot of time wandering away from the happy path, and maybe there is a reverse rule for testing: 20% of your time on the happy path; 80% of your time off of it.
+
+![ What are Unit Testing, Integration Testing and Functional Testing?](http://codeutopia.net/blog/2015/04/11/what-are-unit-testing-integration-testing-and-functional-testing/)
+
+Automated testing is the practice of writing code to programmatically test the actual code we want to write.
+
+It offers several benefits over manual testing:
+
+it saves testing time (by not having to perform manual tests over and over)
+it saves debugging time (by catching bugs earlier)
+it makes it easier to program (because we don't need to keep the entire application in our heads, just the part that we're working on... if we break something, our tests will let us know)
+it makes it easier to come back to a program after some time (programmers forget things, but tests do not)
+it makes it easier to work together (we wrote some widget and know how it works, but our team-mates probably don't; our tests will catch bugs introduced by others on our team, and vice versa)
+it acts as documentation (readings tests is a great way to learn about how code is meant to be used)
+it improves the quality of our code (writing code that is easy to test often requires us to change how our code is structured -- for the better)
 ##  Issues-tracking method
 
 
@@ -359,3 +489,17 @@ refactoring requires us to be able to ensure that behavior remains identical at 
 -   Set a canary test (it checks if the test framework works)
 
 -   Add few (automated) tests. Start with code candidate to change first. If code wasn't designed to be testable, don't change it yet. Make your best to test it as is. This is very important.
+
+
+### Misc. heap of code
+Find main package list + versions:
+```{r}
+#| echo: fenced
+print(head
+      (tibble::tibble(
+        Package = names(installed.packages()[,3]),
+        Version = unname(installed.packages()[,3])
+      ), n=600 #where n = an appropriately large value to capture all your packages
+      )
+)
+```

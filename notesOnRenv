@@ -1,0 +1,186 @@
+#### R Packages version alignment
+```{r}
+#https://github.com/rstudio/renv/issues/1070
+```
+
+renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using *reticulate*).
+
+The general workflow when working with renv is:
+1. Call renv::init() to initialize a new project-local environment with a private R library
+```{r}
+#* Linking packages into the project library ... [48/48] Done!
+#The following package(s) will be updated in the lockfile
+#[...]
+#* Lockfile written to '~/code/Base_code/renv.lock'.
+#Error: snapshot of library #"C:/Users/hoja/AppData/Local/R/cache/R/renv/sandbox/R-4.2/x86_64-w64-mingw32/ed600755" failed
+```
+
+2. Work in the project as normal, installing and removing new R packages as they are needed in the project
+3. Call renv::snapshot() to save the state of the project library to the lockfile (called renv.lock)
+4. Continue working on your project, installing and updating R packages as needed
+5.Call renv::snapshot() again to save the state of your project library if your attempts to update R packages were successful, or call renv::restore() to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.
+
+When renv’s Python integration is active, a couple extra features will activate:
+- renv will instruct reticulate to load your project-local version of Python by default, avoiding some of the challenges with finding and selecting an appropriate version of Python on the system.
+- Calling reticulate::py_install() will install packages into the project’s Python environment by default.
+- When renv::snapshot() is called, your project’s Python library will also be captured into requirements.txt (for virtual environments) / environment.yml (for Conda environments).
+- Similarly, renv::restore() will also attempt to restore your Python environment, as encoded in requirements.txt / environment.yml from a previous snapshot.
+
+
+====================================
+To convert a project to use renv, call renv::init(). It adds three new files and directories to your project:
+
+The project library, renv/library, is a library that contains all packages currently used by your project2. This is the key magic that makes renv work: instead of having one library containing the packages used in every project, renv gives you a separate library for each project. This gives you the benefits of isolation: different projects can use different versions of packages, and installing, updating, or removing packages in one project doesn’t affect any other project.
+The lockfile, renv.lock, records enough metadata about every package that it can be re-installed on a new machine. We’ll come back to the lockfile shortly when we talk about renv::snapshot() and renv::restore().
+A project R profile, .Rprofile. This file is run automatically every time you start R (in that project), and renv uses it to configure your R session to use the project library. This ensures that once you turn on renv for a project, it stays on, until you deliberately turn it off.
+
+=====================
+
+
+> renv::init()
+* Discovering package dependencies ... Done!
+Error in readRDS(file) : unknown input format
+Error in readRDS(file) : unknown input format
+Error in readRDS(file) : unknown input format
+* Linking packages into the project library ... [48/48] Done!
+The following package(s) will be updated in the lockfile:
+
+# CRAN ===============================
+- R6             [* -> 2.5.1]
+- RColorBrewer   [* -> 1.1-3]
+- base64enc      [* -> 0.1-3]
+- bslib          [* -> 0.5.0]
+- cachem         [* -> 1.0.8]
+- cli            [* -> 3.6.1]
+- colorspace     [* -> 2.1-0]
+- digest         [* -> 0.6.31]
+- dplyr          [* -> 1.1.2]
+- ellipsis       [* -> 0.3.2]
+- evaluate       [* -> 0.21]
+- fansi          [* -> 1.0.4]
+- farver         [* -> 2.1.1]
+- fastmap        [* -> 1.1.1]
+- fontawesome    [* -> 0.5.1]
+- fs             [* -> 1.6.2]
+- generics       [* -> 0.1.3]
+- glue           [* -> 1.6.2]
+- highr          [* -> 0.10]
+- htmltools      [* -> 0.5.5]
+- jquerylib      [* -> 0.1.4]
+- jsonlite       [* -> 1.8.4]
+- knitr          [* -> 1.42]
+- labeling       [* -> 0.4.2]
+- lifecycle      [* -> 1.0.3]
+- magrittr       [* -> 2.0.3]
+- memoise        [* -> 2.0.1]
+- mime           [* -> 0.12]
+- munsell        [* -> 0.5.0]
+- pillar         [* -> 1.9.0]
+- pkgconfig      [* -> 2.0.3]
+- rappdirs       [* -> 0.3.3]
+- renv           [* -> 0.17.3]
+- rlang          [* -> 1.1.0]
+- rmarkdown      [* -> 2.23]
+- sass           [* -> 0.4.5]
+- scales         [* -> 1.2.1]
+- stringi        [* -> 1.7.12]
+- stringr        [* -> 1.5.0]
+- tibble         [* -> 3.2.1]
+- tidyselect     [* -> 1.2.0]
+- tinytex        [* -> 0.44]
+- utf8           [* -> 1.2.3]
+- vctrs          [* -> 0.6.1]
+- viridisLite    [* -> 0.4.2]
+- withr          [* -> 2.5.0]
+- writexl        [* -> 1.4.2]
+- xfun           [* -> 0.39]
+- yaml           [* -> 2.3.7]
+
+The version of R recorded in the lockfile will be updated:
+- R              [* -> 4.2.3]
+
+* Lockfile written to '~/code/Base_code/renv.lock'.
+Error: snapshot of library "C:/Users/hoja/AppData/Local/R/cache/R/renv/sandbox/R-4.2/x86_64-w64-mingw32/ed600755" failed
+> renv::dependencies()
+Finding R package dependencies ... Done!
+                                                                                            Source
+1                                                 C:/Users/hoja/Documents/code/Base_code/renv.lock
+2  C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+3  C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+4  C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+5  C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+6  C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+7  C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+8  C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+9  C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+10 C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+11 C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+12 C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+13 C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+14 C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+15 C:/Users/hoja/Documents/code/Base_code/WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd
+        Package Require Version   Dev
+1          renv                 FALSE
+2     rmarkdown                 FALSE
+3            fs                 FALSE
+4         dplyr                 FALSE
+5         dplyr                 FALSE
+6        scales                 FALSE
+7       writexl                 FALSE
+8        scales                 FALSE
+9        scales                 FALSE
+10       scales                 FALSE
+11       scales                 FALSE
+12       scales                 FALSE
+13       scales                 FALSE
+14 RColorBrewer                 FALSE
+15      writexl                 FALSE
+
+
+Checking renv.lock file in directory
+{
+  "R": {
+    "Version": "4.2.3",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cran.rstudio.com"
+      }
+    ]
+  },
+  "Packages": {
+    "R6": {
+      "Package": "R6",
+      "Version": "2.5.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "470851b6d5d0ac559e9d01bb352b4021"
+
+> renv::status()
+renv was unable to snapshot the following packages:
+
+	'nnet': embedded nul in string:
+	'\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+
+These packages will likely need to be repaired and / or reinstalled.
+
+Error: snapshot of library "C:/Users/hoja/AppData/Local/R/cache/R/renv/sandbox/R-4.2/x86_64-w64-mingw32/ed600755" failed
+
+===============================
+
+From renv.init creations we need renv.lock, .Rprofile, renv/settings.json and renv/activate.R to be committed version control, ensuring that others can recreate your project environment. If you’re using git, this is particularly simple because renv will create a .gitignore for you, and you can just commit all suggested files.
+
+For a package to be recorded in the lockfile, it must be both:
+
+Installed your project library, and
+
+Used by the project, as determined by renv::dependencies().
+
+The automatic dependency discovery is really cool, but somewhat limited. It understand the most common and obvious ways a package can be loaded in a script, but it can fail if you use some more indirect methods. For instance, it can fail to detect rmarkdown and its dependencies in some cases.
+
+- rmarkdown is reported as false depedency but is recorded in renv.lock file so ok
+
+When installing a package, renv installs into the global cache and then adds a symlink1 to that directory in the project library. That way each renv project remains isolated from other projects on your system, but they can still re-use the same installed packages.
