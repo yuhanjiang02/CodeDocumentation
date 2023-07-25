@@ -337,7 +337,42 @@ When to reconsider stage: this will all go to GitHub. Consider if that is approp
       - use `git stash` to temporarily store some changes
         ![stash](src/stash.png)
     
-    
+#### Version control workflow
+
+1. The overall workflow graph of version control.
+![workflow](src/workflow.png)
+
+2. Working location - Need to confirm
+
+   - The home folder locations for **main** branch: 
+   
+     S:\WasteWater Surveillance\3_Templates_References\Round_codes
+   
+   - The home folder locations for **Round** branch: 
+   
+     S:\WasteWater Surveillance\4_WIP\O103-Interlabs\d_Code
+   
+   - The home folder locations for **develop** branch:
+   
+     S:\WasteWater Surveillance\1_QMS
+   
+   Clone the remote repository to local directory for each branch working.
+   
+
+3. gitignore file
+
+   To tell Git which files and directories to ignore when you make a commit. To share the ignore rules with other users who clone the repository, commit the .gitignore file in to your repository.
+
+   The gitigonre content reference: https://swcarpentry.github.io/git-novice/06-ignore.html
+
+   The data/files we don't want to commit to GitHub:
+    - all the data spread sheet
+    - plots
+    - reports
+
+4. Unsolved questions
+
+   - Zombie code: cut off but might come back?
 
 ## Linting / Style Guide
 *General*

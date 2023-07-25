@@ -215,8 +215,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7f90dbf9242c574ce1b5" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-7f90dbf9242c574ce1b5">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9479622c83231330d196" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9479622c83231330d196">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ol start="4" type="1">
@@ -471,6 +471,35 @@ Note
 <li><p>commit them and follow previous committed solution or</p></li>
 <li><p>use <code>git stash</code> to temporarily store some changes <img src="src/stash.png" class="img-fluid" alt="stash"></p></li>
 </ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="version-control-workflow" class="level4">
+<h4 class="anchored" data-anchor-id="version-control-workflow">Version control workflow</h4>
+<ol type="1">
+<li><p>The overall workflow graph of version control. <img src="src/workflow.png" class="img-fluid" alt="workflow"></p></li>
+<li><p>Working location - Need to confirm</p>
+<ul>
+<li><p>The home folder locations for <strong>main</strong> branch:</p>
+<p>S:Surveillance\3_Templates_References_codes</p></li>
+<li><p>The home folder locations for <strong>Round</strong> branch:</p>
+<p>S:Surveillance\4_WIP103-Interlabs_Code</p></li>
+<li><p>The home folder locations for <strong>develop</strong> branch:</p>
+<p>S:Surveillance\1_QMS</p></li>
+</ul>
+<p>Clone the remote repository to local directory for each branch working.</p></li>
+<li><p>gitignore file</p>
+<p>To tell Git which files and directories to ignore when you make a commit. To share the ignore rules with other users who clone the repository, commit the .gitignore file in to your repository.</p>
+<p>The gitigonre content reference: https://swcarpentry.github.io/git-novice/06-ignore.html</p>
+<p>The data/files we don’t want to commit to GitHub:</p>
+<ul>
+<li>all the data spread sheet</li>
+<li>plots</li>
+<li>reports</li>
+</ul></li>
+<li><p>Unsolved questions</p>
+<ul>
+<li>Zombie code: cut off but might come back?</li>
 </ul></li>
 </ol>
 </section>
