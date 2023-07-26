@@ -1,6 +1,7 @@
 ---
 title: "Wastewater Surveillance Interlab Program Analytical Code Documentation"
 author: "YJ, JH"
+number-sections: true
 format:
   html:
     toc: true
@@ -9,13 +10,11 @@ format:
 ---
 ```{r,  eval=FALSE, echo = FALSE}
 # to-do's
-# - Try to run base code - JH
-# - Github section - YH to learn+teach in section
-# - Put on GitHub - YH
+# - set up repository ensure online viewability on interlabs github - JH
+# - get comfortable authoring in quarto - both to complete online workshop https://rstudio-conf-2022.github.io/get-started-quarto/
 # - insert inventory tables & flow chart images - YH
 # - edit tables & images as needed - JH
-# - Linting procedure - JH
-# - Packaging versions - JH
+# - Github section - YH to learn+teach in section
 ```
 
 
@@ -50,13 +49,14 @@ The purpose of this document is:
 1. To serve as documentation accompanying the code, and to be continually updated as the code evolves  
 2. Set out practice standards for team to collectively continue hygienic data handling & coding following the refactoring project in 2023; serve as on-boarding training for new team members
 
+# Environment Structure
+
 ## External File Structure
 
 ```{r}
 ### I. Code Documentation
 #1.  Inventory existing external file dependencies and working procedures outside of main codebase, e.g. the python snippets, address books, flow of sample notes, raw, and clean data *(4 weeks / July 2023)*\
 ```
-
 
 An inventory of file and code relationships external to the main codebase is currently is shown in Table 1 and Figure 1 below.
 
@@ -68,13 +68,8 @@ An inventory of file and code relationships external to the main codebase is cur
 
 
 
-
-### Code Internal Structure and Dependency
-```{r}
-#Jane to insert Packages/Libraries, version Listing *(1 week, July 2023)*
-
-```
-
+## Code Internal Structure
+The base code is in the Rmarkdown format with the process and optional analysis codes segmented as chunks.  Explanatory notes are primarily written in markdown prefacing each chunk of code, alongside minor comments in-line within the code chunk.  The chunks should be run from top-down to ensure that prerequisite objects are generated; part of the explanatory notes prefacing each chunk details the prerequisite requirements, and is summarized below.
 
 #### Figure 1: Intra-base code relationships
 ```{r}
@@ -115,59 +110,108 @@ sankeyNetwork(Links = links, Nodes = nodes,
 ```
 
     
-4.  Extract and analyze relevance of in-code comments *(4 weeks / July 2023)*  
-    **Deliverable: Code Documentation, interim**
 
-### Environment (Package Dependencies & Software Versions)
-All work must be done on OCWA-provided laptops.  Overall restrictions applicable to OCWA operating environment will restrict software installation - manager approvals as well as IT "white-list".  The 
+# Operating Environment
 
-#### R
-##### Version Check
-- To check your installed version of RStudio and R, respectively, either use the GUI's or by inputting:
-```r
-RStudio.Version()
-```
+All work must be done on OCWA-provided Windows laptops in conformance with public service technology policies.  Overall restrictions applicable to OCWA operating environment will restrict software installation - manager approvals as well as IT "white-list" may be required.  
 
+Working file may be located in the users OCWA laptop local drive, but also available in the Wastewater surveillance team network folder, which is backed-up by IT:   
+[//ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance](//ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance)
+
+::: .call-out-note
+To avoid issues, the whole path to local working project directory and names of script files should not have empty spaces.  (The configuration of the base network directory preceding "WasteWater Surveillance" cannot be changed unfortunately)
+:::
+
+## General Software
+
+|Software|Purpose|Min. Version| (Extensions)|
+|--------|-------|------------|-----------|
+|Notepad ++| version control: pre-merging manual comparison|v8.5| Plugin: Compare v2|
+:  Software and Versions used {#software-version}
+
+## R Environment
+
+A reproducible environment for the project inside R is managed using the renv package.  renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using *reticulate*).  Detailed initial set-up [steps](#renv-setup) should be executed by authorized lead only.  All other users can make use of the *renv.lock* file and project library *renv/library* to align with the working R and package versions.  Different project and branches may use different versions of packages without affecting each other.    
+
+### Package Dependencies
+Based on line-by-line run of the [base code ](https://github.com/InterlabsOCWA/Base_code/commit/1a4da2e5cbb78f3b97cf4cabb2dd783d574a163e), otherwise named as "WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd", the necessary packages were determined to be (flag jh - maybe take from renv.lock/github main):  
+*ggplot2
+*tidyverse
+*fs
+*janitor
+*readxl
+*ggh4x
+*RColorBrewer
+*scales
+*writexl
+*devEMF
+*DescTools
+*ggpubr
+*officer
+
+If your work requires changing versions of or adding packages, please refer to [steps](#renv-setup) steps 2 and 3 as well as consult the team in a timely manner.   
+
+
+::: {.callout-caution}
+It is highly recommended for any package update as well as the initial set-up to be done collectively with the team, as it may force update of certain packages if the versions logged in the controlled lock file are no longer available from the download source.   (https://stackoverflow.com/questions/60779096/error-installing-packages-using-renvrestore)
+:::
+
+
+The following steps are referenced from [](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv).  
+
+1) Check your version of R matches the below [flag to update periodically], using the GUI's or by inputting:
 ```{r}
 #| echo: fenced
 version
+# not as necessary, but the IDE version can be checked using RStudio.Version()
+```
+2) Make sure you have the renv installed to allow usage of renv commands below.  Version 1.0.0 recommended (this version is also logged in the lockfile)  
+
+3) As part of cloning the project from version controlled branch you are working on, the *renv.lock* (as well as the renv/library, .Rprofile, renv/settings.json, and renv/activate.R files) should be found in your local repository location.   Opening the cloned project at the new location, by executing the below, renv will install/compile what is needed on the system, as long as the same version of R exists between systems:
+```{r, eval=FALSE}
+## Reproduce environment
+renv::restore()
+renv::init()
+```
+
+4) If package versions in project lockfile do not match the your local library, you can follow the console instruction to generate a list of packages out of sync:  
+```{r, eval=FALSE}
+renv::status() 
 ```
 
 
+::: {#renv-setup .callout-note collapse="true"}
+## Set up / Package library updates
 
-- To check your package versions, refer to the package window in the corner of RStudio or input:
-```{r}
-#| echo: fenced
-print(head
-      (tibble::tibble(
-        Package = names(installed.packages()[,3]),
-        Version = unname(installed.packages()[,3])
-      ), n=600 #where n = an appropriately large value to capture all your packages
-      )
-)
-```
+The general workflow for the technical lead to initially set up with renv is:  
 
-#### R Packages version alignment
-```{r}
-#https://github.com/rstudio/renv/issues/1070
-```
+1. Call renv::init() to initialize a new project-local environment with a private R library.  The console should report back it has linked packages into the project library and written the renv.lock lockfile.  Three new files and directories are created:  
 
-renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using *reticulate*).  
+- i. renv/library containing all packages used by the project.  Each project refers to its own isolated library rather than using a common library  
+- ii. the lockfile *renv.lock* recording metadata about every package to enable re-installation on other machines  
+- iii. the project R profile *.Rprofile* which auto-runs when the project is started in R as a configuration file.  
 
-The general workflow when working with renv is:  
-1. Call renv::init() to initialize a new project-local environment with a private R library  
-2. Work in the project as normal, installing and removing new R packages as they are needed in the project  
-3. Call renv::snapshot() to save the state of the project library to the lockfile (called renv.lock)  
-4. Continue working on your project, installing and updating R packages as needed  
-5.Call renv::snapshot() again to save the state of your project library if your attempts to update R packages were successful, or call renv::restore() to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.  
-  
+2. As the project progress, new R packages may be installed, removed or updated.  After validated package changes, call renv::snapshot() to save the state of the project library to the lockfile.  
+Option - call renv::restore() to revert to the previous state as encoded in the lockfile if the package change introduced some new problems*
+
+3. A new commit should be made on github so that the team can update their respective local project environment.   These three components must be committed to version control:  
+- i) renv.lock 
+- ii) .Rprofile
+- iii) renv/settings.json 
+- iv) renv/activate.R    
+A git-ignore file within the renv subdirectory instructs all other non-necessary files **not** to be saved to version control  
+:::
+
+For troubleshooting requiring package version check, besides cross-checking renv.lock files, refer to the package window in the corner of RStudio. 
+
+TBD  
 When renv’s Python integration is active, a couple extra features will activate:  
 - renv will instruct reticulate to load your project-local version of Python by default, avoiding some of the challenges with finding and selecting an appropriate version of Python on the system.  
 - Calling reticulate::py_install() will install packages into the project’s Python environment by default.  
 - When renv::snapshot() is called, your project’s Python library will also be captured into requirements.txt (for virtual environments) / environment.yml (for Conda environments).  
 - Similarly, renv::restore() will also attempt to restore your Python environment, as encoded in requirements.txt / environment.yml from a previous snapshot.  
 
-#### Python
+## Python
 - To check your version of python, use command line or in python:
 ```{python}
 import sys
@@ -381,35 +425,63 @@ It will show the warning below and automatically add the two version with marker
 
    - Zombie code: cut off but might come back?
 
+![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png)
+
 ## Linting / Style Guide
 *General*
-- camelCase 
-- tab indentation
+The [tidyverse style](https://style.tidyverse.org/) will be the default style, and aligns with the lintr package used below.  It is recommended for all users to review the guide.  Some general format rules include:  
+* camelCase recommended (note tidyverse style guide prefers snake case but both are acceptable)
+* tab indentation by two spaces
 *Linting - continuous integration*
 In RStudio IDE:  
-- some linting is included, however it is for errors only
-- selecting code and hitting Ctrl + I will re-indent code for you
+*-* some linting is included, however it is for errors only
+*-* selecting code and hitting Ctrl + I will re-indent code for you
   
-lintr:  
-lintr package will be set up with the main code to provide diagnostic linting (i.e. as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes.  It will activate with github upload workflows following this set up command, which also creates a **.github/workflows** folder with **lint.yaml**
+*lintr*:  
+lintr package will be set up with the main code to provide diagnostic linting (i.e. as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes.  It will activate with github upload workflows following this set up command, which also creates a **.github/workflows** folder with **lint.yaml**  
   
-More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/ 
 ```{r}
+#| eval: FALSE
 usethis::use_github_action("lint")
 # for context, check in console - vignette("continuous-integration")
 
 ```
 
+Once lintr is installed, it can be accessed in RStudio.  In order to see the diagnostic results, first enable the "Markers" pane by  > “Tools” > “Global Options…” > go to “Code” on the left-hand-side > “Diagnostics” tab > check “Show diagnostics for R”.  The Markers pane will then be available tabbed next to Console/Terminal/Background Jobs to display lint results.  
 
+To run lintr, open Tools > Addins. From the pop-up window, select lintr from the addin's list and execute on the open code file.  
+![](img/lintrRStudio.png)
 
-===================================
+::: {.callout-note} You can bind this linting process to a keyboard shortcut in RStudio in the addin's window, with Shift+Alt+L recommended *
+The user may then use the lintr result in the Markers pane as a guide to modify code format.  Automated linting (e.g. styler package) is not recommended at this point.  More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/ 
+:::
 
 ## Refactoring 
 - recommend every x period
 - workflow
 
 ## unit testing approaches & practices 
+*At the minimum, we should aim to write tests for the "happy path" of our application.
 
+What is a "happy path" test? "Happy path" tests are very useful, because they catch the most critical bugs, but are definitely not sufficient for building reliable and robust applications.* https://effectivecio.com/2009/11/02/the-happy-path/
+
+The happy path is the path through a system where everything works, the data is correct, the system stays up, and the users are well-behaved.  We tend to test the happy path first because we understand how the system should function and want to ensure that the basic features should work.  We need to move off the happy path and wander in the weeds.  What if the quantity exceeds stock on hand? What if the user enters too few digits from their credit card? Or too many? Or adds a space, or a dash? What if the zip code doesn’t match the state? What if? What if? What if?
+
+It doesn’t take long to test the happy path.  It takes forever to test everything off the happy path. You need to spend a lot of time wandering away from the happy path, and maybe there is a reverse rule for testing: 20% of your time on the happy path; 80% of your time off of it.
+
+![ What are Unit Testing, Integration Testing and Functional Testing?](http://codeutopia.net/blog/2015/04/11/what-are-unit-testing-integration-testing-and-functional-testing/)
+
+Automated testing is the practice of writing code to programmatically test the actual code we want to write.
+
+It offers several benefits over manual testing:
+
+it saves testing time (by not having to perform manual tests over and over)
+it saves debugging time (by catching bugs earlier)
+it makes it easier to program (because we don't need to keep the entire application in our heads, just the part that we're working on... if we break something, our tests will let us know)
+it makes it easier to come back to a program after some time (programmers forget things, but tests do not)
+it makes it easier to work together (we wrote some widget and know how it works, but our team-mates probably don't; our tests will catch bugs introduced by others on our team, and vice versa)
+it acts as documentation (readings tests is a great way to learn about how code is meant to be used)
+it improves the quality of our code (writing code that is easy to test often requires us to change how our code is structured -- for the better)
 ##  Issues-tracking method
 
 
@@ -550,3 +622,17 @@ refactoring requires us to be able to ensure that behavior remains identical at 
 -   Set a canary test (it checks if the test framework works)
 
 -   Add few (automated) tests. Start with code candidate to change first. If code wasn't designed to be testable, don't change it yet. Make your best to test it as is. This is very important.
+
+
+### Misc. heap of code
+Find main package list + versions:
+```{r}
+#| echo: fenced
+print(head
+      (tibble::tibble(
+        Package = names(installed.packages()[,3]),
+        Version = unname(installed.packages()[,3])
+      ), n=600 #where n = an appropriately large value to capture all your packages
+      )
+)
+```
