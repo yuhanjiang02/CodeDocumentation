@@ -237,13 +237,13 @@ print(sys.version)
 
 1. Install Git from website: <https://gitforwindows.org/>
 
-2. Running on terminal
+2. Check/update git version
     - Go to the Start menu
     - In the Search or Run line type ”cmd”and press enter
     - Check git version: `git --version`
     - Update git version if have git but not the latest version:`git update-git-for-windows`
     
-    ![git](src/versionUpdate.gif).
+    ![git](src/versionUpdate.gif)
     
 3. Introduce yourself to Git
     - Type the following in cmd:
@@ -255,42 +255,170 @@ print(sys.version)
 Note: This **must** be the email associated with your GitHub account.
 :::
 
+4. Install a Git client
+
+   A Git client and an integrated development environment, such as RStudio, are not necessary to use Git or R, respectively. But they make the experience more pleasant because they reduce the amount of command line and provide a richer visual representation of the current state.
+
+   Here’s a screenshot of GitKraken (see below) open to the repository for the R package pkgdown. You get a nice graphical overview of the recent commit history, branches, and diffs, as well as a GUI that facilitates the most common Git operations.
+
+   ![gitkraken](src/gitkrakenScreenshot.png)
+
 #### Connect to Git, GitHub and RStudio
 
-4. Setup a new remote repository in GitHub
-  ![repo](src/SetRepo.gif).
+1. Setup a new remote repository in GitHub
+   ![repo](src/SetRepo.gif)
   
-5. Connect Rstudio to GitHub and clone the repo
-  ![connect](src/RStudioConnectGitHub.gif).
+2. Connect Rstudio to GitHub and clone the repo to local
+   ![connect](src/RStudioConnectGitHub.gif)
   
-6. Detect Git from RStudio
+   After click “Create Project” to create a new directory, which will be all of these things:
+  
+   - a directory or “folder” on your computer
+   - a Git repository, linked to a remote GitHub repository
+   - an RStudio Project
+  
+3. Detect Git from RStudio
     - Type `where git` in cmd to get the git executable path
     - From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to your Git executable.
-  ![detect](src/detect.png).
+    ![detect](src/detect.png)
 
 #### Git Fundamentals
-7. Make changes and commit 
-    - click on the **Git** tab in RStudio. You’ll notice that there’s only one file listed, since RStudio only lists files that have changed in its git interface.
+1. Overall flow chart
+   
+   The image below shows a overall git flow chart.
+   ![flow](src/flow.png)
+  
+2. Make changes and commit 
+    - Click on the **Git** tab in RStudio. You’ll notice that there’s only one file listed, since RStudio only lists files that have changed in its git interface.
+    ![git](src/git.png)
+    
     - Click on the **Staged** check box to stage your change. Now click on **Diff**(next to **Commit**) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red.
-    - Add a commit message and click on **Commit**. Every time make a commit, must also write a short **commit message**.
-    - In the **Git** tab of RStudio, click on **Diff** and then **History**. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.
-    
-8. Push & Pull
-    - To start working on a project,**Pull** any new changes to update local copy.
-    - When you are finished and committed, to **Push** these changes to the remote repository (e.g., GitHub). Should see below image.
+    ![diff](src/diff.png)
 
-9. Branch
+    - Add a commit message and click on **Commit**. Every time make a commit, must also write a short **commit message**.
     
+    - In the **Git** tab of RStudio, click on **Diff** and then **History**. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.
+    ![history](src/history.png)
+    
+    - Check on the state of the Git world: type `git status` in terminal
+    
+    - Check your past commits: type `git log` in terminal
+
+::: {.callout-note}
+When to reconsider stage: this will all go to GitHub. Consider if that is appropriate for each file. You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in **.gitignore**.
+::: 
+
+3. Push & Pull
+    - To start working on a project, **Pull** any new changes to update local copy.
+    
+    - When you are finished and committed, to **Push** these changes to the remote repository (e.g., GitHub). Should see below image if successfully pushed.
+    ![push](src/push.png)
+
+4. Branch
+
     **Branching** is the way to work on different versions of a repository at one time. By default your repository has one branch named`master`which is considered to be the definitive branch.
     
     When you create a branch off the `master` branch, you’re making a copy, or snapshot, of `master` as it was at that point in time. This is particularly useful when you are working on a collaborative project. For example, if someone else made changes to the `master` branch while you were working on your branch, you could pull in those updates.
-    - Create a new branch on GitHub/RStudio/shell
+   
+    - Create a new branch in GitHub/RStudio/shell
+   
+     GitHub:
+     ![gitbranch](src/GitHubBranch.gif)
+     
+     Rstudio:
+     ![Rbranch](src/RBranch.png)
+     
+     Shell: type `$ git branch <branch_name>`
+     
+    - Switch to the working branch
+   
+     Rstudio:
+     ![Rbranch](src/SwitchBranch.png)
+     
+     Shell: type `$ git checkout <branch_name>`
+   
+   4.1. Pull Request and Merge Chances
     
-    9.1. Pull Request and Merge Chances
-        - You will notice that at the top of all you files there is a new section that says: **Your recently pushed branches:**. The changes you made to your script have been pushed to your online copy of the project and are now in the branch `NewPlot`. In order to merge them into your `master` branch we need to create a pull request. Click on the button that says *Compare and pull request*.
-        - In the **Open a pull request** page click on **Create pull request**.
-        - GitHub has now compared the two versions of your project that are in the two branches, `master` and `Newplot`and it is telling us that there are no conflicts between the two versions.
-        - Now it’s time to bring your changes together – merging your `Newplot` branch into the `master` branch. Click the green **Merge pull request** button to merge the changes into master. Click **Confirm merge**. Go ahead and delete the branch, since its changes have been incorporated, with the **Delete branch** button in the purple box.
+   - You will notice that at the top of all you files there is a new section that says: **Your recently pushed branches:**. The changes you made to your script have been pushed to your online copy of the project and are now in the branch `NewPlot`. In order to merge them into your `master` branch we need to create a pull request. Click on the button that says *Compare and pull request*.
+   ![pull](src/pullrequest.png)
+           
+   - In the **Open a pull request** page click on **Create pull request**.
+    ![createpull](src/createpullrequest.png)
+           
+   - GitHub has now compared the two versions of your project that are in the two branches, `master` and `Newplot`and it is telling us that there are no conflicts between the two versions.
+   ![noconflict](src/noconflict.png)
+        
+   - Now it’s time to bring your changes together – merging your `Newplot` branch into the `master` branch. Click the green **Merge pull request** button to merge the changes into master. Click **Confirm merge**. Go ahead and delete the branch, since its changes have been incorporated, with the **Delete branch** button in the purple box.
+   ![success](src/successMerge.png)
+
+#### Issues might occur
+1. Pull, but you have local work
+
+    Problem: You want to pull changes from upstream, but you have done some new work locally since the last time you pulled. This often comes up because what you actually want to do is push, but Git won’t let you until you first incorporate the upstream changes.
+
+    Recent commit history of origin/main: A--B--C
+    
+    Recent commit history of the local main branch: A--B--D
+    
+    or maybe: A--B--(uncommitted changes)
+    
+    Your goal: get commit C into your local branch, while retaining the work in commit D or your uncommitted changes.
+    
+    - Best case, no-merge-conflicts version of git pull
+    
+    - If have Conflict in the file will show below :
+    
+      + For Local work is committed (A--B--D): 
+      
+      ![conflict](src/conflict.png)
+      
+      Literally, at each locus of conflict, pick one version or the other (upstream or local) or create a hybrid yourself. Remove the all the markers inserted to demarcate the conflicts. Save.
+      
+      + For Local work is uncommitted (A--B--(uncommitted changes)):
+      
+      ![conflict2](src/conflict2.png)
+      
+         - commit them first and follow previous committed solution (Recommand) **or**
+      
+         - use `git stash` to temporarily store some changes
+        ![stash](src/stash.png)
+    
+#### Version control workflow
+
+1. The overall workflow graph of version control.
+![workflow](src/workflow.png)
+
+2. Working location - Need to confirm
+
+   - The home folder locations for **main** branch: 
+   
+     S:\WasteWater Surveillance\3_Templates_References\Round_codes
+   
+   - The home folder locations for **Round** branch: 
+   
+     S:\WasteWater Surveillance\4_WIP\O103-Interlabs\d_Code
+   
+   - The home folder locations for **develop** branch:
+   
+     S:\WasteWater Surveillance\1_QMS
+   
+   Clone the remote repository to local directory for each branch working.
+   
+
+3. gitignore file
+
+   To tell Git which files and directories to ignore when you make a commit. To share the ignore rules with other users who clone the repository, commit the .gitignore file in to your repository.
+
+   The gitigonre content reference: https://swcarpentry.github.io/git-novice/06-ignore.html
+
+   The data/files we don't want to commit to GitHub:
+    - all the data spread sheet
+    - plots
+    - reports
+
+4. Unsolved questions
+
+   - Zombie code: cut off but might come back?
 
 ![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png)
 
