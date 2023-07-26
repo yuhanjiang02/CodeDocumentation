@@ -122,36 +122,42 @@ Working file may be located in the users OCWA laptop local drive, but also avail
 To avoid issues, the whole path to local working project directory and names of script files should not have empty spaces.  (The configuration of the base network directory preceding "WasteWater Surveillance" cannot be changed unfortunately)
 :::
 
-## Software
+## General Software
 
-|Software|Purpose|Min. Version (Extensions)|
-|--------|-------|------------------------|
-|Notepad ++| version control: pre-merging manual comparison|v8.5, Plugin: Compare v2|
+|Software|Purpose|Min. Version| (Extensions)|
+|--------|-------|------------|-----------|
+|Notepad ++| version control: pre-merging manual comparison|v8.5| Plugin: Compare v2|
 :  Software and Versions used {#software-version}
 
-#### R Environment
+## R Environment
 
 A reproducible environment for the project inside R is managed using the renv package.  renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using *reticulate*).  Detailed initial set-up [steps](#renv-setup) should be executed by authorized lead only.  All other users can make use of the *renv.lock* file and project library *renv/library* to align with the working R and package versions.  Different project and branches may use different versions of packages without affecting each other.    
 
 ### Package Dependencies
-Based on line-by-line run of the ![base code ](https://github.com/InterlabsOCWA/Base_code/commit/1a4da2e5cbb78f3b97cf4cabb2dd783d574a163e), otherwise named as "WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd", the necessary packages were determined to be (flag jh - maybe take from renv.lock/github main):
-(ggplot2)
-(tidyverse)
-(fs)
-(janitor)
-(readxl)
-(ggh4x)
-(RColorBrewer)
-(scales)
-(writexl)
-(devEMF)
-(DescTools)
-(ggpubr)
-(officer)
+Based on line-by-line run of the [base code ](https://github.com/InterlabsOCWA/Base_code/commit/1a4da2e5cbb78f3b97cf4cabb2dd783d574a163e), otherwise named as "WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd", the necessary packages were determined to be (flag jh - maybe take from renv.lock/github main):  
+*ggplot2
+*tidyverse
+*fs
+*janitor
+*readxl
+*ggh4x
+*RColorBrewer
+*scales
+*writexl
+*devEMF
+*DescTools
+*ggpubr
+*officer
 
-The following steps are referenced from ![](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv).  
+If your work requires changing versions of or adding packages, please refer to [steps](#renv-setup) steps 2 and 3 as well as consult the team in a timely manner.   
 
-* N.B. it is highly recommended for any package update as well as the initial set-up to be done collectively with the team, as it may force update of certain packages if the versions logged in the controlled lock file are no longer available from the download source (https://stackoverflow.com/questions/60779096/error-installing-packages-using-renvrestore) *
+
+::: {.callout-caution}
+It is highly recommended for any package update as well as the initial set-up to be done collectively with the team, as it may force update of certain packages if the versions logged in the controlled lock file are no longer available from the download source.   (https://stackoverflow.com/questions/60779096/error-installing-packages-using-renvrestore)
+:::
+
+
+The following steps are referenced from [](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv).  
 
 1) Check your version of R matches the below [flag to update periodically], using the GUI's or by inputting:
 ```{r}
@@ -173,8 +179,6 @@ renv::init()
 renv::status() 
 ```
 
-If your work results in changing versions of or adding packages, please refer to [steps](#renv-setup) steps 2 and 3 as well as consult the team in a timely manner.    
-
 
 ::: {#renv-setup .callout-note collapse="true"}
 ## Set up / Package library updates
@@ -188,7 +192,6 @@ The general workflow for the technical lead to initially set up with renv is:
 - iii. the project R profile *.Rprofile* which auto-runs when the project is started in R as a configuration file.  
 
 2. As the project progress, new R packages may be installed, removed or updated.  After validated package changes, call renv::snapshot() to save the state of the project library to the lockfile.  
-
 Option - call renv::restore() to revert to the previous state as encoded in the lockfile if the package change introduced some new problems*
 
 3. A new commit should be made on github so that the team can update their respective local project environment.   These three components must be committed to version control:  
@@ -199,22 +202,16 @@ Option - call renv::restore() to revert to the previous state as encoded in the 
 A git-ignore file within the renv subdirectory instructs all other non-necessary files **not** to be saved to version control  
 :::
 
-
-
-
 For troubleshooting requiring package version check, besides cross-checking renv.lock files, refer to the package window in the corner of RStudio. 
 
-
-
-
-=====  
+TBD  
 When renv’s Python integration is active, a couple extra features will activate:  
 - renv will instruct reticulate to load your project-local version of Python by default, avoiding some of the challenges with finding and selecting an appropriate version of Python on the system.  
 - Calling reticulate::py_install() will install packages into the project’s Python environment by default.  
 - When renv::snapshot() is called, your project’s Python library will also be captured into requirements.txt (for virtual environments) / environment.yml (for Conda environments).  
 - Similarly, renv::restore() will also attempt to restore your Python environment, as encoded in requirements.txt / environment.yml from a previous snapshot.  
 
-#### Python
+## Python
 - To check your version of python, use command line or in python:
 ```{python}
 import sys
@@ -299,13 +296,13 @@ Note: This **must** be the email associated with your GitHub account.
 
 ## Linting / Style Guide
 *General*
-The ![tidyverse style](https://style.tidyverse.org/) will be the default style, and aligns with the lintr package used below.  It is recommended for all users to review the guide.  Some general format rules include:  
-- camelCase recommended (note tidyverse style guide prefers snake case but both are acceptable)
-- tab indentation by two spaces
+The [tidyverse style](https://style.tidyverse.org/) will be the default style, and aligns with the lintr package used below.  It is recommended for all users to review the guide.  Some general format rules include:  
+* camelCase recommended (note tidyverse style guide prefers snake case but both are acceptable)
+* tab indentation by two spaces
 *Linting - continuous integration*
 In RStudio IDE:  
-- some linting is included, however it is for errors only
-- selecting code and hitting Ctrl + I will re-indent code for you
+*-* some linting is included, however it is for errors only
+*-* selecting code and hitting Ctrl + I will re-indent code for you
   
 *lintr*:  
 lintr package will be set up with the main code to provide diagnostic linting (i.e. as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes.  It will activate with github upload workflows following this set up command, which also creates a **.github/workflows** folder with **lint.yaml**  
@@ -322,10 +319,9 @@ Once lintr is installed, it can be accessed in RStudio.  In order to see the dia
 To run lintr, open Tools > Addins. From the pop-up window, select lintr from the addin's list and execute on the open code file.  
 ![](img/lintrRStudio.png)
 
-*N.B. You can bind this linting process to a keyboard shortcut in RStudio in the addin's window, with Shift+Alt+L recommended *
-
+::: {.callout-note} You can bind this linting process to a keyboard shortcut in RStudio in the addin's window, with Shift+Alt+L recommended *
 The user may then use the lintr result in the Markers pane as a guide to modify code format.  Automated linting (e.g. styler package) is not recommended at this point.  More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/ 
-===================================
+:::
 
 ## Refactoring 
 - recommend every x period
