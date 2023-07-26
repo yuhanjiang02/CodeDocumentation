@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
@@ -85,34 +84,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#external-file-structure" id="toc-external-file-structure" class="nav-link" data-scroll-target="#external-file-structure">External File Structure</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">0.1</span> Introduction</a></li>
+  <li><a href="#environment-structure" id="toc-environment-structure" class="nav-link" data-scroll-target="#environment-structure"><span class="header-section-number">1</span> Environment Structure</a>
   <ul class="collapse">
-  <li><a href="#code-internal-structure-and-dependency" id="toc-code-internal-structure-and-dependency" class="nav-link" data-scroll-target="#code-internal-structure-and-dependency">Code Internal Structure and Dependency</a></li>
-  <li><a href="#environment-package-dependencies-software-versions" id="toc-environment-package-dependencies-software-versions" class="nav-link" data-scroll-target="#environment-package-dependencies-software-versions">Environment (Package Dependencies &amp; Software Versions)</a></li>
+  <li><a href="#external-file-structure" id="toc-external-file-structure" class="nav-link" data-scroll-target="#external-file-structure"><span class="header-section-number">1.1</span> External File Structure</a></li>
+  <li><a href="#code-internal-structure" id="toc-code-internal-structure" class="nav-link" data-scroll-target="#code-internal-structure"><span class="header-section-number">1.2</span> Code Internal Structure</a></li>
   </ul></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a>
+  <li><a href="#operating-environment" id="toc-operating-environment" class="nav-link" data-scroll-target="#operating-environment"><span class="header-section-number">2</span> Operating Environment</a>
   <ul class="collapse">
-  <li><a href="#trainingestablishing-guidelines" id="toc-trainingestablishing-guidelines" class="nav-link" data-scroll-target="#trainingestablishing-guidelines">Training/Establishing Guidelines</a></li>
+  <li><a href="#general-software" id="toc-general-software" class="nav-link" data-scroll-target="#general-software"><span class="header-section-number">2.1</span> General Software</a></li>
+  <li><a href="#r-environment" id="toc-r-environment" class="nav-link" data-scroll-target="#r-environment"><span class="header-section-number">2.2</span> R Environment</a>
+  <ul class="collapse">
+  <li><a href="#package-dependencies" id="toc-package-dependencies" class="nav-link" data-scroll-target="#package-dependencies"><span class="header-section-number">2.2.1</span> Package Dependencies</a></li>
   </ul></li>
-  <li><a href="#linting-style-guide" id="toc-linting-style-guide" class="nav-link" data-scroll-target="#linting-style-guide">Linting / Style Guide</a></li>
-  <li><a href="#refactoring" id="toc-refactoring" class="nav-link" data-scroll-target="#refactoring">Refactoring</a></li>
-  <li><a href="#unit-testing-approaches-practices" id="toc-unit-testing-approaches-practices" class="nav-link" data-scroll-target="#unit-testing-approaches-practices">unit testing approaches &amp; practices</a></li>
-  <li><a href="#issues-tracking-method" id="toc-issues-tracking-method" class="nav-link" data-scroll-target="#issues-tracking-method">Issues-tracking method</a></li>
-  <li><a href="#unit-testing-framework" id="toc-unit-testing-framework" class="nav-link" data-scroll-target="#unit-testing-framework">Unit Testing Framework</a>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python"><span class="header-section-number">2.3</span> Python</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="header-section-number">2.4</span> Version Control</a>
   <ul class="collapse">
-  <li><a href="#table-3---milestone-deliverables-tentative-schedule" id="toc-table-3---milestone-deliverables-tentative-schedule" class="nav-link" data-scroll-target="#table-3---milestone-deliverables-tentative-schedule">Table 3 - Milestone Deliverables &amp; Tentative Schedule</a></li>
+  <li><a href="#trainingestablishing-guidelines" id="toc-trainingestablishing-guidelines" class="nav-link" data-scroll-target="#trainingestablishing-guidelines"><span class="header-section-number">2.4.1</span> Training/Establishing Guidelines</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#appendixreference-extracts" id="toc-appendixreference-extracts" class="nav-link" data-scroll-target="#appendixreference-extracts">Appendix/Reference Extracts</a>
+  <li><a href="#linting-style-guide" id="toc-linting-style-guide" class="nav-link" data-scroll-target="#linting-style-guide"><span class="header-section-number">2.5</span> Linting / Style Guide</a></li>
+  <li><a href="#refactoring" id="toc-refactoring" class="nav-link" data-scroll-target="#refactoring"><span class="header-section-number">2.6</span> Refactoring</a></li>
+  <li><a href="#unit-testing-approaches-practices" id="toc-unit-testing-approaches-practices" class="nav-link" data-scroll-target="#unit-testing-approaches-practices"><span class="header-section-number">2.7</span> unit testing approaches &amp; practices</a></li>
+  <li><a href="#unit-testing-framework" id="toc-unit-testing-framework" class="nav-link" data-scroll-target="#unit-testing-framework"><span class="header-section-number">2.8</span> Unit Testing Framework</a>
   <ul class="collapse">
-  <li><a href="#dark-modelight-mode-technique" id="toc-dark-modelight-mode-technique" class="nav-link" data-scroll-target="#dark-modelight-mode-technique">Dark Mode/Light Mode Technique</a></li>
-  <li><a href="#typical-code-issues-correspondent-refactoring" id="toc-typical-code-issues-correspondent-refactoring" class="nav-link" data-scroll-target="#typical-code-issues-correspondent-refactoring">Typical Code Issues &amp; Correspondent Refactoring</a>
-  <ul class="collapse">
-  <li><a href="#refactoring-methods" id="toc-refactoring-methods" class="nav-link" data-scroll-target="#refactoring-methods">Refactoring methods</a></li>
+  <li><a href="#table-3---milestone-deliverables-tentative-schedule" id="toc-table-3---milestone-deliverables-tentative-schedule" class="nav-link" data-scroll-target="#table-3---milestone-deliverables-tentative-schedule"><span class="header-section-number">2.8.1</span> Table 3 - Milestone Deliverables &amp; Tentative Schedule</a></li>
   </ul></li>
-  <li><a href="#handling-commented-out-code" id="toc-handling-commented-out-code" class="nav-link" data-scroll-target="#handling-commented-out-code">Handling Commented-out code</a></li>
-  <li><a href="#unit-testing-notes" id="toc-unit-testing-notes" class="nav-link" data-scroll-target="#unit-testing-notes">Unit testing notes</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
+  <li><a href="#appendixreference-extracts" id="toc-appendixreference-extracts" class="nav-link" data-scroll-target="#appendixreference-extracts"><span class="header-section-number">4</span> Appendix/Reference Extracts</a>
+  <ul class="collapse">
+  <li><a href="#dark-modelight-mode-technique" id="toc-dark-modelight-mode-technique" class="nav-link" data-scroll-target="#dark-modelight-mode-technique"><span class="header-section-number">4.1</span> Dark Mode/Light Mode Technique</a></li>
+  <li><a href="#typical-code-issues-correspondent-refactoring" id="toc-typical-code-issues-correspondent-refactoring" class="nav-link" data-scroll-target="#typical-code-issues-correspondent-refactoring"><span class="header-section-number">4.2</span> Typical Code Issues &amp; Correspondent Refactoring</a>
+  <ul class="collapse">
+  <li><a href="#refactoring-methods" id="toc-refactoring-methods" class="nav-link" data-scroll-target="#refactoring-methods"><span class="header-section-number">4.2.1</span> Refactoring methods</a></li>
+  </ul></li>
+  <li><a href="#handling-commented-out-code" id="toc-handling-commented-out-code" class="nav-link" data-scroll-target="#handling-commented-out-code"><span class="header-section-number">4.3</span> Handling Commented-out code</a></li>
+  <li><a href="#unit-testing-notes" id="toc-unit-testing-notes" class="nav-link" data-scroll-target="#unit-testing-notes"><span class="header-section-number">4.4</span> Unit testing notes</a>
+  <ul class="collapse">
+  <li><a href="#misc.-heap-of-code" id="toc-misc.-heap-of-code" class="nav-link" data-scroll-target="#misc.-heap-of-code"><span class="header-section-number">4.4.1</span> Misc. heap of code</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -153,94 +163,143 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Warning: package 'reticulate' was built under R version 4.3.1</code></pre>
 </div>
 </div>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">0.1</span> Introduction</h2>
 <p>Within the interlabs program, R code performs data processing, plots and statistics generation. As an aside, an ancillary collection of spreadsheets with Excel code and python code are used in sample preparation and pre-processing.</p>
 <p>The R code (“base code”) continues to evolve to serve the new requirements and exploratory analysis in the interlabs program. With the rapid advancement and frequent customizations, it was recognized the analysis process would benefit from comprehensive code tidying. As a rule-of-thumb, with each new feature development, teams should allocate a further 15-20% of time to resolve technical debts. There is currently no established tracking of technical debts besides some in-code comments and team members recollection.</p>
 <p>The purpose of this document is: 1. To serve as documentation accompanying the code, and to be continually updated as the code evolves<br>
 2. Set out practice standards for team to collectively continue hygienic data handling &amp; coding following the refactoring project in 2023; serve as on-boarding training for new team members</p>
 </section>
-<section id="external-file-structure" class="level2">
-<h2 class="anchored" data-anchor-id="external-file-structure">External File Structure</h2>
+<section id="environment-structure" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Environment Structure</h1>
+<section id="external-file-structure" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="external-file-structure"><span class="header-section-number">1.1</span> External File Structure</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### I. Code Documentation</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Inventory existing external file dependencies and working procedures outside of main codebase, e.g. the python snippets, address books, flow of sample notes, raw, and clean data *(4 weeks / July 2023)*\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>An inventory of file and code relationships external to the main codebase is currently is shown in Table 1 and Figure 1 below.</p>
-<section id="table-1-spreadsheets-inventory" class="level4">
-<h4 class="anchored" data-anchor-id="table-1-spreadsheets-inventory">Table 1: Spreadsheets Inventory</h4>
+<section id="table-1-spreadsheets-inventory" class="level4" data-number="1.1.0.1">
+<h4 data-number="1.1.0.1" class="anchored" data-anchor-id="table-1-spreadsheets-inventory"><span class="header-section-number">1.1.0.1</span> Table 1: Spreadsheets Inventory</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan - please load into your excel table as df, then use kable package to format it </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>: Existing Spreadsheets</p>
 </section>
-<section id="code-internal-structure-and-dependency" class="level3">
-<h3 class="anchored" data-anchor-id="code-internal-structure-and-dependency">Code Internal Structure and Dependency</h3>
+</section>
+<section id="code-internal-structure" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="code-internal-structure"><span class="header-section-number">1.2</span> Code Internal Structure</h2>
+<p>The base code is in the Rmarkdown format with the process and optional analysis codes segmented as chunks. Explanatory notes are primarily written in markdown prefacing each chunk of code, alongside minor comments in-line within the code chunk. The chunks should be run from top-down to ensure that prerequisite objects are generated; part of the explanatory notes prefacing each chunk details the prerequisite requirements, and is summarized below.</p>
+<section id="figure-1-intra-base-code-relationships" class="level4" data-number="1.2.0.1">
+<h4 data-number="1.2.0.1" class="anchored" data-anchor-id="figure-1-intra-base-code-relationships"><span class="header-section-number">1.2.0.1</span> Figure 1: Intra-base code relationships</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Jane to insert Packages/Libraries, version Listing *(1 week, July 2023)*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="figure-1-intra-base-code-relationships" class="level4">
-<h4 class="anchored" data-anchor-id="figure-1-intra-base-code-relationships">Figure 1: Intra-base code relationships</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan to insert flowchart code and execute the code to show figure</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#*Deliverable: Inventory &amp; flowchart of external relationships*</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#2.  Inventory existing internal code dependencies and timelines (in-progress work shown in Figure 1) *(4 weeks / July 2023)*\</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># **Deliverable: Inventory &amp; flowchart of intra-basecode relationships**</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan to insert flowchart code and execute the code to show figure</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#*Deliverable: Inventory &amp; flowchart of external relationships*</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#2.  Inventory existing internal code dependencies and timelines (in-progress work shown in Figure 1) *(4 weeks / July 2023)*\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># **Deliverable: Inventory &amp; flowchart of intra-basecode relationships**</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>: Intra-base code relationships</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nodes <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">"name"</span> <span class="ot">=</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">c</span>(<span class="st">"Emails"</span>,                                <span class="co"># 0</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Raw data"</span>,                              <span class="co"># 1</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Clean data"</span>,                            <span class="co"># 2</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"20230529_Sample_Notes.xlsm"</span>,            <span class="co"># 3</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"WBE_Sample_Phasma-CA_20230511.Rmd"</span>,     <span class="co"># 4</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"plots"</span>,                                 <span class="co"># 5</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"dataframe"</span>,                             <span class="co"># 6</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"report"</span>))                               <span class="co"># 7</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>links <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="co"># Each row represents a link. The first number</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="co"># represents the node being conntected from. </span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="co"># the second number represents the node connected to.</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="co"># The third number is the value of the node</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>,</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>,</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">5</span>, <span class="dv">7</span> ,<span class="dv">1</span>,</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">1</span>),</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(links) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"source"</span>, <span class="st">"target"</span>, <span class="st">"value"</span>)</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sankeyNetwork</span>(<span class="at">Links =</span> links, <span class="at">Nodes =</span> nodes,</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">Source =</span> <span class="st">"source"</span>, <span class="at">Target =</span> <span class="st">"target"</span>,</span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nodes <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">"name"</span> <span class="ot">=</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">c</span>(<span class="st">"Emails"</span>,                                <span class="co"># 0</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Raw data"</span>,                              <span class="co"># 1</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Clean data"</span>,                            <span class="co"># 2</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"20230529_Sample_Notes.xlsm"</span>,            <span class="co"># 3</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"WBE_Sample_Phasma-CA_20230511.Rmd"</span>,     <span class="co"># 4</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"plots"</span>,                                 <span class="co"># 5</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"dataframe"</span>,                             <span class="co"># 6</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"report"</span>))                               <span class="co"># 7</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>links <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="co"># Each row represents a link. The first number</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="co"># represents the node being conntected from. </span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="co"># the second number represents the node connected to.</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="co"># The third number is the value of the node</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">5</span>, <span class="dv">7</span> ,<span class="dv">1</span>,</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">1</span>),</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(links) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"source"</span>, <span class="st">"target"</span>, <span class="st">"value"</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sankeyNetwork</span>(<span class="at">Links =</span> links, <span class="at">Nodes =</span> nodes,</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">Source =</span> <span class="st">"source"</span>, <span class="at">Target =</span> <span class="st">"target"</span>,</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4c903ca193d0e4d4db06" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-4c903ca193d0e4d4db06">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-64dd30b2e2771b71b3d0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-64dd30b2e2771b71b3d0">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<ol start="4" type="1">
-<li>Extract and analyze relevance of in-code comments <em>(4 weeks / July 2023)</em><br>
-<strong>Deliverable: Code Documentation, interim</strong></li>
+</section>
+</section>
+</section>
+<section id="operating-environment" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Operating Environment</h1>
+<p>All work must be done on OCWA-provided Windows laptops in conformance with public service technology policies. Overall restrictions applicable to OCWA operating environment will restrict software installation - manager approvals as well as IT “white-list” may be required.</p>
+<p>Working file may be located in the users OCWA laptop local drive, but also available in the Wastewater surveillance team network folder, which is backed-up by IT:<br>
+<a href="//ocwfileeng/eng/Innov%20and%20Infra%20Services/WasteWater%20Surveillance">//ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance</a></p>
+<div class=".call-out-note">
+<p>To avoid issues, the whole path to local working project directory and names of script files should not have empty spaces. (The configuration of the base network directory preceding “WasteWater Surveillance” cannot be changed unfortunately)</p>
+</div>
+<section id="general-software" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="general-software"><span class="header-section-number">2.1</span> General Software</h2>
+<table class="table">
+<caption>Software and Versions used {#software-version}</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 18%">
+<col style="width: 31%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Software</th>
+<th>Purpose</th>
+<th>Min. Version</th>
+<th>(Extensions)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Notepad ++</td>
+<td>version control: pre-merging manual comparison</td>
+<td>v8.5</td>
+<td>Plugin: Compare v2</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="r-environment" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="r-environment"><span class="header-section-number">2.2</span> R Environment</h2>
+<p>A reproducible environment for the project inside R is managed using the renv package. renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using <em>reticulate</em>). Detailed initial set-up <a href="#renv-setup">steps</a> should be executed by authorized lead only. All other users can make use of the <em>renv.lock</em> file and project library <em>renv/library</em> to align with the working R and package versions. Different project and branches may use different versions of packages without affecting each other.</p>
+<section id="package-dependencies" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="package-dependencies"><span class="header-section-number">2.2.1</span> Package Dependencies</h3>
+<p>Based on line-by-line run of the <a href="https://github.com/InterlabsOCWA/Base_code/commit/1a4da2e5cbb78f3b97cf4cabb2dd783d574a163e">base code</a>, otherwise named as “WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd”, the necessary packages were determined to be (flag jh - maybe take from renv.lock/github main):<br>
+<em>ggplot2 </em>tidyverse <em>fs </em>janitor <em>readxl </em>ggh4x <em>RColorBrewer </em>scales <em>writexl </em>devEMF <em>DescTools </em>ggpubr *officer</p>
+<p>If your work requires changing versions of or adding packages, please refer to <a href="#renv-setup">steps</a> steps 2 and 3 as well as consult the team in a timely manner.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is highly recommended for any package update as well as the initial set-up to be done collectively with the team, as it may force update of certain packages if the versions logged in the controlled lock file are no longer available from the download source. (https://stackoverflow.com/questions/60779096/error-installing-packages-using-renvrestore)</p>
+</div>
+</div>
+<p>The following steps are referenced from <a href="https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv"></a>.</p>
+<ol type="1">
+<li>Check your version of R matches the below [flag to update periodically], using the GUI’s or by inputting:</li>
 </ol>
-</section>
-</section>
-<section id="environment-package-dependencies-software-versions" class="level3">
-<h3 class="anchored" data-anchor-id="environment-package-dependencies-software-versions">Environment (Package Dependencies &amp; Software Versions)</h3>
-<p>All work must be done on OCWA-provided laptops. Overall restrictions applicable to OCWA operating environment will restrict software installation - manager approvals as well as IT “white-list”. The</p>
-<section id="r" class="level4">
-<h4 class="anchored" data-anchor-id="r">R</h4>
-<section id="version-check" class="level5">
-<h5 class="anchored" data-anchor-id="version-check">Version Check</h5>
-<ul>
-<li>To check your installed version of RStudio and R, respectively, either use the GUI’s or by inputting:</li>
-</ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>version</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>version</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># not as necessary, but the IDE version can be checked using RStudio.Version()</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               _                                
 platform       x86_64-w64-mingw32               
@@ -260,93 +319,119 @@ version.string R version 4.3.0 (2023-04-21 ucrt)
 nickname       Already Tomorrow                 </code></pre>
 </div>
 </div>
+<ol start="2" type="1">
+<li><p>Make sure you have the renv installed to allow usage of renv commands below. Version 1.0.0 recommended (this version is also logged in the lockfile)</p></li>
+<li><p>As part of cloning the project from version controlled branch you are working on, the <em>renv.lock</em> (as well as the renv/library, .Rprofile, renv/settings.json, and renv/activate.R files) should be found in your local repository location. Opening the cloned project at the new location, by executing the below, renv will install/compile what is needed on the system, as long as the same version of R exists between systems:</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Reproduce environment</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>If package versions in project lockfile do not match the your local library, you can follow the console instruction to generate a list of packages out of sync:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="renv-setup" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Set up / Package library updates
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The general workflow for the technical lead to initially set up with renv is:</p>
+<ol type="1">
+<li>Call renv::init() to initialize a new project-local environment with a private R library. The console should report back it has linked packages into the project library and written the renv.lock lockfile. Three new files and directories are created:</li>
+</ol>
 <ul>
-<li>To check your package versions, refer to the package window in the corner of RStudio or input:</li>
+<li><ol type="i">
+<li>renv/library containing all packages used by the project. Each project refers to its own isolated library rather than using a common library<br>
+</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li>the lockfile <em>renv.lock</em> recording metadata about every package to enable re-installation on other machines<br>
+</li>
+</ol></li>
+<li><ol start="3" type="i">
+<li>the project R profile <em>.Rprofile</em> which auto-runs when the project is started in R as a configuration file.</li>
+</ol></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(head</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>      (tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">Package =</span> <span class="fu">names</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>]),</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Version =</span> <span class="fu">unname</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>])</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      ), <span class="at">n=</span><span class="dv">600</span> <span class="co">#where n = an appropriately large value to capture all your packages</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 361 × 2
-   Package      Version 
-   &lt;chr&gt;        &lt;chr&gt;   
- 1 abind        1.4-5   
- 2 askpass      1.1     
- 3 assertthat   0.2.1   
- 4 backports    1.4.1   
- 5 base         4.3.0   
- 6 base64enc    0.1-3   
- 7 BH           1.81.0-1
- 8 bigD         0.2.0   
- 9 BiocGenerics 0.46.0  
-10 BiocManager  1.30.21 
-# ℹ 351 more rows</code></pre>
+<ol start="2" type="1">
+<li><p>As the project progress, new R packages may be installed, removed or updated. After validated package changes, call renv::snapshot() to save the state of the project library to the lockfile.<br>
+Option - call renv::restore() to revert to the previous state as encoded in the lockfile if the package change introduced some new problems*</p></li>
+<li><p>A new commit should be made on github so that the team can update their respective local project environment. These three components must be committed to version control:<br>
+</p></li>
+</ol>
+<ul>
+<li><ol type="i">
+<li>renv.lock</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li>.Rprofile</li>
+</ol></li>
+<li><ol start="3" type="i">
+<li>renv/settings.json</li>
+</ol></li>
+<li><ol start="4" type="i">
+<li>renv/activate.R<br>
+A git-ignore file within the renv subdirectory instructs all other non-necessary files <strong>not</strong> to be saved to version control<br>
+</li>
+</ol></li>
+</ul>
 </div>
 </div>
-</section>
-</section>
-<section id="r-packages-version-alignment" class="level4">
-<h4 class="anchored" data-anchor-id="r-packages-version-alignment">R Packages version alignment</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://github.com/rstudio/renv/issues/1070</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using <em>reticulate</em>).</p>
-<p>The general workflow when working with renv is:<br>
-1. Call renv::init() to initialize a new project-local environment with a private R library<br>
-2. Work in the project as normal, installing and removing new R packages as they are needed in the project<br>
-3. Call renv::snapshot() to save the state of the project library to the lockfile (called renv.lock)<br>
-4. Continue working on your project, installing and updating R packages as needed<br>
-5.Call renv::snapshot() again to save the state of your project library if your attempts to update R packages were successful, or call renv::restore() to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.</p>
-<p>When renv’s Python integration is active, a couple extra features will activate:<br>
+<p>For troubleshooting requiring package version check, besides cross-checking renv.lock files, refer to the package window in the corner of RStudio.</p>
+<p>TBD<br>
+When renv’s Python integration is active, a couple extra features will activate:<br>
 - renv will instruct reticulate to load your project-local version of Python by default, avoiding some of the challenges with finding and selecting an appropriate version of Python on the system.<br>
 - Calling reticulate::py_install() will install packages into the project’s Python environment by default.<br>
 - When renv::snapshot() is called, your project’s Python library will also be captured into requirements.txt (for virtual environments) / environment.yml (for Conda environments).<br>
 - Similarly, renv::restore() will also attempt to restore your Python environment, as encoded in requirements.txt / environment.yml from a previous snapshot.</p>
 </section>
-<section id="python" class="level4">
-<h4 class="anchored" data-anchor-id="python">Python</h4>
+</section>
+<section id="python" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="python"><span class="header-section-number">2.3</span> Python</h2>
 <ul>
 <li>To check your version of python, use command line or in python:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3.11.4 (tags/v3.11.4:d2340ef, Jun  7 2023, 05:45:37) [MSC v.1934 64 bit (AMD64)]</code></pre>
 </div>
 </div>
 </section>
-</section>
-</section>
-<section id="version-control" class="level2">
-<h2 class="anchored" data-anchor-id="version-control">Version Control</h2>
+<section id="version-control" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="version-control"><span class="header-section-number">2.4</span> Version Control</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan's section</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### II. Training/Establishing Guidelines</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Acquire training on and establish version control on Github *(2 weeks/July 2023)* *Deliverable: Training/Guidance document section, specifically method for &amp; train team as soon as possible on version control/change management**\</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="do">### III. Preparatory Version Control &amp; Unit Tests</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Establish version control on Github. All team members to abide by training guidelines when introducing changes to main code base *(2 weeks/July 2023)*\</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan's section</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### II. Training/Establishing Guidelines</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Acquire training on and establish version control on Github *(2 weeks/July 2023)* *Deliverable: Training/Guidance document section, specifically method for &amp; train team as soon as possible on version control/change management**\</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">### III. Preparatory Version Control &amp; Unit Tests</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Establish version control on Github. All team members to abide by training guidelines when introducing changes to main code base *(2 weeks/July 2023)*\</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="trainingestablishing-guidelines" class="level3">
-<h3 class="anchored" data-anchor-id="trainingestablishing-guidelines">Training/Establishing Guidelines</h3>
-<section id="installation-and-setup" class="level4">
-<h4 class="anchored" data-anchor-id="installation-and-setup">Installation and setup</h4>
-<section id="install-git-from-website-httpsgitforwindows.org" class="level5">
-<h5 class="anchored" data-anchor-id="install-git-from-website-httpsgitforwindows.org">1. Install Git from website: <a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a></h5>
+<section id="trainingestablishing-guidelines" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="trainingestablishing-guidelines"><span class="header-section-number">2.4.1</span> Training/Establishing Guidelines</h3>
+<section id="installation-and-setup" class="level4" data-number="2.4.1.1">
+<h4 data-number="2.4.1.1" class="anchored" data-anchor-id="installation-and-setup"><span class="header-section-number">2.4.1.1</span> Installation and setup</h4>
+<section id="install-git-from-website-httpsgitforwindows.org" class="level5" data-number="2.4.1.1.1">
+<h5 data-number="2.4.1.1.1" class="anchored" data-anchor-id="install-git-from-website-httpsgitforwindows.org"><span class="header-section-number">2.4.1.1.1</span> 1. Install Git from website: <a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a></h5>
 </section>
-<section id="checkupdate-git-version" class="level5">
-<h5 class="anchored" data-anchor-id="checkupdate-git-version">2. Check/update git version</h5>
+<section id="checkupdate-git-version" class="level5" data-number="2.4.1.1.2">
+<h5 data-number="2.4.1.1.2" class="anchored" data-anchor-id="checkupdate-git-version"><span class="header-section-number">2.4.1.1.2</span> 2. Check/update git version</h5>
 <ul>
 <li><p>Go to the Start menu</p></li>
 <li><p>In the Search or Run line type ”cmd”and press enter</p></li>
@@ -355,8 +440,8 @@ nickname       Already Tomorrow                 </code></pre>
 <img src="src/versionUpdate.gif" class="img-fluid" alt="git"></li>
 </ul>
 </section>
-<section id="introduce-yourself-to-git" class="level5">
-<h5 class="anchored" data-anchor-id="introduce-yourself-to-git">3. Introduce yourself to Git</h5>
+<section id="introduce-yourself-to-git" class="level5" data-number="2.4.1.1.3">
+<h5 data-number="2.4.1.1.3" class="anchored" data-anchor-id="introduce-yourself-to-git"><span class="header-section-number">2.4.1.1.3</span> 3. Introduce yourself to Git</h5>
 <ul>
 <li>Type the following in cmd: <code>git config --global user.email "you@youremail.com"</code> <code>git config --global user.name "Your Name"</code></li>
 <li>See result: <code>git config --global --list</code></li>
@@ -375,8 +460,8 @@ Note
 </div>
 </div>
 </section>
-<section id="install-a-git-client---need-to-rewrite" class="level5">
-<h5 class="anchored" data-anchor-id="install-a-git-client---need-to-rewrite">4. Install a Git client - Need to rewrite</h5>
+<section id="install-a-git-client---need-to-rewrite" class="level5" data-number="2.4.1.1.4">
+<h5 data-number="2.4.1.1.4" class="anchored" data-anchor-id="install-a-git-client---need-to-rewrite"><span class="header-section-number">2.4.1.1.4</span> 4. Install a Git client - Need to rewrite</h5>
 <p>A Git client and an integrated development environment, such as RStudio, are not necessary to use Git or R, respectively. But they make the experience more pleasant because they reduce the amount of command line and provide a richer visual representation of the current state.</p>
 <p>Here’s a screenshot of GitKraken (see below) open to the repository for the R package pkgdown. You get a nice graphical overview of the recent commit history, branches, and diffs, as well as a GUI that facilitates the most common Git operations.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -387,10 +472,10 @@ Note
 </div>
 </section>
 </section>
-<section id="connect-to-git-github-and-rstudio" class="level4">
-<h4 class="anchored" data-anchor-id="connect-to-git-github-and-rstudio">Connect to Git, GitHub and RStudio</h4>
-<section id="setup-a-new-remote-repository-in-github" class="level5">
-<h5 class="anchored" data-anchor-id="setup-a-new-remote-repository-in-github">1. Setup a new remote repository in GitHub</h5>
+<section id="connect-to-git-github-and-rstudio" class="level4" data-number="2.4.1.2">
+<h4 data-number="2.4.1.2" class="anchored" data-anchor-id="connect-to-git-github-and-rstudio"><span class="header-section-number">2.4.1.2</span> Connect to Git, GitHub and RStudio</h4>
+<section id="setup-a-new-remote-repository-in-github" class="level5" data-number="2.4.1.2.1">
+<h5 data-number="2.4.1.2.1" class="anchored" data-anchor-id="setup-a-new-remote-repository-in-github"><span class="header-section-number">2.4.1.2.1</span> 1. Setup a new remote repository in GitHub</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="src/SetRepo.gif" class="img-fluid figure-img"></p>
@@ -398,8 +483,8 @@ Note
 </figure>
 </div>
 </section>
-<section id="create-branches" class="level5">
-<h5 class="anchored" data-anchor-id="create-branches">2.Create branches</h5>
+<section id="create-branches" class="level5" data-number="2.4.1.2.2">
+<h5 data-number="2.4.1.2.2" class="anchored" data-anchor-id="create-branches"><span class="header-section-number">2.4.1.2.2</span> 2.Create branches</h5>
 <p>To work on different versions of the base code at one time, we need to branch off the specific branch we want to work on. It will coping all the files in the branch at that point in time.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -430,8 +515,8 @@ Important
 <img src="src/RBranch.png" class="img-fluid" alt="Rbranch"></li>
 </ul>
 </section>
-<section id="connect-rstudio-to-github-and-clone-the-repo-to-local" class="level5">
-<h5 class="anchored" data-anchor-id="connect-rstudio-to-github-and-clone-the-repo-to-local">3. Connect Rstudio to GitHub and clone the repo to local</h5>
+<section id="connect-rstudio-to-github-and-clone-the-repo-to-local" class="level5" data-number="2.4.1.2.3">
+<h5 data-number="2.4.1.2.3" class="anchored" data-anchor-id="connect-rstudio-to-github-and-clone-the-repo-to-local"><span class="header-section-number">2.4.1.2.3</span> 3. Connect Rstudio to GitHub and clone the repo to local</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="src/RStudioConnectGitHub.gif" class="img-fluid figure-img"></p>
@@ -445,22 +530,22 @@ Important
 <li>an RStudio Project</li>
 </ul>
 </section>
-<section id="detect-git-from-rstudio" class="level5">
-<h5 class="anchored" data-anchor-id="detect-git-from-rstudio">4. Detect Git from RStudio</h5>
+<section id="detect-git-from-rstudio" class="level5" data-number="2.4.1.2.4">
+<h5 data-number="2.4.1.2.4" class="anchored" data-anchor-id="detect-git-from-rstudio"><span class="header-section-number">2.4.1.2.4</span> 4. Detect Git from RStudio</h5>
 <ul>
 <li>Type <code>where git</code> in cmd to get the git executable path</li>
 <li>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to your Git executable. <img src="src/detect.png" class="img-fluid" alt="detect"></li>
 </ul>
 </section>
 </section>
-<section id="fundamentals-branch-workflow" class="level4">
-<h4 class="anchored" data-anchor-id="fundamentals-branch-workflow">Fundamentals branch workflow</h4>
-<section id="overall-flow-chart" class="level5">
-<h5 class="anchored" data-anchor-id="overall-flow-chart">Overall flow chart</h5>
+<section id="fundamentals-branch-workflow" class="level4" data-number="2.4.1.3">
+<h4 data-number="2.4.1.3" class="anchored" data-anchor-id="fundamentals-branch-workflow"><span class="header-section-number">2.4.1.3</span> Fundamentals branch workflow</h4>
+<section id="overall-flow-chart" class="level5" data-number="2.4.1.3.1">
+<h5 data-number="2.4.1.3.1" class="anchored" data-anchor-id="overall-flow-chart"><span class="header-section-number">2.4.1.3.1</span> Overall flow chart</h5>
 <p>The image below shows a overall git flow chart. <img src="src/flow.png" class="img-fluid" alt="flow"></p>
 </section>
-<section id="switch_branch" class="level5">
-<h5 class="anchored" data-anchor-id="switch_branch">1. Switch to right branch</h5>
+<section id="switch_branch" class="level5" data-number="2.4.1.3.2">
+<h5 data-number="2.4.1.3.2" class="anchored" data-anchor-id="switch_branch"><span class="header-section-number">2.4.1.3.2</span> 1. Switch to right branch</h5>
 <p>Since people are work on different branch so before start we need to switch to our working branch. There are two methods to switch between branch:</p>
 <ul>
 <li><p>In Rstudio:</p>
@@ -469,16 +554,16 @@ Important
 <li><p>In Shell: type <code>$ git checkout &lt;branch_name&gt;</code> in terminal</p></li>
 </ul>
 </section>
-<section id="pull-from-remote" class="level5">
-<h5 class="anchored" data-anchor-id="pull-from-remote">2.Pull from remote</h5>
+<section id="pull-from-remote" class="level5" data-number="2.4.1.3.3">
+<h5 data-number="2.4.1.3.3" class="anchored" data-anchor-id="pull-from-remote"><span class="header-section-number">2.4.1.3.3</span> 2.Pull from remote</h5>
 <p>To start working on a project, pull any new changes to update local copy. If there is a merge conflict see <span class="citation" data-cites="merge_conflict">@merge_conflict</span> section.</p>
 <ul>
 <li><p>In Rstudio: Click the <strong>Pull</strong> bottom in the <strong>Git</strong> tab section</p></li>
 <li><p>In Shell: type <code>$ git pull</code> in terminal</p></li>
 </ul>
 </section>
-<section id="make-changes-and-commit" class="level5">
-<h5 class="anchored" data-anchor-id="make-changes-and-commit">3. Make changes and commit</h5>
+<section id="make-changes-and-commit" class="level5" data-number="2.4.1.3.4">
+<h5 data-number="2.4.1.3.4" class="anchored" data-anchor-id="make-changes-and-commit"><span class="header-section-number">2.4.1.3.4</span> 3. Make changes and commit</h5>
 <ul>
 <li>Click on the <strong>Git</strong> tab in RStudio. It will show the files that have changed or added.</li>
 </ul>
@@ -524,13 +609,13 @@ Note
 </div>
 </div>
 </section>
-<section id="push" class="level5">
-<h5 class="anchored" data-anchor-id="push">4. Push</h5>
+<section id="push" class="level5" data-number="2.4.1.3.5">
+<h5 data-number="2.4.1.3.5" class="anchored" data-anchor-id="push"><span class="header-section-number">2.4.1.3.5</span> 4. Push</h5>
 <p>When you are finished and committed, remember to <strong>Push</strong> these changes to the remote repository (e.g., GitHub). Should see below image if successfully pushed. <img src="src/push.png" class="img-fluid" alt="push"></p>
 </section>
 </section>
-<section id="pull-request-and-merge-chances-between-branches" class="level4">
-<h4 class="anchored" data-anchor-id="pull-request-and-merge-chances-between-branches">Pull Request and Merge Chances between branches</h4>
+<section id="pull-request-and-merge-chances-between-branches" class="level4" data-number="2.4.1.4">
+<h4 data-number="2.4.1.4" class="anchored" data-anchor-id="pull-request-and-merge-chances-between-branches"><span class="header-section-number">2.4.1.4</span> Pull Request and Merge Chances between branches</h4>
 <p>Each time you want to merge/pull a branch from another branch, you will need to create a pull request. Sometimes it will show up automatically in the branch web page after you push, if not you need to do it manually.</p>
 <ul>
 <li><p>For the first auto case, you will see a notice to create a pull request (see the image below). Then click on the button that says <strong>Compare and pull request</strong> to go next step. <img src="src/pullrequest.png" class="img-fluid" alt="pull_auto"></p></li>
@@ -541,8 +626,8 @@ Note
 </ul>
 <p>The manual pull request process: <img src="src/manualpullrequest.gif" class="img-fluid" alt="manual"></p>
 </section>
-<section id="merge_conflict" class="level4">
-<h4 class="anchored" data-anchor-id="merge_conflict">Merge conflict</h4>
+<section id="merge_conflict" class="level4" data-number="2.4.1.5">
+<h4 data-number="2.4.1.5" class="anchored" data-anchor-id="merge_conflict"><span class="header-section-number">2.4.1.5</span> Merge conflict</h4>
 <p>There will be a merge conflict when you pull from the remote but have done some new work locally since the last time you pulled:</p>
 <ul>
 <li><p>Recent commit history of origin/main: A–B–C</p></li>
@@ -568,8 +653,8 @@ Note
 <li>Keep the version you want and remove the all the markers line (&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:, ======, &gt;&gt;&gt;&gt;&gt;&gt;) inserted to demarcate the conflicts then save the file and do the following commit and push again.</li>
 </ul>
 </section>
-<section id="version-control-workflow" class="level4">
-<h4 class="anchored" data-anchor-id="version-control-workflow">Version control workflow</h4>
+<section id="version-control-workflow" class="level4" data-number="2.4.1.6">
+<h4 data-number="2.4.1.6" class="anchored" data-anchor-id="version-control-workflow"><span class="header-section-number">2.4.1.6</span> Version control workflow</h4>
 <ol type="1">
 <li><p>The overall workflow graph of version control. <img src="src/workflow.png" class="img-fluid" alt="workflow"></p></li>
 <li><p>Working location - Need to confirm</p>
@@ -596,47 +681,61 @@ Note
 <li>Zombie code: cut off but might come back?</li>
 </ul></li>
 </ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/premergeDiffNotepad.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Cross-checking in Notepad++ prior merge</figcaption>
+</figure>
+</div>
 </section>
 </section>
 </section>
-<section id="linting-style-guide" class="level2">
-<h2 class="anchored" data-anchor-id="linting-style-guide">Linting / Style Guide</h2>
-<p><em>General</em> - camelCase - tab indentation <em>Linting - continuous integration</em> In RStudio IDE:<br>
-- some linting is included, however it is for errors only - selecting code and hitting Ctrl + I will re-indent code for you</p>
-<p>lintr:<br>
+<section id="linting-style-guide" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="linting-style-guide"><span class="header-section-number">2.5</span> Linting / Style Guide</h2>
+<p><em>General</em> The <a href="https://style.tidyverse.org/">tidyverse style</a> will be the default style, and aligns with the lintr package used below. It is recommended for all users to review the guide. Some general format rules include:<br>
+* camelCase recommended (note tidyverse style guide prefers snake case but both are acceptable) * tab indentation by two spaces <em>Linting - continuous integration</em> In RStudio IDE:<br>
+<em>-</em> some linting is included, however it is for errors only <em>-</em> selecting code and hitting Ctrl + I will re-indent code for you</p>
+<p><em>lintr</em>:<br>
 lintr package will be set up with the main code to provide diagnostic linting (i.e.&nbsp;as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes. It will activate with github upload workflows following this set up command, which also creates a <strong>.github/workflows</strong> folder with <strong>lint.yaml</strong></p>
-<p>More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"lint"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✔ Setting active project to 'C:/Users/jiangyu/Documents/CodeDocumentation'
-✔ Saving 'r-lib/actions/examples/lint.yaml@v2' to '.github/workflows/lint.yaml'
-• Learn more at &lt;https://github.com/r-lib/actions/blob/v2/examples/README.md&gt;.</code></pre>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"lint"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for context, check in console - vignette("continuous-integration")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for context, check in console - vignette("continuous-integration")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>===================================</p>
+<p>Once lintr is installed, it can be accessed in RStudio. In order to see the diagnostic results, first enable the “Markers” pane by &gt; “Tools” &gt; “Global Options…” &gt; go to “Code” on the left-hand-side &gt; “Diagnostics” tab &gt; check “Show diagnostics for R”. The Markers pane will then be available tabbed next to Console/Terminal/Background Jobs to display lint results.</p>
+<p>To run lintr, open Tools &gt; Addins. From the pop-up window, select lintr from the addin’s list and execute on the open code file.<br>
+<img src="img/lintrRStudio.png" class="img-fluid"></p>
+<p>::: {.callout-note} You can bind this linting process to a keyboard shortcut in RStudio in the addin’s window, with Shift+Alt+L recommended * The user may then use the lintr result in the Markers pane as a guide to modify code format. Automated linting (e.g.&nbsp;styler package) is not recommended at this point. More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/ :::</p>
 </section>
-<section id="refactoring" class="level2">
-<h2 class="anchored" data-anchor-id="refactoring">Refactoring</h2>
+<section id="refactoring" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="refactoring"><span class="header-section-number">2.6</span> Refactoring</h2>
 <ul>
 <li>recommend every x period</li>
 <li>workflow</li>
 </ul>
 </section>
-<section id="unit-testing-approaches-practices" class="level2">
-<h2 class="anchored" data-anchor-id="unit-testing-approaches-practices">unit testing approaches &amp; practices</h2>
-</section>
-<section id="issues-tracking-method" class="level2">
-<h2 class="anchored" data-anchor-id="issues-tracking-method">Issues-tracking method</h2>
+<section id="unit-testing-approaches-practices" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="unit-testing-approaches-practices"><span class="header-section-number">2.7</span> unit testing approaches &amp; practices</h2>
+<p>*At the minimum, we should aim to write tests for the “happy path” of our application.</p>
+<p>What is a “happy path” test? “Happy path” tests are very useful, because they catch the most critical bugs, but are definitely not sufficient for building reliable and robust applications.* https://effectivecio.com/2009/11/02/the-happy-path/</p>
+<p>The happy path is the path through a system where everything works, the data is correct, the system stays up, and the users are well-behaved. We tend to test the happy path first because we understand how the system should function and want to ensure that the basic features should work. We need to move off the happy path and wander in the weeds. What if the quantity exceeds stock on hand? What if the user enters too few digits from their credit card? Or too many? Or adds a space, or a dash? What if the zip code doesn’t match the state? What if? What if? What if?</p>
+<p>It doesn’t take long to test the happy path. It takes forever to test everything off the happy path. You need to spend a lot of time wandering away from the happy path, and maybe there is a reverse rule for testing: 20% of your time on the happy path; 80% of your time off of it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://codeutopia.net/blog/2015/04/11/what-are-unit-testing-integration-testing-and-functional-testing/.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">What are Unit Testing, Integration Testing and Functional Testing?</figcaption>
+</figure>
+</div>
+<p>Automated testing is the practice of writing code to programmatically test the actual code we want to write.</p>
+<p>It offers several benefits over manual testing:</p>
+<p>it saves testing time (by not having to perform manual tests over and over) it saves debugging time (by catching bugs earlier) it makes it easier to program (because we don’t need to keep the entire application in our heads, just the part that we’re working on… if we break something, our tests will let us know) it makes it easier to come back to a program after some time (programmers forget things, but tests do not) it makes it easier to work together (we wrote some widget and know how it works, but our team-mates probably don’t; our tests will catch bugs introduced by others on our team, and vice versa) it acts as documentation (readings tests is a great way to learn about how code is meant to be used) it improves the quality of our code (writing code that is easy to test often requires us to change how our code is structured – for the better) ## Issues-tracking method</p>
 <ol start="7" type="1">
 <li>Document the procedures for above practices and create training presentations for the team <em>(3 weeks)</em><br>
 <strong>Deliverable: Training/Guidance document</strong><br>
 <strong>Deliverable: Training session</strong></li>
 </ol>
 </section>
-<section id="unit-testing-framework" class="level2">
-<h2 class="anchored" data-anchor-id="unit-testing-framework">Unit Testing Framework</h2>
+<section id="unit-testing-framework" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="unit-testing-framework"><span class="header-section-number">2.8</span> Unit Testing Framework</h2>
 <ol start="2" type="1">
 <li>Set up formal testing, enabling validation of no-loss-of-function and establishing built-in “bases” during refactoring. <em>(August 2023)</em> <strong>Deliverable: Test framework &amp; test-suite code</strong></li>
 </ol>
@@ -673,8 +772,8 @@ lintr package will be set up with the main code to provide diagnostic linting (i
 <li>Documentation updates<br>
 <strong>Deliverable: Code &amp; Guidance Documentation Updates, Inventory of updated intra/external code relationships </strong></li>
 </ol>
-<section id="table-3---milestone-deliverables-tentative-schedule" class="level3">
-<h3 class="anchored" data-anchor-id="table-3---milestone-deliverables-tentative-schedule">Table 3 - Milestone Deliverables &amp; Tentative Schedule</h3>
+<section id="table-3---milestone-deliverables-tentative-schedule" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="table-3---milestone-deliverables-tentative-schedule"><span class="header-section-number">2.8.1</span> Table 3 - Milestone Deliverables &amp; Tentative Schedule</h3>
 <table class="table">
 <colgroup>
 <col style="width: 61%">
@@ -793,8 +892,9 @@ lintr package will be set up with the main code to provide diagnostic linting (i
 </table>
 </section>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+</section>
+<section id="references" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> References</h1>
 <p><em>WWS Working Platforms</em><br>
 https://github.com/InterlabsOCWA<br>
 https://www.goodday.work/p/GKN7K9</p>
@@ -811,10 +911,10 @@ https://learning.oreilly.com/library/view/refactoring-workbook/0321109295/</p>
 <p>https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/VersionControl/</p>
 <p>#2.4.4.</p>
 </section>
-<section id="appendixreference-extracts" class="level1">
-<h1>Appendix/Reference Extracts</h1>
-<section id="dark-modelight-mode-technique" class="level2">
-<h2 class="anchored" data-anchor-id="dark-modelight-mode-technique">Dark Mode/Light Mode Technique</h2>
+<section id="appendixreference-extracts" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Appendix/Reference Extracts</h1>
+<section id="dark-modelight-mode-technique" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="dark-modelight-mode-technique"><span class="header-section-number">4.1</span> Dark Mode/Light Mode Technique</h2>
 <p>(extract from Lemaire, 2020. <em>Refactoring at Scale</em>)<br>
 Dark Mode / Light Mode : We can compare pre-refactor and post-refactor behavior by employing what we’ve coined at Slack as the light/dark technique<br>
 Dark mode : Both implementations are called<br>
@@ -836,10 +936,10 @@ Continue to opt broader groups of users into light mode, until everyone is succe
 <p>Disable execution of both code paths<br>
 Remove the old logic altogether : only the new implementation should remain</p>
 </section>
-<section id="typical-code-issues-correspondent-refactoring" class="level2">
-<h2 class="anchored" data-anchor-id="typical-code-issues-correspondent-refactoring">Typical Code Issues &amp; Correspondent Refactoring</h2>
-<section id="refactoring-methods" class="level3">
-<h3 class="anchored" data-anchor-id="refactoring-methods">Refactoring methods</h3>
+<section id="typical-code-issues-correspondent-refactoring" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="typical-code-issues-correspondent-refactoring"><span class="header-section-number">4.2</span> Typical Code Issues &amp; Correspondent Refactoring</h2>
+<section id="refactoring-methods" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="refactoring-methods"><span class="header-section-number">4.2.1</span> Refactoring methods</h3>
 <ol type="a">
 <li>Extraction: breaking code into chunks or utilizing existing chunks for isolation into separate functions and replaced with a call to the functions. Change patterns into abstraction. Similarly for variables</li>
 <li>Inline refactoring: finding functions calls and replacing them with the function content (opposite of extraction)</li>
@@ -848,20 +948,51 @@ Remove the old logic altogether : only the new implementation should remain</p>
 </ol>
 </section>
 </section>
-<section id="handling-commented-out-code" class="level2">
-<h2 class="anchored" data-anchor-id="handling-commented-out-code">Handling Commented-out code</h2>
+<section id="handling-commented-out-code" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="handling-commented-out-code"><span class="header-section-number">4.3</span> Handling Commented-out code</h2>
 <p>## stuff to incorp. COMMENTED-OUT CODE In the case of commented-out code, it’s pretty obvious that the code is unused. I always recommend that developers who are tempted to comment-out code instead simply delete it if the code is tracked using version control. If you need it again someday, you can easily recover it by going back through your commit history.</p>
 <p>new function to help mitigate code degradation. Let’s say we write up a simple helper to encapsulate all the logic for validating a user object; we’ll call it validateUser</p>
 <p>A NOTE ABOUT COUNTING LINES OF COMMENTS By and large, ignoring comments is good practice when counting lines of code. Docblocks and inlined TODOs do not affect the behavior of our programs, so including them in our size calculations would not help us better characterize a program’s complexity. In practice, however, I’ve noticed that you can easily pinpoint some rather perplexing sections of code by counting the number of inline comments at the function level. In general, developers tend to leave inline code comments when the surrounding logic is difficult to follow. Whether that’s because the code is dealing with a complicated piece of business logic or it has just become gradually more convoluted over time, we tend to leave some pointers to others who come after us when modifying exceptionally tricky code. Therefore, we can use the quantity of inline comments within a single function, whether short or long, as a possible warning sign.</p>
 <p>When we’re working to improve an existing implementation, whatever the extent of our endeavor, we want to be sure that we’re correctly retaining its behavior. We can safely assert that our new solution continues to work identically to the old by relying on the original implementation’s test suite. Because we are relying on the test coverage to warn us about potential regressions, we need to verify two things before beginning our refactoring effort: first, confirm that the original implementation has test coverage and, second, determine whether that test coverage is adequate.<br>
 refactoring requires us to be able to ensure that behavior remains identical at every iteration. We can increase our confidence that nothing has changed by writing a suite of tests (unit, integration, end to end), and we should not seriously consider moving forward with any refactoring effort until we’ve established sufficient test coverage.</p>
 </section>
-<section id="unit-testing-notes" class="level2">
-<h2 class="anchored" data-anchor-id="unit-testing-notes">Unit testing notes</h2>
+<section id="unit-testing-notes" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="unit-testing-notes"><span class="header-section-number">4.4</span> Unit testing notes</h2>
 <ul>
 <li><p>Set a canary test (it checks if the test framework works)</p></li>
 <li><p>Add few (automated) tests. Start with code candidate to change first. If code wasn’t designed to be testable, don’t change it yet. Make your best to test it as is. This is very important.</p></li>
 </ul>
+<section id="misc.-heap-of-code" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="misc.-heap-of-code"><span class="header-section-number">4.4.1</span> Misc. heap of code</h3>
+<p>Find main package list + versions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(head</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>      (tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">Package =</span> <span class="fu">names</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>]),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Version =</span> <span class="fu">unname</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>])</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>      ), <span class="at">n=</span><span class="dv">600</span> <span class="co">#where n = an appropriately large value to capture all your packages</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 361 × 2
+   Package      Version 
+   &lt;chr&gt;        &lt;chr&gt;   
+ 1 abind        1.4-5   
+ 2 askpass      1.1     
+ 3 assertthat   0.2.1   
+ 4 backports    1.4.1   
+ 5 base         4.3.0   
+ 6 base64enc    0.1-3   
+ 7 BH           1.81.0-1
+ 8 bigD         0.2.0   
+ 9 BiocGenerics 0.46.0  
+10 BiocManager  1.30.21 
+# ℹ 351 more rows</code></pre>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -1105,1170 +1236,3 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 </body></html>
-=======
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.323">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="YJ, JH">
-
-<title>Wastewater Surveillance Interlab Program Analytical Code Documentation</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
-
-
-<script src="InterlabsCodeGuidance_files/libs/clipboard/clipboard.min.js"></script>
-<script src="InterlabsCodeGuidance_files/libs/quarto-html/quarto.js"></script>
-<script src="InterlabsCodeGuidance_files/libs/quarto-html/popper.min.js"></script>
-<script src="InterlabsCodeGuidance_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="InterlabsCodeGuidance_files/libs/quarto-html/anchor.min.js"></script>
-<link href="InterlabsCodeGuidance_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="InterlabsCodeGuidance_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="InterlabsCodeGuidance_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="InterlabsCodeGuidance_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="InterlabsCodeGuidance_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="InterlabsCodeGuidance_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<script src="InterlabsCodeGuidance_files/libs/d3-4.5.0/d3.min.js"></script>
-<script src="InterlabsCodeGuidance_files/libs/sankey-1/sankey.js"></script>
-<script src="InterlabsCodeGuidance_files/libs/sankeyNetwork-binding-0.4/sankeyNetwork.js"></script>
-
-
-</head>
-
-<body>
-
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">0.1</span> Introduction</a></li>
-  <li><a href="#environment-structure" id="toc-environment-structure" class="nav-link" data-scroll-target="#environment-structure"><span class="header-section-number">1</span> Environment Structure</a>
-  <ul class="collapse">
-  <li><a href="#external-file-structure" id="toc-external-file-structure" class="nav-link" data-scroll-target="#external-file-structure"><span class="header-section-number">1.1</span> External File Structure</a></li>
-  <li><a href="#code-internal-structure" id="toc-code-internal-structure" class="nav-link" data-scroll-target="#code-internal-structure"><span class="header-section-number">1.2</span> Code Internal Structure</a></li>
-  </ul></li>
-  <li><a href="#operating-environment" id="toc-operating-environment" class="nav-link" data-scroll-target="#operating-environment"><span class="header-section-number">2</span> Operating Environment</a>
-  <ul class="collapse">
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software"><span class="header-section-number">2.1</span> Software</a>
-  <ul class="collapse">
-  <li><a href="#package-dependencies" id="toc-package-dependencies" class="nav-link" data-scroll-target="#package-dependencies"><span class="header-section-number">2.1.1</span> Package Dependencies</a></li>
-  </ul></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="header-section-number">2.2</span> Version Control</a>
-  <ul class="collapse">
-  <li><a href="#trainingestablishing-guidelines" id="toc-trainingestablishing-guidelines" class="nav-link" data-scroll-target="#trainingestablishing-guidelines"><span class="header-section-number">2.2.1</span> Training/Establishing Guidelines</a></li>
-  </ul></li>
-  <li><a href="#linting-style-guide" id="toc-linting-style-guide" class="nav-link" data-scroll-target="#linting-style-guide"><span class="header-section-number">2.3</span> Linting / Style Guide</a></li>
-  </ul></li>
-  <li><a href="#the-user-may-then-use-the-lintr-result-in-the-markers-pane-as-a-guide-to-modify-code-format.-automated-linting-e.g.-styler-package-is-not-recommended-at-this-point.-more-options-for-linting-and-details-are-available-for-reference-at-httpsblog.r-hub.io20220321code-style" id="toc-the-user-may-then-use-the-lintr-result-in-the-markers-pane-as-a-guide-to-modify-code-format.-automated-linting-e.g.-styler-package-is-not-recommended-at-this-point.-more-options-for-linting-and-details-are-available-for-reference-at-httpsblog.r-hub.io20220321code-style" class="nav-link" data-scroll-target="#the-user-may-then-use-the-lintr-result-in-the-markers-pane-as-a-guide-to-modify-code-format.-automated-linting-e.g.-styler-package-is-not-recommended-at-this-point.-more-options-for-linting-and-details-are-available-for-reference-at-httpsblog.r-hub.io20220321code-style"><span class="header-section-number">3</span> The user may then use the lintr result in the Markers pane as a guide to modify code format. Automated linting (e.g.&nbsp;styler package) is not recommended at this point. More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/</a>
-  <ul class="collapse">
-  <li><a href="#refactoring" id="toc-refactoring" class="nav-link" data-scroll-target="#refactoring"><span class="header-section-number">3.1</span> Refactoring</a></li>
-  <li><a href="#unit-testing-approaches-practices" id="toc-unit-testing-approaches-practices" class="nav-link" data-scroll-target="#unit-testing-approaches-practices"><span class="header-section-number">3.2</span> unit testing approaches &amp; practices</a></li>
-  <li><a href="#unit-testing-framework" id="toc-unit-testing-framework" class="nav-link" data-scroll-target="#unit-testing-framework"><span class="header-section-number">3.3</span> Unit Testing Framework</a>
-  <ul class="collapse">
-  <li><a href="#table-3---milestone-deliverables-tentative-schedule" id="toc-table-3---milestone-deliverables-tentative-schedule" class="nav-link" data-scroll-target="#table-3---milestone-deliverables-tentative-schedule"><span class="header-section-number">3.3.1</span> Table 3 - Milestone Deliverables &amp; Tentative Schedule</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4</span> References</a></li>
-  <li><a href="#appendixreference-extracts" id="toc-appendixreference-extracts" class="nav-link" data-scroll-target="#appendixreference-extracts"><span class="header-section-number">5</span> Appendix/Reference Extracts</a>
-  <ul class="collapse">
-  <li><a href="#dark-modelight-mode-technique" id="toc-dark-modelight-mode-technique" class="nav-link" data-scroll-target="#dark-modelight-mode-technique"><span class="header-section-number">5.1</span> Dark Mode/Light Mode Technique</a></li>
-  <li><a href="#typical-code-issues-correspondent-refactoring" id="toc-typical-code-issues-correspondent-refactoring" class="nav-link" data-scroll-target="#typical-code-issues-correspondent-refactoring"><span class="header-section-number">5.2</span> Typical Code Issues &amp; Correspondent Refactoring</a>
-  <ul class="collapse">
-  <li><a href="#refactoring-methods" id="toc-refactoring-methods" class="nav-link" data-scroll-target="#refactoring-methods"><span class="header-section-number">5.2.1</span> Refactoring methods</a></li>
-  </ul></li>
-  <li><a href="#handling-commented-out-code" id="toc-handling-commented-out-code" class="nav-link" data-scroll-target="#handling-commented-out-code"><span class="header-section-number">5.3</span> Handling Commented-out code</a></li>
-  <li><a href="#unit-testing-notes" id="toc-unit-testing-notes" class="nav-link" data-scroll-target="#unit-testing-notes"><span class="header-section-number">5.4</span> Unit testing notes</a>
-  <ul class="collapse">
-  <li><a href="#misc.-heap-of-code" id="toc-misc.-heap-of-code" class="nav-link" data-scroll-target="#misc.-heap-of-code"><span class="header-section-number">5.4.1</span> Misc. heap of code</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
-</div>
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Wastewater Surveillance Interlab Program Analytical Code Documentation</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>YJ, JH </p>
-          </div>
-  </div>
-
-
-
-  </div>
-
-
-</header>
-
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(kableExtra)#for dataframe generated tables</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(networkD3) <span class="co">#for flowcharts</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)<span class="co">#to run python in this file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="introduction" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">0.1</span> Introduction</h2>
-<p>Within the interlabs program, R code performs data processing, plots and statistics generation. As an aside, an ancillary collection of spreadsheets with Excel code and python code are used in sample preparation and pre-processing.</p>
-<p>The R code (“base code”) continues to evolve to serve the new requirements and exploratory analysis in the interlabs program. With the rapid advancement and frequent customizations, it was recognized the analysis process would benefit from comprehensive code tidying. As a rule-of-thumb, with each new feature development, teams should allocate a further 15-20% of time to resolve technical debts. There is currently no established tracking of technical debts besides some in-code comments and team members recollection.</p>
-<p>The purpose of this document is: 1. To serve as documentation accompanying the code, and to be continually updated as the code evolves<br>
-2. Set out practice standards for team to collectively continue hygienic data handling &amp; coding following the refactoring project in 2023; serve as on-boarding training for new team members</p>
-</section>
-<section id="environment-structure" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Environment Structure</h1>
-<section id="external-file-structure" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="external-file-structure"><span class="header-section-number">1.1</span> External File Structure</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### I. Code Documentation</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Inventory existing external file dependencies and working procedures outside of main codebase, e.g. the python snippets, address books, flow of sample notes, raw, and clean data *(4 weeks / July 2023)*\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>An inventory of file and code relationships external to the main codebase is currently is shown in Table 1 and Figure 1 below.</p>
-<section id="table-1-spreadsheets-inventory" class="level4" data-number="1.1.0.1">
-<h4 data-number="1.1.0.1" class="anchored" data-anchor-id="table-1-spreadsheets-inventory"><span class="header-section-number">1.1.0.1</span> Table 1: Spreadsheets Inventory</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan - please load into your excel table as df, then use kable package to format it </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>: Existing Spreadsheets</p>
-</section>
-</section>
-<section id="code-internal-structure" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="code-internal-structure"><span class="header-section-number">1.2</span> Code Internal Structure</h2>
-<p>The base code is in the Rmarkdown format with the process and optional analysis codes segmented as chunks. Explanatory notes are primarily written in markdown prefacing each chunk of code, alongside minor comments in-line within the code chunk. The chunks should be run from top-down to ensure that prerequisite objects are generated; part of the explanatory notes prefacing each chunk details the prerequisite requirements, and is summarized below.</p>
-<section id="figure-1-intra-base-code-relationships" class="level4" data-number="1.2.0.1">
-<h4 data-number="1.2.0.1" class="anchored" data-anchor-id="figure-1-intra-base-code-relationships"><span class="header-section-number">1.2.0.1</span> Figure 1: Intra-base code relationships</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan to insert flowchart code and execute the code to show figure</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#*Deliverable: Inventory &amp; flowchart of external relationships*</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#2.  Inventory existing internal code dependencies and timelines (in-progress work shown in Figure 1) *(4 weeks / July 2023)*\</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># **Deliverable: Inventory &amp; flowchart of intra-basecode relationships**</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>: Intra-base code relationships</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nodes <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">"name"</span> <span class="ot">=</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">c</span>(<span class="st">"Emails"</span>,                                <span class="co"># 0</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Raw data"</span>,                              <span class="co"># 1</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Clean data"</span>,                            <span class="co"># 2</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"20230529_Sample_Notes.xlsm"</span>,            <span class="co"># 3</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"WBE_Sample_Phasma-CA_20230511.Rmd"</span>,     <span class="co"># 4</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"plots"</span>,                                 <span class="co"># 5</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"dataframe"</span>,                             <span class="co"># 6</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"report"</span>))                               <span class="co"># 7</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>links <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="co"># Each row represents a link. The first number</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="co"># represents the node being conntected from. </span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="co"># the second number represents the node connected to.</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="co"># The third number is the value of the node</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">5</span>, <span class="dv">7</span> ,<span class="dv">1</span>,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">1</span>),</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(links) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"source"</span>, <span class="st">"target"</span>, <span class="st">"value"</span>)</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sankeyNetwork</span>(<span class="at">Links =</span> links, <span class="at">Nodes =</span> nodes,</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">Source =</span> <span class="st">"source"</span>, <span class="at">Target =</span> <span class="st">"target"</span>,</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b6575935e706a47521e6" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b6575935e706a47521e6">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="operating-environment" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Operating Environment</h1>
-<p>All work must be done on OCWA-provided Windows laptops in conformance with public service technology policies. Overall restrictions applicable to OCWA operating environment will restrict software installation - manager approvals as well as IT “white-list” may be required.</p>
-<p>Working file may be located in the users OCWA laptop local drive, but also available in the Wastewater surveillance team network folder, which is backed-up by IT:<br>
-<a href="//ocwfileeng/eng/Innov%20and%20Infra%20Services/WasteWater%20Surveillance">//ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance</a></p>
-<div class=".call-out-note">
-<p>To avoid issues, the whole path to local working project directory and names of script files should not have empty spaces. (The configuration of the base network directory preceding “WasteWater Surveillance” cannot be changed unfortunately)</p>
-</div>
-<section id="software" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="software"><span class="header-section-number">2.1</span> Software</h2>
-<table class="table">
-<caption>Software and Versions used {#software-version}</caption>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 17%">
-<col style="width: 61%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Software</th>
-<th>Purpose</th>
-<th>Min. Version (Extensions)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Notepad ++</td>
-<td>version control: pre-merging manual comparison</td>
-<td>v8.5, Plugin: Compare v2</td>
-</tr>
-</tbody>
-</table>
-<section id="r-environment" class="level4" data-number="2.1.0.1">
-<h4 data-number="2.1.0.1" class="anchored" data-anchor-id="r-environment"><span class="header-section-number">2.1.0.1</span> R Environment</h4>
-<p>A reproducible environment for the project inside R is managed using the renv package. renv() package is used to manage project-local R dependency, with capability to also capture Python dependency (where the latter is run off RStudio using <em>reticulate</em>). Detailed initial set-up <a href="#renv-setup">steps</a> should be executed by authorized lead only. All other users can make use of the <em>renv.lock</em> file and project library <em>renv/library</em> to align with the working R and package versions. Different project and branches may use different versions of packages without affecting each other.</p>
-</section>
-<section id="package-dependencies" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="package-dependencies"><span class="header-section-number">2.1.1</span> Package Dependencies</h3>
-<p>Based on line-by-line run of the <img src="https://github.com/InterlabsOCWA/Base_code/commit/1a4da2e5cbb78f3b97cf4cabb2dd783d574a163e.png" class="img-fluid" alt="base code">, otherwise named as “WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd”, the necessary packages were determined to be (flag jh - maybe take from renv.lock/github main): (ggplot2) (tidyverse) (fs) (janitor) (readxl) (ggh4x) (RColorBrewer) (scales) (writexl) (devEMF) (DescTools) (ggpubr) (officer)</p>
-<p>The following steps are referenced from <img src="https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv.png" class="img-fluid">.</p>
-<ul>
-<li>N.B. it is highly recommended for any package update as well as the initial set-up to be done collectively with the team, as it may force update of certain packages if the versions logged in the controlled lock file are no longer available from the download source (https://stackoverflow.com/questions/60779096/error-installing-packages-using-renvrestore) *</li>
-</ul>
-<ol type="1">
-<li>Check your version of R matches the below [flag to update periodically], using the GUI’s or by inputting:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>version</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># not as necessary, but the IDE version can be checked using RStudio.Version()</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>               _
-platform       x86_64-w64-mingw32
-arch           x86_64
-os             mingw32
-crt            ucrt
-system         x86_64, mingw32
-status
-major          4
-minor          2.3
-year           2023
-month          03
-day            15
-svn rev        83980
-language       R
-version.string R version 4.2.3 (2023-03-15 ucrt)
-nickname       Shortstop Beagle                 </code></pre>
-</div>
-</div>
-<ol start="2" type="1">
-<li><p>Make sure you have the renv installed to allow usage of renv commands below. Version 1.0.0 recommended (this version is also logged in the lockfile)</p></li>
-<li><p>As part of cloning the project from version controlled branch you are working on, the <em>renv.lock</em> (as well as the renv/library, .Rprofile, renv/settings.json, and renv/activate.R files) should be found in your local repository location. Opening the cloned project at the new location, by executing the below, renv will install/compile what is needed on the system, as long as the same version of R exists between systems:</p></li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Reproduce environment</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="4" type="1">
-<li>If package versions in project lockfile do not match the your local library, you can follow the console instruction to generate a list of packages out of sync:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If your work results in changing versions of or adding packages, please refer to <a href="#renv-setup">steps</a> steps 2 and 3 as well as consult the team in a timely manner.</p>
-<div id="renv-setup" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Set up / Package library updates
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The general workflow for the technical lead to initially set up with renv is:</p>
-<ol type="1">
-<li>Call renv::init() to initialize a new project-local environment with a private R library. The console should report back it has linked packages into the project library and written the renv.lock lockfile. Three new files and directories are created:</li>
-</ol>
-<ul>
-<li><ol type="i">
-<li>renv/library containing all packages used by the project. Each project refers to its own isolated library rather than using a common library<br>
-</li>
-</ol></li>
-<li><ol start="2" type="i">
-<li>the lockfile <em>renv.lock</em> recording metadata about every package to enable re-installation on other machines<br>
-</li>
-</ol></li>
-<li><ol start="3" type="i">
-<li>the project R profile <em>.Rprofile</em> which auto-runs when the project is started in R as a configuration file.</li>
-</ol></li>
-</ul>
-<ol start="2" type="1">
-<li>As the project progress, new R packages may be installed, removed or updated. After validated package changes, call renv::snapshot() to save the state of the project library to the lockfile.</li>
-</ol>
-<p>Option - call renv::restore() to revert to the previous state as encoded in the lockfile if the package change introduced some new problems*</p>
-<ol start="3" type="1">
-<li>A new commit should be made on github so that the team can update their respective local project environment. These three components must be committed to version control:<br>
-</li>
-</ol>
-<ul>
-<li><ol type="i">
-<li>renv.lock</li>
-</ol></li>
-<li><ol start="2" type="i">
-<li>.Rprofile</li>
-</ol></li>
-<li><ol start="3" type="i">
-<li>renv/settings.json</li>
-</ol></li>
-<li><ol start="4" type="i">
-<li>renv/activate.R<br>
-A git-ignore file within the renv subdirectory instructs all other non-necessary files <strong>not</strong> to be saved to version control<br>
-</li>
-</ol></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(head</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>      (tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">Package =</span> <span class="fu">names</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>]),</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Version =</span> <span class="fu">unname</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>])</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      ), <span class="at">n=</span><span class="dv">600</span> <span class="co">#where n = an appropriately large value to capture all your packages</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 361 × 2
-   Package      Version
-   &lt;chr&gt;        &lt;chr&gt;
- 1 abind        1.4-5
- 2 askpass      1.1
- 3 assertthat   0.2.1
- 4 backports    1.4.1
- 5 base         4.3.0
- 6 base64enc    0.1-3
- 7 BH           1.81.0-1
- 8 bigD         0.2.0
- 9 BiocGenerics 0.46.0
-10 BiocManager  1.30.21
-# ℹ 351 more rows</code></pre>
-</div>
-</div>
-</div>
-<p>For troubleshooting requiring package version check, besides cross-checking renv.lock files, refer to the package window in the corner of RStudio.</p>
-<p>=====<br>
-When renv’s Python integration is active, a couple extra features will activate:<br>
-- renv will instruct reticulate to load your project-local version of Python by default, avoiding some of the challenges with finding and selecting an appropriate version of Python on the system.<br>
-- Calling reticulate::py_install() will install packages into the project’s Python environment by default.<br>
-- When renv::snapshot() is called, your project’s Python library will also be captured into requirements.txt (for virtual environments) / environment.yml (for Conda environments).<br>
-- Similarly, renv::restore() will also attempt to restore your Python environment, as encoded in requirements.txt / environment.yml from a previous snapshot.</p>
-<section id="python" class="level4" data-number="2.1.1.1">
-<h4 data-number="2.1.1.1" class="anchored" data-anchor-id="python"><span class="header-section-number">2.1.1.1</span> Python</h4>
-<ul>
-<li>To check your version of python, use command line or in python:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3.11.4 (tags/v3.11.4:d2340ef, Jun  7 2023, 05:45:37) [MSC v.1934 64 bit (AMD64)]</code></pre>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="version-control" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="version-control"><span class="header-section-number">2.2</span> Version Control</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Yuhan's section</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### II. Training/Establishing Guidelines</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Acquire training on and establish version control on Github *(2 weeks/July 2023)* *Deliverable: Training/Guidance document section, specifically method for &amp; train team as soon as possible on version control/change management**\</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="do">### III. Preparatory Version Control &amp; Unit Tests</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  Establish version control on Github. All team members to abide by training guidelines when introducing changes to main code base *(2 weeks/July 2023)*\</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="trainingestablishing-guidelines" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="trainingestablishing-guidelines"><span class="header-section-number">2.2.1</span> Training/Establishing Guidelines</h3>
-<section id="installation-and-setup" class="level4" data-number="2.2.1.1">
-<h4 data-number="2.2.1.1" class="anchored" data-anchor-id="installation-and-setup"><span class="header-section-number">2.2.1.1</span> Installation and setup</h4>
-<ol type="1">
-<li><p>Install Git from website: <a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a></p></li>
-
-<li><p>Check/update git version</p>
-
-<ul>
-<li>Go to the Start menu</li>
-<li>In the Search or Run line type ”cmd”and press enter</li>
-<li>Check git version: <code>git --version</code></li>
-<li>Update git version if have git but not the latest version:<code>git update-git-for-windows</code></li>
-</ul>
-<img src="src/versionUpdate.gif" class="img-fluid" alt="git"></li>
-<li><p>Introduce yourself to Git</p>
-<ul>
-<li>Type the following in cmd: <code>git config --global user.email "you@youremail.com"</code> <code>git config --global user.name "Your Name"</code></li>
-<li>See result: <code>git config --global --list</code></li>
-</ul></li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note: This <strong>must</strong> be the email associated with your GitHub account.</p>
-</div>
-</div>
-<ol start="4" type="1">
-<li><p>Install a Git client</p>
-<p>A Git client and an integrated development environment, such as RStudio, are not necessary to use Git or R, respectively. But they make the experience more pleasant because they reduce the amount of command line and provide a richer visual representation of the current state.</p>
-<p>Here’s a screenshot of GitKraken (see below) open to the repository for the R package pkgdown. You get a nice graphical overview of the recent commit history, branches, and diffs, as well as a GUI that facilitates the most common Git operations.</p>
-<img src="src/gitkrakenScreenshot.png" class="img-fluid" alt="gitkraken"></li>
-</ol>
-</section>
-<section id="connect-to-git-github-and-rstudio" class="level4">
-<h4 class="anchored" data-anchor-id="connect-to-git-github-and-rstudio">Connect to Git, GitHub and RStudio</h4>
-<ol type="1">
-<li><p>Setup a new remote repository in GitHub <img src="src/SetRepo.gif" class="img-fluid" alt="repo"></p></li>
-<li><p>Connect Rstudio to GitHub and clone the repo to local <img src="src/RStudioConnectGitHub.gif" class="img-fluid" alt="connect"></p>
-<p>After click “Create Project” to create a new directory, which will be all of these things:</p>
-<ul>
-<li>a directory or “folder” on your computer</li>
-<li>a Git repository, linked to a remote GitHub repository</li>
-<li>an RStudio Project</li>
-</ul></li>
-<li><p>Detect Git from RStudio</p>
-<ul>
-<li>Type <code>where git</code> in cmd to get the git executable path</li>
-<li>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to your Git executable. <img src="src/detect.png" class="img-fluid" alt="detect"></li>
-</ul></li>
-</ol>
-</section>
-<section id="git-fundamentals" class="level4">
-<h4 class="anchored" data-anchor-id="git-fundamentals">Git Fundamentals</h4>
-<ol type="1">
-<li><p>Overall flow chart</p>
-<p>The image below shows a overall git flow chart. <img src="src/flow.png" class="img-fluid" alt="flow"></p></li>
-<li><p>Make changes and commit</p>
-<ul>
-<li><p>Click on the <strong>Git</strong> tab in RStudio. You’ll notice that there’s only one file listed, since RStudio only lists files that have changed in its git interface. <img src="src/git.png" class="img-fluid" alt="git"></p></li>
-<li><p>Click on the <strong>Staged</strong> check box to stage your change. Now click on <strong>Diff</strong>(next to <strong>Commit</strong>) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red. <img src="src/diff.png" class="img-fluid" alt="diff"></p></li>
-<li><p>Add a commit message and click on <strong>Commit</strong>. Every time make a commit, must also write a short <strong>commit message</strong>.</p></li>
-<li><p>In the <strong>Git</strong> tab of RStudio, click on <strong>Diff</strong> and then <strong>History</strong>. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago. <img src="src/history.png" class="img-fluid" alt="history"></p></li>
-<li><p>Check on the state of the Git world: type <code>git status</code> in terminal</p></li>
-<li><p>Check your past commits: type <code>git log</code> in terminal</p></li>
-</ul></li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When to reconsider stage: this will all go to GitHub. Consider if that is appropriate for each file. You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in <strong>.gitignore</strong>.</p>
-</div>
-</div>
-<ol start="3" type="1">
-<li><p>Push &amp; Pull</p>
-<ul>
-<li><p>To start working on a project, <strong>Pull</strong> any new changes to update local copy.</p></li>
-<li><p>When you are finished and committed, to <strong>Push</strong> these changes to the remote repository (e.g., GitHub). Should see below image if successfully pushed. <img src="src/push.png" class="img-fluid" alt="push"></p></li>
-</ul></li>
-<li><p>Branch</p>
-<p><strong>Branching</strong> is the way to work on different versions of a repository at one time. By default your repository has one branch named<code>master</code>which is considered to be the definitive branch.</p>
-<p>When you create a branch off the <code>master</code> branch, you’re making a copy, or snapshot, of <code>master</code> as it was at that point in time. This is particularly useful when you are working on a collaborative project. For example, if someone else made changes to the <code>master</code> branch while you were working on your branch, you could pull in those updates.</p>
-<ul>
-<li>Create a new branch in GitHub/RStudio/shell</li>
-</ul>
-<p>GitHub: <img src="src/GitHubBranch.gif" class="img-fluid" alt="gitbranch"></p>
-<p>Rstudio: <img src="src/RBranch.png" class="img-fluid" alt="Rbranch"></p>
-<p>Shell: type <code>$ git branch &lt;branch_name&gt;</code></p>
-<ul>
-<li>Switch to the working branch</li>
-</ul>
-<p>Rstudio: <img src="src/SwitchBranch.png" class="img-fluid" alt="Rbranch"></p>
-<p>Shell: type <code>$ git checkout &lt;branch_name&gt;</code></p>
-<p>4.1. Pull Request and Merge Chances</p>
-<ul>
-<li><p>You will notice that at the top of all you files there is a new section that says: <strong>Your recently pushed branches:</strong>. The changes you made to your script have been pushed to your online copy of the project and are now in the branch <code>NewPlot</code>. In order to merge them into your <code>master</code> branch we need to create a pull request. Click on the button that says <em>Compare and pull request</em>. <img src="src/pullrequest.png" class="img-fluid" alt="pull"></p></li>
-<li><p>In the <strong>Open a pull request</strong> page click on <strong>Create pull request</strong>. <img src="src/createpullrequest.png" class="img-fluid" alt="createpull"></p></li>
-<li><p>GitHub has now compared the two versions of your project that are in the two branches, <code>master</code> and <code>Newplot</code>and it is telling us that there are no conflicts between the two versions. <img src="src/noconflict.png" class="img-fluid" alt="noconflict"></p></li>
-<li><p>Now it’s time to bring your changes together – merging your <code>Newplot</code> branch into the <code>master</code> branch. Click the green <strong>Merge pull request</strong> button to merge the changes into master. Click <strong>Confirm merge</strong>. Go ahead and delete the branch, since its changes have been incorporated, with the <strong>Delete branch</strong> button in the purple box. <img src="src/successMerge.png" class="img-fluid" alt="success"></p></li>
-</ul></li>
-</ol>
-</section>
-<section id="issues-might-occur" class="level4">
-<h4 class="anchored" data-anchor-id="issues-might-occur">Issues might occur</h4>
-<ol type="1">
-<li><p>Pull, but you have local work</p>
-<p>Problem: You want to pull changes from upstream, but you have done some new work locally since the last time you pulled. This often comes up because what you actually want to do is push, but Git won’t let you until you first incorporate the upstream changes.</p>
-<p>Recent commit history of origin/main: A–B–C</p>
-<p>Recent commit history of the local main branch: A–B–D</p>
-<p>or maybe: A–B–(uncommitted changes)</p>
-<p>Your goal: get commit C into your local branch, while retaining the work in commit D or your uncommitted changes.</p>
-<ul>
-<li><p>Best case, no-merge-conflicts version of git pull</p></li>
-<li><p>If have Conflict in the file will show below :</p>
-<ul>
-<li>For Local work is committed (A–B–D):</li>
-</ul>
-<img src="src/conflict.png" class="img-fluid" alt="conflict">
-<p>Literally, at each locus of conflict, pick one version or the other (upstream or local) or create a hybrid yourself. Remove the all the markers inserted to demarcate the conflicts. Save.</p>
-<ul>
-<li>For Local work is uncommitted (A–B–(uncommitted changes)):</li>
-</ul>
-<img src="src/conflict2.png" class="img-fluid" alt="conflict2">
-<ul>
-<li><p>commit them first and follow previous committed solution (Recommand) <strong>or</strong></p></li>
-<li><p>use <code>git stash</code> to temporarily store some changes <img src="src/stash.png" class="img-fluid" alt="stash"></p></li>
-</ul></li>
-</ul></li>
-</ol>
-</section>
-<section id="version-control-workflow" class="level4">
-<h4 class="anchored" data-anchor-id="version-control-workflow">Version control workflow</h4>
-<ol type="1">
-<li><p>The overall workflow graph of version control. <img src="src/workflow.png" class="img-fluid" alt="workflow"></p></li>
-<li><p>Working location - Need to confirm</p>
-<ul>
-<li><p>The home folder locations for <strong>main</strong> branch:</p>
-<p>S:Surveillance\3_Templates_References_codes</p></li>
-<li><p>The home folder locations for <strong>Round</strong> branch:</p>
-<p>S:Surveillance\4_WIP103-Interlabs_Code</p></li>
-<li><p>The home folder locations for <strong>develop</strong> branch:</p>
-<p>S:Surveillance\1_QMS</p></li>
-</ul>
-<p>Clone the remote repository to local directory for each branch working.</p></li>
-<li><p>gitignore file</p>
-<p>To tell Git which files and directories to ignore when you make a commit. To share the ignore rules with other users who clone the repository, commit the .gitignore file in to your repository.</p>
-<p>The gitigonre content reference: https://swcarpentry.github.io/git-novice/06-ignore.html</p>
-<p>The data/files we don’t want to commit to GitHub:</p>
-<ul>
-<li>all the data spread sheet</li>
-<li>plots</li>
-<li>reports</li>
-</ul></li>
-<li><p>Unsolved questions</p>
-<ul>
-<li>Zombie code: cut off but might come back?</li>
-</ul></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/premergeDiffNotepad.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Cross-checking in Notepad++ prior merge</figcaption><p></p>
-</figure>
-</div>
-</section>
-</section>
-</section>
-<section id="linting-style-guide" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="linting-style-guide"><span class="header-section-number">2.3</span> Linting / Style Guide</h2>
-<p><em>General</em> The <img src="https://style.tidyverse.org/.png" class="img-fluid" alt="tidyverse style"> will be the default style, and aligns with the lintr package used below. It is recommended for all users to review the guide. Some general format rules include:<br>
-- camelCase recommended (note tidyverse style guide prefers snake case but both are acceptable) - tab indentation by two spaces <em>Linting - continuous integration</em> In RStudio IDE:<br>
-- some linting is included, however it is for errors only - selecting code and hitting Ctrl + I will re-indent code for you</p>
-<p><em>lintr</em>:<br>
-lintr package will be set up with the main code to provide diagnostic linting (i.e.&nbsp;as opposed to auto-correction using stylr package), recommending but not enforcing stylistic changes. It will activate with github upload workflows following this set up command, which also creates a <strong>.github/workflows</strong> folder with <strong>lint.yaml</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"lint"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for context, check in console - vignette("continuous-integration")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Once lintr is installed, it can be accessed in RStudio. In order to see the diagnostic results, first enable the “Markers” pane by &gt; “Tools” &gt; “Global Options…” &gt; go to “Code” on the left-hand-side &gt; “Diagnostics” tab &gt; check “Show diagnostics for R”. The Markers pane will then be available tabbed next to Console/Terminal/Background Jobs to display lint results.</p>
-<p>To run lintr, open Tools &gt; Addins. From the pop-up window, select lintr from the addin’s list and execute on the open code file.<br>
-<img src="img/lintrRStudio.png" class="img-fluid"></p>
-<p><em>N.B. You can bind this linting process to a keyboard shortcut in RStudio in the addin’s window, with Shift+Alt+L recommended </em></p>
-</section>
-</section>
-<section id="the-user-may-then-use-the-lintr-result-in-the-markers-pane-as-a-guide-to-modify-code-format.-automated-linting-e.g.-styler-package-is-not-recommended-at-this-point.-more-options-for-linting-and-details-are-available-for-reference-at-httpsblog.r-hub.io20220321code-style" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> The user may then use the lintr result in the Markers pane as a guide to modify code format. Automated linting (e.g.&nbsp;styler package) is not recommended at this point. More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/</h1>
-<section id="refactoring" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="refactoring"><span class="header-section-number">3.1</span> Refactoring</h2>
-<ul>
-<li>recommend every x period</li>
-<li>workflow</li>
-</ul>
-</section>
-<section id="unit-testing-approaches-practices" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="unit-testing-approaches-practices"><span class="header-section-number">3.2</span> unit testing approaches &amp; practices</h2>
-<p>*At the minimum, we should aim to write tests for the “happy path” of our application.</p>
-<p>What is a “happy path” test? “Happy path” tests are very useful, because they catch the most critical bugs, but are definitely not sufficient for building reliable and robust applications.* https://effectivecio.com/2009/11/02/the-happy-path/</p>
-<p>The happy path is the path through a system where everything works, the data is correct, the system stays up, and the users are well-behaved. We tend to test the happy path first because we understand how the system should function and want to ensure that the basic features should work. We need to move off the happy path and wander in the weeds. What if the quantity exceeds stock on hand? What if the user enters too few digits from their credit card? Or too many? Or adds a space, or a dash? What if the zip code doesn’t match the state? What if? What if? What if?</p>
-<p>It doesn’t take long to test the happy path. It takes forever to test everything off the happy path. You need to spend a lot of time wandering away from the happy path, and maybe there is a reverse rule for testing: 20% of your time on the happy path; 80% of your time off of it.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="http://codeutopia.net/blog/2015/04/11/what-are-unit-testing-integration-testing-and-functional-testing/.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">What are Unit Testing, Integration Testing and Functional Testing?</figcaption><p></p>
-</figure>
-</div>
-<p>Automated testing is the practice of writing code to programmatically test the actual code we want to write.</p>
-<p>It offers several benefits over manual testing:</p>
-<p>it saves testing time (by not having to perform manual tests over and over) it saves debugging time (by catching bugs earlier) it makes it easier to program (because we don’t need to keep the entire application in our heads, just the part that we’re working on… if we break something, our tests will let us know) it makes it easier to come back to a program after some time (programmers forget things, but tests do not) it makes it easier to work together (we wrote some widget and know how it works, but our team-mates probably don’t; our tests will catch bugs introduced by others on our team, and vice versa) it acts as documentation (readings tests is a great way to learn about how code is meant to be used) it improves the quality of our code (writing code that is easy to test often requires us to change how our code is structured – for the better) ## Issues-tracking method</p>
-<ol start="7" type="1">
-<li>Document the procedures for above practices and create training presentations for the team <em>(3 weeks)</em><br>
-<strong>Deliverable: Training/Guidance document</strong><br>
-<strong>Deliverable: Training session</strong></li>
-</ol>
-</section>
-<section id="unit-testing-framework" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="unit-testing-framework"><span class="header-section-number">3.3</span> Unit Testing Framework</h2>
-<ol start="2" type="1">
-<li>Set up formal testing, enabling validation of no-loss-of-function and establishing built-in “bases” during refactoring. <em>(August 2023)</em> <strong>Deliverable: Test framework &amp; test-suite code</strong></li>
-</ol>
-<p>Cursory review in June 2023 found that base code functions (more suitable for testing) are few and generally used to generate plots (unsuitable for testing). Testing may be adapted to instead inspect dataframe size &amp; output value spot-check.</p>
-<hr>
-<ol type="1">
-<li>Packages/Libraries organization <em>(3 weeks / July 2023)</em>:
-<ol type="1">
-<li>create reference document of package purpose/usage in the program (including any removed but potentially useful)</li>
-<li>remove any currently unused packages, narrowing list/call to just the necessary ones</li>
-<li>create packrat compilation or Docker of used packages to preserve running versions<br>
-<strong>Metric: Number of superfluous packages/libraries, number TBD to 0</strong><br>
-<strong>Deliverable: One packrat / docker with all in-use packages including versions</strong></li>
-</ol></li>
-<li>Linting for consistent style <em>(1 week; August 2023)</em><br>
-<strong>Deliverable: Commit [track number]</strong><br>
-</li>
-<li>Refactoring cycle, which will be repeated for each issue/potential improvment. As adapted from Fowler: 0.1 Select issue/potential improvement to work on. Create branch on version control 0.2 Introduce comments/pseudo-code for changes. Obtain consensus with <em>reviewer</em><br>
-<strong>Deliverable: Branch &amp; Commit [track number]</strong>
-<ol type="1">
-<li>Create getters and setters for the field<br>
-</li>
-<li>Locate all references: replace access with calls to the getter, and changes to the field with calls to the setter<br>
-</li>
-<li>Compile and test after changing each reference<br>
-</li>
-<li>Declare the field as private<br>
-</li>
-<li>Compile and test. Switch to light mode for coder &amp; reviewer<br>
-</li>
-<li><em>Reviewer</em> checks pull request, code and merge. Light mode for all users<br>
-<strong>Deliverable: Commit [track number]</strong></li>
-</ol></li>
-<li>Documentation updates<br>
-<strong>Deliverable: Code &amp; Guidance Documentation Updates, Inventory of updated intra/external code relationships </strong></li>
-</ol>
-<section id="table-3---milestone-deliverables-tentative-schedule" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="table-3---milestone-deliverables-tentative-schedule"><span class="header-section-number">3.3.1</span> Table 3 - Milestone Deliverables &amp; Tentative Schedule</h3>
-<table class="table">
-<colgroup>
-<col style="width: 61%">
-<col style="width: 31%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Deliverable</th>
-<th>Timeline&nbsp;[In Progress/Completed]</th>
-<th>Resp./Review</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Code Documentation</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1.Inventory &amp; flowchart of external relationships</td>
-<td>Summer 2023 / July 2023</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2.Inventory &amp; flowchart of intra-basecode relationships</td>
-<td>Summer 2023 / July 2023</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>3.Packages/Libraries Listing</td>
-<td>Summer 2023 / July 2023</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>4.Code Documentation - existing code comments archival</td>
-<td>Summer 2023 / July 2023</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5.Kaban battle board (initial version)</td>
-<td>Summer 2023 / July 2023</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Training/Guidelines</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6a.Guidance Documentation - Version Control &amp; Issues resolution</td>
-<td>Summer 2023 / July 2023</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>6b.Guidance Documentation - Refactoring &amp; Unit Testing</td>
-<td>Summer 2023 / August 2023</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6c.Guidance Documentation - Linting, Selected Style</td>
-<td>Summer 2023 / July 2023</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Preparatory Staging</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>7.Version control established, team training session</td>
-<td>August 2023</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>8.Testing framework</td>
-<td>August / September 2023</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Refactoring</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>9.Refactoring cycles</td>
-<td>Autumn 2023 / November 2023?</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>10a.Code &amp; Guidance Documentation Updates</td>
-<td>Autumn 2023 / November 2023?</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>10b.Inventory of updated intra/external relationships, packages</td>
-<td>Ongoing / December 2023</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>11.Training sessions, monthly</td>
-<td>Ongoing</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>12.Project Completion Memo, performance metric</td>
-<td>January 2023</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-</section>
-<section id="references" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
-<p><em>WWS Working Platforms</em><br>
-https://github.com/InterlabsOCWA<br>
-https://www.goodday.work/p/GKN7K9</p>
-<p><em>Inventory/Code Profiling</em> https://bookdown.org/csgillespie/efficientR/performance.html#performance-profvis<br>
-https://github.com/lewinfox/foodwebr https://www.researchgate.net/publication/305738639_A_Proposal_of_Refactoring_Method_for_Existing_Program_Using_Code_Clone_Detection_and_Impact_Analysis_Method https://rstudio.github.io/packrat/walkthrough.html</p>
-<p><em>Unit Testing</em><br>
-https://r-pkgs.org/testing-design.html</p>
-<p>https://webcache.googleusercontent.com/search?q=cache:q9QbZVfMwtQJ:https://www.r-bloggers.com/2019/11/automated-testing-with-testthat-in-practice/&amp;cd=14&amp;hl=en&amp;ct=clnk&amp;gl=ca</p>
-<p><em>Refactoring</em><br>
-Lemaire, 2020. <em>Refactoring at Scale</em><br>
-https://learning.oreilly.com/library/view/refactoring-workbook/0321109295/</p>
-<p><em>Version Control</em> (add existing RStudio project to Github): https://happygitwithr.com/index.html</p>
-<p>https://hansenjohnson.org/post/sync-github-repository-with-existing-r-project/</p>
-</section>
-<section id="appendixreference-extracts" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Appendix/Reference Extracts</h1>
-<section id="dark-modelight-mode-technique" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="dark-modelight-mode-technique"><span class="header-section-number">5.1</span> Dark Mode/Light Mode Technique</h2>
-<p>(extract from Lemaire, 2020. <em>Refactoring at Scale</em>)<br>
-Dark Mode / Light Mode : We can compare pre-refactor and post-refactor behavior by employing what we’ve coined at Slack as the light/dark technique<br>
-Dark mode : Both implementations are called<br>
-The results are compared<br>
-The results from the old implementation are returned</p>
-<p>Light mode :<br>
-Both implementations are called<br>
-The results are compared<br>
-The results from the new implementation are returned</p>
-<p>How To ?<br>
-Once the abstraction has been properly put in place<br>
-Start enabling dark mode<br>
-Monitor any differences being logged between the two result sets<br>
-Track down and fix any potential bugs in the new implementation causing those discrepancies<br>
-Repeat this process until you’ve properly handled all discrepancies, Enabling dark mode to broader groups of users</p>
-<p>Once all users have been opted in to dark mode<br>
-Continue logging any differences in the result sets<br>
-Continue to opt broader groups of users into light mode, until everyone is successfully processing results from the new implementation.</p>
-<p>Disable execution of both code paths<br>
-Remove the old logic altogether : only the new implementation should remain</p>
-</section>
-<section id="typical-code-issues-correspondent-refactoring" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="typical-code-issues-correspondent-refactoring"><span class="header-section-number">5.2</span> Typical Code Issues &amp; Correspondent Refactoring</h2>
-<section id="refactoring-methods" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="refactoring-methods"><span class="header-section-number">5.2.1</span> Refactoring methods</h3>
-<ol type="a">
-<li>Extraction: breaking code into chunks or utilizing existing chunks for isolation into separate functions and replaced with a call to the functions. Change patterns into abstraction. Similarly for variables</li>
-<li>Inline refactoring: finding functions calls and replacing them with the function content (opposite of extraction)</li>
-<li>Simplifying methods logic: consolidate conditional fragments and using polymorphism instead of conditionals</li>
-<li>Simplifying method calls: examining parameters involved and adding/replacing as needed</li>
-</ol>
-</section>
-</section>
-<section id="handling-commented-out-code" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="handling-commented-out-code"><span class="header-section-number">5.3</span> Handling Commented-out code</h2>
-<p>## stuff to incorp. COMMENTED-OUT CODE In the case of commented-out code, it’s pretty obvious that the code is unused. I always recommend that developers who are tempted to comment-out code instead simply delete it if the code is tracked using version control. If you need it again someday, you can easily recover it by going back through your commit history.</p>
-<p>new function to help mitigate code degradation. Let’s say we write up a simple helper to encapsulate all the logic for validating a user object; we’ll call it validateUser</p>
-<p>A NOTE ABOUT COUNTING LINES OF COMMENTS By and large, ignoring comments is good practice when counting lines of code. Docblocks and inlined TODOs do not affect the behavior of our programs, so including them in our size calculations would not help us better characterize a program’s complexity. In practice, however, I’ve noticed that you can easily pinpoint some rather perplexing sections of code by counting the number of inline comments at the function level. In general, developers tend to leave inline code comments when the surrounding logic is difficult to follow. Whether that’s because the code is dealing with a complicated piece of business logic or it has just become gradually more convoluted over time, we tend to leave some pointers to others who come after us when modifying exceptionally tricky code. Therefore, we can use the quantity of inline comments within a single function, whether short or long, as a possible warning sign.</p>
-<p>When we’re working to improve an existing implementation, whatever the extent of our endeavor, we want to be sure that we’re correctly retaining its behavior. We can safely assert that our new solution continues to work identically to the old by relying on the original implementation’s test suite. Because we are relying on the test coverage to warn us about potential regressions, we need to verify two things before beginning our refactoring effort: first, confirm that the original implementation has test coverage and, second, determine whether that test coverage is adequate.<br>
-refactoring requires us to be able to ensure that behavior remains identical at every iteration. We can increase our confidence that nothing has changed by writing a suite of tests (unit, integration, end to end), and we should not seriously consider moving forward with any refactoring effort until we’ve established sufficient test coverage.</p>
-</section>
-<section id="unit-testing-notes" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="unit-testing-notes"><span class="header-section-number">5.4</span> Unit testing notes</h2>
-<ul>
-<li><p>Set a canary test (it checks if the test framework works)</p></li>
-<li><p>Add few (automated) tests. Start with code candidate to change first. If code wasn’t designed to be testable, don’t change it yet. Make your best to test it as is. This is very important.</p></li>
-</ul>
-<section id="misc.-heap-of-code" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="misc.-heap-of-code"><span class="header-section-number">5.4.1</span> Misc. heap of code</h3>
-<p>Find main package list + versions:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(head</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>      (tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">Package =</span> <span class="fu">names</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>]),</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Version =</span> <span class="fu">unname</span>(<span class="fu">installed.packages</span>()[,<span class="dv">3</span>])</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      ), <span class="at">n=</span><span class="dv">600</span> <span class="co">#where n = an appropriately large value to capture all your packages</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Error in readRDS(file) : unknown input format
-Error in readRDS(file) : unknown input format
-Error in readRDS(file) : unknown input format
-# A tibble: 392 × 2
-   Package      Version
-   &lt;chr&gt;        &lt;chr&gt;
- 1 abind        1.4-5
- 2 anytime      0.3.9
- 3 askpass      1.1
- 4 assertthat   0.2.1
- 5 backports    1.4.1
- 6 base         4.2.3
- 7 base64enc    0.1-3
- 8 BH           1.81.0-1
- 9 bigD         0.2.0
-10 BiocGenerics 0.44.0
-# ℹ 382 more rows</code></pre>
-</div>
-</div>
-</section>
-</section>
-</section>
-
-</main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button,
-        { trigger: "manual",
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config);
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
-      });
-    }
-  }
-});
-</script>
-</div> <!-- /content -->
-
-
-
-</body></html>
->>>>>>> 3fa04257105792476f014ffb6a2585d441f4cfcd
