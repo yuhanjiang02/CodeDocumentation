@@ -215,8 +215,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9479622c83231330d196" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-9479622c83231330d196">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4c903ca193d0e4d4db06" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4c903ca193d0e4d4db06">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ol start="4" type="1">
@@ -341,22 +341,25 @@ nickname       Already Tomorrow                 </code></pre>
 <h3 class="anchored" data-anchor-id="trainingestablishing-guidelines">Training/Establishing Guidelines</h3>
 <section id="installation-and-setup" class="level4">
 <h4 class="anchored" data-anchor-id="installation-and-setup">Installation and setup</h4>
-<ol type="1">
-<li><p>Install Git from website: <a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a></p></li>
-<li><p>Check/update git version</p>
+<section id="install-git-from-website-httpsgitforwindows.org" class="level5">
+<h5 class="anchored" data-anchor-id="install-git-from-website-httpsgitforwindows.org">1. Install Git from website: <a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a></h5>
+</section>
+<section id="checkupdate-git-version" class="level5">
+<h5 class="anchored" data-anchor-id="checkupdate-git-version">2. Check/update git version</h5>
 <ul>
-<li>Go to the Start menu</li>
-<li>In the Search or Run line type ”cmd”and press enter</li>
-<li>Check git version: <code>git --version</code></li>
-<li>Update git version if have git but not the latest version:<code>git update-git-for-windows</code></li>
-</ul>
+<li><p>Go to the Start menu</p></li>
+<li><p>In the Search or Run line type ”cmd”and press enter</p></li>
+<li><p>Check git version: <code>git --version</code></p></li>
+<li><p>Update git version if have git but not the latest version:<code>git update-git-for-windows</code></p>
 <img src="src/versionUpdate.gif" class="img-fluid" alt="git"></li>
-<li><p>Introduce yourself to Git</p>
+</ul>
+</section>
+<section id="introduce-yourself-to-git" class="level5">
+<h5 class="anchored" data-anchor-id="introduce-yourself-to-git">3. Introduce yourself to Git</h5>
 <ul>
 <li>Type the following in cmd: <code>git config --global user.email "you@youremail.com"</code> <code>git config --global user.name "Your Name"</code></li>
 <li>See result: <code>git config --global --list</code></li>
-</ul></li>
-</ol>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -370,46 +373,142 @@ Note
 <p>Note: This <strong>must</strong> be the email associated with your GitHub account.</p>
 </div>
 </div>
-<ol start="4" type="1">
-<li><p>Install a Git client</p>
+</section>
+<section id="install-a-git-client---need-to-rewrite" class="level5">
+<h5 class="anchored" data-anchor-id="install-a-git-client---need-to-rewrite">4. Install a Git client - Need to rewrite</h5>
 <p>A Git client and an integrated development environment, such as RStudio, are not necessary to use Git or R, respectively. But they make the experience more pleasant because they reduce the amount of command line and provide a richer visual representation of the current state.</p>
 <p>Here’s a screenshot of GitKraken (see below) open to the repository for the R package pkgdown. You get a nice graphical overview of the recent commit history, branches, and diffs, as well as a GUI that facilitates the most common Git operations.</p>
-<img src="src/gitkrakenScreenshot.png" class="img-fluid" alt="gitkraken"></li>
-</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/gitkrakenScreenshot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">gitkraken</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="connect-to-git-github-and-rstudio" class="level4">
 <h4 class="anchored" data-anchor-id="connect-to-git-github-and-rstudio">Connect to Git, GitHub and RStudio</h4>
-<ol type="1">
-<li><p>Setup a new remote repository in GitHub <img src="src/SetRepo.gif" class="img-fluid" alt="repo"></p></li>
-<li><p>Connect Rstudio to GitHub and clone the repo to local <img src="src/RStudioConnectGitHub.gif" class="img-fluid" alt="connect"></p>
+<section id="setup-a-new-remote-repository-in-github" class="level5">
+<h5 class="anchored" data-anchor-id="setup-a-new-remote-repository-in-github">1. Setup a new remote repository in GitHub</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/SetRepo.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">repo</figcaption>
+</figure>
+</div>
+</section>
+<section id="create-branches" class="level5">
+<h5 class="anchored" data-anchor-id="create-branches">2.Create branches</h5>
+<p>To work on different versions of the base code at one time, we need to branch off the specific branch we want to work on. It will coping all the files in the branch at that point in time.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember to select which branch you want to branch off <strong>AND</strong> Pull it after you create branch !!</p>
+</div>
+</div>
+<p>There are two ways to create a new branch in both local and remote:</p>
+<ul>
+<li>From GitHub:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/GitHubBranch.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">gitbranch</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>From Rstudio:</p>
+<p>Switch to the branch you want to branch off (see <span class="citation" data-cites="switch_branch">@switch_branch</span> section) then create branch followed by below image.</p>
+<img src="src/RBranch.png" class="img-fluid" alt="Rbranch"></li>
+</ul>
+</section>
+<section id="connect-rstudio-to-github-and-clone-the-repo-to-local" class="level5">
+<h5 class="anchored" data-anchor-id="connect-rstudio-to-github-and-clone-the-repo-to-local">3. Connect Rstudio to GitHub and clone the repo to local</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/RStudioConnectGitHub.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">connect</figcaption>
+</figure>
+</div>
 <p>After click “Create Project” to create a new directory, which will be all of these things:</p>
 <ul>
 <li>a directory or “folder” on your computer</li>
 <li>a Git repository, linked to a remote GitHub repository</li>
 <li>an RStudio Project</li>
-</ul></li>
-<li><p>Detect Git from RStudio</p>
+</ul>
+</section>
+<section id="detect-git-from-rstudio" class="level5">
+<h5 class="anchored" data-anchor-id="detect-git-from-rstudio">4. Detect Git from RStudio</h5>
 <ul>
 <li>Type <code>where git</code> in cmd to get the git executable path</li>
 <li>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to your Git executable. <img src="src/detect.png" class="img-fluid" alt="detect"></li>
-</ul></li>
-</ol>
+</ul>
 </section>
-<section id="git-fundamentals" class="level4">
-<h4 class="anchored" data-anchor-id="git-fundamentals">Git Fundamentals</h4>
-<ol type="1">
-<li><p>Overall flow chart</p>
-<p>The image below shows a overall git flow chart. <img src="src/flow.png" class="img-fluid" alt="flow"></p></li>
-<li><p>Make changes and commit</p>
+</section>
+<section id="fundamentals-branch-workflow" class="level4">
+<h4 class="anchored" data-anchor-id="fundamentals-branch-workflow">Fundamentals branch workflow</h4>
+<section id="overall-flow-chart" class="level5">
+<h5 class="anchored" data-anchor-id="overall-flow-chart">Overall flow chart</h5>
+<p>The image below shows a overall git flow chart. <img src="src/flow.png" class="img-fluid" alt="flow"></p>
+</section>
+<section id="switch_branch" class="level5">
+<h5 class="anchored" data-anchor-id="switch_branch">1. Switch to right branch</h5>
+<p>Since people are work on different branch so before start we need to switch to our working branch. There are two methods to switch between branch:</p>
 <ul>
-<li><p>Click on the <strong>Git</strong> tab in RStudio. You’ll notice that there’s only one file listed, since RStudio only lists files that have changed in its git interface. <img src="src/git.png" class="img-fluid" alt="git"></p></li>
-<li><p>Click on the <strong>Staged</strong> check box to stage your change. Now click on <strong>Diff</strong>(next to <strong>Commit</strong>) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red. <img src="src/diff.png" class="img-fluid" alt="diff"></p></li>
-<li><p>Add a commit message and click on <strong>Commit</strong>. Every time make a commit, must also write a short <strong>commit message</strong>.</p></li>
-<li><p>In the <strong>Git</strong> tab of RStudio, click on <strong>Diff</strong> and then <strong>History</strong>. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago. <img src="src/history.png" class="img-fluid" alt="history"></p></li>
-<li><p>Check on the state of the Git world: type <code>git status</code> in terminal</p></li>
-<li><p>Check your past commits: type <code>git log</code> in terminal</p></li>
-</ul></li>
-</ol>
+<li><p>In Rstudio:</p>
+<p>Select the remote branch you want to work on by clicking the bottom (see image below), it will automatically create and switch to that local branch.</p>
+<img src="src/SwitchBranch.png" class="img-fluid" alt="Rbranch"></li>
+<li><p>In Shell: type <code>$ git checkout &lt;branch_name&gt;</code> in terminal</p></li>
+</ul>
+</section>
+<section id="pull-from-remote" class="level5">
+<h5 class="anchored" data-anchor-id="pull-from-remote">2.Pull from remote</h5>
+<p>To start working on a project, pull any new changes to update local copy. If there is a merge conflict see <span class="citation" data-cites="merge_conflict">@merge_conflict</span> section.</p>
+<ul>
+<li><p>In Rstudio: Click the <strong>Pull</strong> bottom in the <strong>Git</strong> tab section</p></li>
+<li><p>In Shell: type <code>$ git pull</code> in terminal</p></li>
+</ul>
+</section>
+<section id="make-changes-and-commit" class="level5">
+<h5 class="anchored" data-anchor-id="make-changes-and-commit">3. Make changes and commit</h5>
+<ul>
+<li>Click on the <strong>Git</strong> tab in RStudio. It will show the files that have changed or added.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/git.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">git</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on the <strong>Staged</strong> check box to stage your change. Now click on <strong>Diff</strong> (next to <strong>Commit</strong>) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/diff.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">diff</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>Add a commit message and click on <strong>Commit</strong> in this window. Every time make a commit, must also write a short <strong>commit message</strong>.</p></li>
+<li><p>In the <strong>Git</strong> tab of RStudio, click on <strong>Diff</strong> and then <strong>History</strong>. You’ll see that you can look through every commit you’ve ever made. You can also view the commit history in other Git client app. Or check your past commits though type <code>git log</code> in terminal.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/history.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">history</figcaption>
+</figure>
+</div>
+<ul>
+<li>Check on the state of the Git world: type <code>git status</code> in terminal</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -420,59 +519,53 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When to reconsider stage: this will all go to GitHub. Consider if that is appropriate for each file. You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in <strong>.gitignore</strong>.</p>
+<p>For the files you don’t want to push to Github you can list the them in <strong>.gitignore</strong> file, see <span class="citation" data-cites="gitigore">@gitigore</span>.</p>
 </div>
 </div>
-<ol start="3" type="1">
-<li><p>Push &amp; Pull</p>
-<ul>
-<li><p>To start working on a project, <strong>Pull</strong> any new changes to update local copy.</p></li>
-<li><p>When you are finished and committed, to <strong>Push</strong> these changes to the remote repository (e.g., GitHub). Should see below image if successfully pushed. <img src="src/push.png" class="img-fluid" alt="push"></p></li>
-</ul></li>
-<li><p>Branch</p>
-<p><strong>Branching</strong> is the way to work on different versions of a repository at one time. By default your repository has one branch named<code>master</code>which is considered to be the definitive branch.</p>
-<p>When you create a branch off the <code>master</code> branch, you’re making a copy, or snapshot, of <code>master</code> as it was at that point in time. This is particularly useful when you are working on a collaborative project. For example, if someone else made changes to the <code>master</code> branch while you were working on your branch, you could pull in those updates.</p>
-<ul>
-<li>Create a new branch in GitHub/RStudio/shell</li>
-</ul>
-<p>GitHub: <img src="src/GitHubBranch.gif" class="img-fluid" alt="gitbranch"></p>
-<p>Rstudio: <img src="src/RBranch.png" class="img-fluid" alt="Rbranch"></p>
-<p>Shell: type <code>$ git branch &lt;branch_name&gt;</code></p>
-<ul>
-<li>Switch to the working branch</li>
-</ul>
-<p>Rstudio: <img src="src/SwitchBranch.png" class="img-fluid" alt="Rbranch"></p>
-<p>Shell: type <code>$ git checkout &lt;branch_name&gt;</code></p>
-<p>4.1. Pull Request and Merge Chances</p>
-<ul>
-<li><p>You will notice that at the top of all you files there is a new section that says: <strong>Your recently pushed branches:</strong>. The changes you made to your script have been pushed to your online copy of the project and are now in the branch <code>NewPlot</code>. In order to merge them into your <code>master</code> branch we need to create a pull request. Click on the button that says <em>Compare and pull request</em>. <img src="src/pullrequest.png" class="img-fluid" alt="pull"></p></li>
-<li><p>In the <strong>Open a pull request</strong> page click on <strong>Create pull request</strong>. <img src="src/createpullrequest.png" class="img-fluid" alt="createpull"></p></li>
-<li><p>GitHub has now compared the two versions of your project that are in the two branches, <code>master</code> and <code>Newplot</code>and it is telling us that there are no conflicts between the two versions. <img src="src/noconflict.png" class="img-fluid" alt="noconflict"></p></li>
-<li><p>Now it’s time to bring your changes together – merging your <code>Newplot</code> branch into the <code>master</code> branch. Click the green <strong>Merge pull request</strong> button to merge the changes into master. Click <strong>Confirm merge</strong>. Go ahead and delete the branch, since its changes have been incorporated, with the <strong>Delete branch</strong> button in the purple box. <img src="src/successMerge.png" class="img-fluid" alt="success"></p></li>
-</ul></li>
-</ol>
 </section>
-<section id="issues-might-occur" class="level4">
-<h4 class="anchored" data-anchor-id="issues-might-occur">Issues might occur</h4>
-<ol type="1">
-<li><p>Pull, but you have local work</p>
-<p>Problem: You want to pull changes from upstream, but you have done some new work locally since the last time you pulled. This often comes up because what you actually want to do is push, but Git won’t let you until you first incorporate the upstream changes.</p>
-<p>Recent commit history of origin/main: A–B–C</p>
-<p>Recent commit history of the local main branch: A–B–D</p>
-<p>or maybe: A–B–(uncommitted changes)</p>
-<p>Your goal: get commit C into your local branch, while retaining the work in commit D or your uncommitted changes.</p>
+<section id="push" class="level5">
+<h5 class="anchored" data-anchor-id="push">4. Push</h5>
+<p>When you are finished and committed, remember to <strong>Push</strong> these changes to the remote repository (e.g., GitHub). Should see below image if successfully pushed. <img src="src/push.png" class="img-fluid" alt="push"></p>
+</section>
+</section>
+<section id="pull-request-and-merge-chances-between-branches" class="level4">
+<h4 class="anchored" data-anchor-id="pull-request-and-merge-chances-between-branches">Pull Request and Merge Chances between branches</h4>
+<p>Each time you want to merge/pull a branch from another branch, you will need to create a pull request. Sometimes it will show up automatically in the branch web page after you push, if not you need to do it manually.</p>
 <ul>
-<li><p>Best case, no-merge-conflicts version of git pull</p></li>
-<li><p>Have Conflict: ‘CONFLICT (content): Merge conflict in file Automatic merge failed; fix conflicts and then commit the result.’</p>
-<p>For Local work is committed (A–B–D):</p>
-<p>Literally, at each locus of conflict, pick one version or the other (upstream or local) or create a hybrid yourself. Remove the all the markers inserted to demarcate the conflicts. Save.</p>
-<p>For Local work is uncommitted (A–B–(uncommitted changes)):</p>
+<li><p>For the first auto case, you will see a notice to create a pull request (see the image below). Then click on the button that says <strong>Compare and pull request</strong> to go next step. <img src="src/pullrequest.png" class="img-fluid" alt="pull_auto"></p></li>
+<li><p>For the manual case, first need to click the <strong>Pull request</strong> tab. Then click the button that says <strong>New pull request</strong>. It will show up the <strong>Compare changes</strong> page, you need to decide the pull direction. The compare branch is the one you want to pull from. After decide the branches, click <strong>Create pull request</strong> button and go next step.</p></li>
+<li><p>Now both case are in the same <strong>Open a pull request</strong> page, and click on <strong>Create pull request</strong> to compare and merge them.</p></li>
+<li><p>GitHub has now compared the two versions of the project that are in the two branches. If there is no conflict it is telling us that there are no conflicts between the two versions and you can click the green <strong>Merge pull request</strong> button to merge the changes.</p></li>
+<li><p>If you don’t need the branch, click <strong>Confirm merge</strong>. Go ahead and delete the branch, since its changes have been incorporated, with the <strong>Delete branch</strong> button in the purple box. <img src="src/successMerge.png" class="img-fluid" alt="success"></p></li>
+</ul>
+<p>The manual pull request process: <img src="src/manualpullrequest.gif" class="img-fluid" alt="manual"></p>
+</section>
+<section id="merge_conflict" class="level4">
+<h4 class="anchored" data-anchor-id="merge_conflict">Merge conflict</h4>
+<p>There will be a merge conflict when you pull from the remote but have done some new work locally since the last time you pulled:</p>
 <ul>
-<li><p>commit them and follow previous committed solution or</p></li>
-<li><p>use <code>git stash</code> to temporarily store some changes <img src="src/stash.png" class="img-fluid" alt="stash"></p></li>
-</ul></li>
-</ul></li>
-</ol>
+<li><p>Recent commit history of origin/main: A–B–C</p></li>
+<li><p>Recent commit history of the local main branch: A–B–D</p></li>
+</ul>
+<p>It will show the warning below and automatically add the two version with markers in that file.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/conflict.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">conflictmessage</figcaption>
+</figure>
+</div>
+<ul>
+<li>The code between the &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD and ======= line is the content in the current remote branch and the code between the ======= and &gt;&gt;&gt;&gt;&gt;&gt;&gt; line is the content in your local that need to merge.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/mergeconflict.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">marker</figcaption>
+</figure>
+</div>
+<ul>
+<li>Keep the version you want and remove the all the markers line (&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:, ======, &gt;&gt;&gt;&gt;&gt;&gt;) inserted to demarcate the conflicts then save the file and do the following commit and push again.</li>
+</ul>
 </section>
 <section id="version-control-workflow" class="level4">
 <h4 class="anchored" data-anchor-id="version-control-workflow">Version control workflow</h4>
@@ -488,7 +581,7 @@ Note
 <p>S:Surveillance\1_QMS</p></li>
 </ul>
 <p>Clone the remote repository to local directory for each branch working.</p></li>
-<li><p>gitignore file</p>
+<li><p>gitignore file {#gitignore}</p>
 <p>To tell Git which files and directories to ignore when you make a commit. To share the ignore rules with other users who clone the repository, commit the .gitignore file in to your repository.</p>
 <p>The gitigonre content reference: https://swcarpentry.github.io/git-novice/06-ignore.html</p>
 <p>The data/files we don’t want to commit to GitHub:</p>
@@ -714,6 +807,8 @@ Lemaire, 2020. <em>Refactoring at Scale</em><br>
 https://learning.oreilly.com/library/view/refactoring-workbook/0321109295/</p>
 <p><em>Version Control</em> (add existing RStudio project to Github): https://happygitwithr.com/index.html</p>
 <p>https://hansenjohnson.org/post/sync-github-repository-with-existing-r-project/</p>
+<p>https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/VersionControl/</p>
+<p>#2.4.4.</p>
 </section>
 <section id="appendixreference-extracts" class="level1">
 <h1>Appendix/Reference Extracts</h1>
