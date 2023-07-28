@@ -288,7 +288,7 @@ There are two ways to create a new branch in both local and remote:
    
    - From Rstudio:
      
-     Switch to the branch you want to branch off [(see switch branch section)](#switch_branch) then create branch followed by below image.
+     Switch to the branch you want to branch off ([see switch branch section in ](#branch_workflow)in branch workflow) then create branch followed by below image.
       
      ![Rbranch](src/RBranch.png)
      
@@ -312,7 +312,7 @@ After click “Create Project” to create a new directory, which will be all of
 * From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to your Git executable.
     ![detect](src/detect.png)
 
-#### Fundamentals branch workflow {#switch_branch}
+#### Fundamentals branch workflow {#branch_workflow}
 
 **Overall flow chart**
 
@@ -365,10 +365,10 @@ For the files you don't want to push to Github you can list the them in [**.giti
 When you are finished and committed, remember to **Push** these changes to the remote repository (e.g., GitHub). Should see 'branch -> branch' if successfully pushed.
 
 ::: {.callout-note}
-You might need to pull again before push, if someone pushed their work to remote during your work
+You might need to pull again before push, if someone pushed their work to remote during your work.
 ::: 
    
-#### Pull Request and Merge Chances between branches
+#### Pull Request and Merge Chances between branches {#pullrequest}
 
 Each time you want to merge/pull a branch from another branch, you will need to create a pull request. Sometimes it will show up automatically in the branch web page after you push, if not you need to do it manually.
 
@@ -381,7 +381,7 @@ Each time you want to merge/pull a branch from another branch, you will need to 
            
 * GitHub has now compared the two versions of the project that are in the two branches. If there is no conflict it is telling us that there are no conflicts between the two versions and you can click the green **Merge pull request** button to merge the changes.
 
-* If you don't need the branch, click **Confirm merge**. Go ahead and delete the branch, since its changes have been incorporated, with the **Delete branch** button in the purple box.
+* If you don't need the branch (e.x. feature branch), click **Confirm merge**. Go ahead and delete the branch, since its changes have been incorporated, with the **Delete branch** button in the purple box.
 ![success](src/successMerge.png)
 
 The manual pull request process: ![manual](src/manualpullrequest.gif)
@@ -416,34 +416,69 @@ The data/files we don't want to commit to GitHub:
 - plots
 - reports
     
-#### Version control workflow
-**1. The overall workflow graph of version control**
+### Version control workflow
+**The overall workflow graph of version control**
 
 The diagram below shows the overall version control workflow for each round.
 
 ![workflow](src/workflow.png)
 
-**2. Working location** - Need to confirm
+#### Main branch
+The main branch contains the base code template that will be updated during each round. There will have a workshop to compare the files using [Notepad++](#notepad) and decide the merge request before merging the subbranch to main.
 
-- The home folder locations for **main** branch: 
-   
-     S:\WasteWater Surveillance\3_Templates_References\Round_codes
+![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png){#notepad}
+
+::: {.callout-warning}
+People should not switch to main branch and make changes to it during work.
+::: 
+
+#### Round branch
+The round branch contains current round code, it will be update during each round.
+
+The workflow for round branch: 
+
+1. Create manual [pull request](#pullrequest) to update the round branch from main in GitHUb.
+2. Do the [branch workflow](#branch_workflow) steps.
+3. After finished this round code, create pull request to merge to main branch.
+
+Q: need feature branch for this?
+
+::: {.callout-warning}
+For step 3, only need to create pull request. Do not need to merge it!
+::: 
+
+#### Develop branch
+The code refactoring work will in this branch.
+
+The workflow for round branch: 
+
+1. Create manual [pull request](#pullrequest) to update the round branch from main in GitHUb.
+2. Do the [branch workflow](#branch_workflow) steps.
+3. Might need to create feature branch to add new feature to the base code.
+4. After finished this round code, create pull request to merge to main branch.
+
+::: {.callout-warning}
+For step 4, only need to create pull request. Do not need to merge it!
+::: 
+
+#### Working location - Need to confirm
+
+- The home folder locations for **main** branch:
+
+    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/3_Templates_References/Round_codes
    
 - The home folder locations for **Round** branch: 
    
-     S:\WasteWater Surveillance\4_WIP\O103-Interlabs\d_Code
+    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/4_WIP/O103-Interlabs/d_Code
    
 - The home folder locations for **develop** branch:
    
-     S:\WasteWater Surveillance\1_QMS
+    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/1_QMS
    
 Clone the remote repository to local directory for each branch working.
    
-**3. Unsolved questions**
-
-   - Zombie code: cut off but might come back?
-
-![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png)
+#### Unsolved questions
+- Zombie code: cut off but might come back?
 
 ## Linting / Style Guide
 *General*
