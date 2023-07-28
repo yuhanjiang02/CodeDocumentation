@@ -238,12 +238,12 @@ print(sys.version)
 
 **1. Install Git from website ** 
 
-Go to [Git website](<https://gitforwindows.org/>) to download and install it.
+Go to [Git website](https://gitforwindows.org/) to download and install it.
 
 **2. Check/update git version**
 
 * Go to the Start menu
-* In the Search or Run line type ”cmd”and press enter
+* In the Search or Run line type ”cmd” and press enter
 * Check git version: `git --version`
 * Update git version if have git but not the latest version:`git update-git-for-windows`
     
@@ -264,7 +264,7 @@ Note: This **must** be the email associated with your GitHub account.
    
 "A Git client and an integrated development environment, such as RStudio, are not necessary to use Git or R, respectively. But they make the experience more pleasant because they reduce the amount of command line and provide a richer visual representation of the current state." (from Happy Git with R)
 
-We can use Git client (e.x. GitKraken) to get a nice graphical overview of the recent commit history, branches, and diffs.
+We can use Git client (e.x. [GitKraken](https://www.gitkraken.com/)) to get a nice graphical overview of the recent commit history, branches, and diffs.
 
 ![gitkraken](src/gitkrakenScreenshot.png)
 
@@ -341,17 +341,17 @@ To start working on a project, pull any new changes to update local copy. If the
 
 **3. Make changes and commit**
 
-* Click on the **Git** tab in RStudio. It will show the files that have changed or added.
+* After finishing changes, click on the **Git** tab in RStudio. It will show the files that have changed or added.
 
 ![git](src/git.png)
 
-* Click on the **Staged** check box to stage your change. Now click on **Diff** (next to **Commit**) to display a summary of what’s changed. Lines that have been added are green. Lines that have been removed are red.
+* Click on the **Commit**, it will show the window in below image. Click the staged box to stage the file you want to push to remote. You can see the difference between the files after you click the file (show blue line). Lines that have been added are green. Lines that have been removed are red.
 
 ![diff](src/diff.png)
 
 * Add a commit message and click on **Commit** in this window. Every time make a commit, must also write a short **commit message**.
     
-* In the **Git** tab of RStudio, click on **Diff** and then **History**. You’ll see that you can look through every commit you’ve ever made. You can also view the commit history in other Git client app. Or check your past commits though type `git log` in terminal.
+* You can view the history of your commit after click the left corner **History** beside the change. You can also view the commit history in other Git client app. Or check your past commits though type `git log` in terminal.
 
     
 * Check on the state of the Git world: type `git status` in terminal
@@ -394,8 +394,9 @@ There will be a merge conflict when you pull from the remote but have done some 
 * Recent commit history of the local main branch: A--B--D
 
 It will show the warning below and automatically add the two version with markers in that file.
-      
-![conflictmessage](src/conflict.png)
+    
+    'CONFLICT (content): Merge conflict in ...(the file have conflict)
+    Automatic merge failed; fix conflicts and then commit the result.'      
       
 * The code between the <<<<<<< HEAD and ======= line is the content you committed in your local and the code between the ======= and >>>>>>> line is the content in the current remote branch.
 
@@ -405,9 +406,9 @@ It will show the warning below and automatically add the two version with marker
 
 #### gitignore file {#gitignore}
 
-To tell Git which files and directories to ignore when you make a commit. To share the ignore rules with other users who clone the repository, commit the .gitignore file in to your repository.
+The .gitignore file can tell Git which files and directories to ignore when you make a commit. You can commit and push the .gitinore file to share the ignore rules with other users.
 
-The gitigonre content writing reference: <https://swcarpentry.github.io/git-novice/06-ignore.html>
+The .gitigonre content writing reference: <https://swcarpentry.github.io/git-novice/06-ignore.html>
    
 The data/files we don't want to commit to GitHub:
 
