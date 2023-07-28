@@ -397,7 +397,7 @@ It will show the warning below and automatically add the two version with marker
       
 ![conflictmessage](src/conflict.png)
       
-* The code between the <<<<<<< HEAD and ======= line is the content in the current remote branch and the code between the ======= and >>>>>>> line is the content in your local that need to merge.
+* The code between the <<<<<<< HEAD and ======= line is the content you committed in your local and the code between the ======= and >>>>>>> line is the content in the current remote branch.
 
 ![marker](src/mergeconflict.png)
 
