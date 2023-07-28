@@ -233,19 +233,24 @@ print(sys.version)
 ```
 
 ### Training/Establishing Guidelines
+
 #### Installation and setup
 
-##### 1. Install Git from website: <https://gitforwindows.org/>
+**1. Install Git from website ** 
 
-##### 2. Check/update git version
+Go to [Git website](<https://gitforwindows.org/>) to download and install it.
+
+**2. Check/update git version**
+
 * Go to the Start menu
 * In the Search or Run line type ”cmd”and press enter
 * Check git version: `git --version`
 * Update git version if have git but not the latest version:`git update-git-for-windows`
     
-    ![git](src/versionUpdate.gif)
+![git](src/versionUpdate.gif)
     
-##### 3. Introduce yourself to Git
+**3. Introduce yourself to Git**
+
 * Type the following in cmd:
     `git config --global user.email "you@youremail.com"` 
     `git config --global user.name "Your Name"`
@@ -255,79 +260,87 @@ print(sys.version)
 Note: This **must** be the email associated with your GitHub account.
 :::
 
-##### 4. Install a Git client - Need to rewrite
+**4. Install a Git client**
    
-   A Git client and an integrated development environment, such as RStudio, are not necessary to use Git or R, respectively. But they make the experience more pleasant because they reduce the amount of command line and provide a richer visual representation of the current state.
+"A Git client and an integrated development environment, such as RStudio, are not necessary to use Git or R, respectively. But they make the experience more pleasant because they reduce the amount of command line and provide a richer visual representation of the current state." (from Happy Git with R)
 
-   Here’s a screenshot of GitKraken (see below) open to the repository for the R package pkgdown. You get a nice graphical overview of the recent commit history, branches, and diffs, as well as a GUI that facilitates the most common Git operations.
+We can use Git client (e.x. GitKraken) to get a nice graphical overview of the recent commit history, branches, and diffs.
 
-   ![gitkraken](src/gitkrakenScreenshot.png)
+![gitkraken](src/gitkrakenScreenshot.png)
 
 #### Connect to Git, GitHub and RStudio
+**1. Setup a new remote repository in GitHub**
+    ![repo](src/SetRepo.gif)
 
-##### 1. Setup a new remote repository in GitHub
-![repo](src/SetRepo.gif)
-
-##### 2.Create branches
+**2. Create branches**
 
 To work on different versions of the base code at one time, we need to branch off the specific branch we want to work on. It will coping all the files in the branch at that point in time.
 
 ::: {.callout-important}
-Remember to select which branch you want to branch off **AND** Pull it after you create branch !!
+Remember to select which branch you want to branch off **AND** Pull it to your local after you create branch !!
 :::
-
+    
 There are two ways to create a new branch in both local and remote:
    
-   - From GitHub:
+  - From GitHub:
    
-   ![gitbranch](src/GitHubBranch.gif)
+    ![gitbranch](src/GitHubBranch.gif)
    
    - From Rstudio:
      
-     Switch to the branch you want to branch off (see @switch_branch section) then create branch followed by below image.
+     Switch to the branch you want to branch off [(see switch branch section)](#switch_branch) then create branch followed by below image.
       
      ![Rbranch](src/RBranch.png)
+     
+::: {.callout-note}
+For Rstudio method, you need to finish **step 3** below first.
+:::
 
-##### 3. Connect Rstudio to GitHub and clone the repo to local
+**3. Connect Rstudio to GitHub and clone the repo to local**
 ![connect](src/RStudioConnectGitHub.gif)
   
 After click “Create Project” to create a new directory, which will be all of these things:
   
-   - a directory or “folder” on your computer
-   - a Git repository, linked to a remote GitHub repository
-   - an RStudio Project
+- a folder with same remote repository name on your computer
+- a .gitignore file
+- an RStudio Project
+- any files you upload into remote rpository
 
-##### 4. Detect Git from RStudio
+**4. Detect Git from RStudio**
+
 * Type `where git` in cmd to get the git executable path
 * From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to your Git executable.
     ![detect](src/detect.png)
 
-#### Fundamentals branch workflow
+#### Fundamentals branch workflow {#switch_branch}
 
-##### Overall flow chart
+**Overall flow chart**
+
 The image below shows a overall git flow chart.
 ![flow](src/flow.png)
 
-##### 1. Switch to right branch {#switch_branch}
+**1. Switch to right branch**
+
 Since people are work on different branch so before start we need to switch to our working branch. There are two methods to switch between branch:
 
 * In Rstudio:
 
-  Select the remote branch you want to work on by clicking the bottom (see image below), it will automatically create and switch to that local branch.
+    Select the remote branch you want to work on by clicking the bottom (see image below), it will automatically create and switch to that local branch.
   
-  ![Rbranch](src/SwitchBranch.png)
+    ![Rbranch](src/SwitchBranch.png)
      
 * In Shell: type `$ git checkout <branch_name>` in terminal
 
-##### 2.Pull from remote
+**2. Pull from remote**
 
-To start working on a project, pull any new changes to update local copy. If there is a merge conflict see @merge_conflict section.
+To start working on a project, pull any new changes to update local copy. If there is a merge conflict see [merge_conflict section](#merge_conflict).
 
 * In Rstudio: Click the **Pull** bottom in the **Git** tab section
 
 * In Shell: type `$ git pull` in terminal
 
-##### 3. Make changes and commit 
+**3. Make changes and commit**
+
 * Click on the **Git** tab in RStudio. It will show the files that have changed or added.
 
 ![git](src/git.png)
@@ -340,17 +353,20 @@ To start working on a project, pull any new changes to update local copy. If the
     
 * In the **Git** tab of RStudio, click on **Diff** and then **History**. You’ll see that you can look through every commit you’ve ever made. You can also view the commit history in other Git client app. Or check your past commits though type `git log` in terminal.
 
-![history](src/history.png)
     
 * Check on the state of the Git world: type `git status` in terminal
 
 ::: {.callout-note}
-For the files you don't want to push to Github you can list the them in **.gitignore** file, see @gitigore.
+For the files you don't want to push to Github you can list the them in [**.gitignore** file](#gitignore).
 ::: 
 
-##### 4. Push
-When you are finished and committed, remember to **Push** these changes to the remote repository (e.g., GitHub). Should see below image if successfully pushed.
-    ![push](src/push.png)
+**4. Push**
+
+When you are finished and committed, remember to **Push** these changes to the remote repository (e.g., GitHub). Should see 'branch -> branch' if successfully pushed.
+
+::: {.callout-note}
+You might need to pull again before push, if someone pushed their work to remote during your work
+::: 
    
 #### Pull Request and Merge Chances between branches
 
@@ -387,41 +403,42 @@ It will show the warning below and automatically add the two version with marker
 
 * Keep the version you want and remove the all the markers line (<<<<<<< HEAD:, ======, >>>>>>) inserted to demarcate the conflicts then save the file and do the following commit and push again.
 
+#### gitignore file {#gitignore}
+
+To tell Git which files and directories to ignore when you make a commit. To share the ignore rules with other users who clone the repository, commit the .gitignore file in to your repository.
+
+The gitigonre content writing reference: <https://swcarpentry.github.io/git-novice/06-ignore.html>
+   
+The data/files we don't want to commit to GitHub:
+
+- all the data spread sheet
+- plots
+- reports
     
 #### Version control workflow
+**1. The overall workflow graph of version control**
 
-1. The overall workflow graph of version control.
+The diagram below shows the overall version control workflow for each round.
+
 ![workflow](src/workflow.png)
 
-2. Working location - Need to confirm
+**2. Working location** - Need to confirm
 
-   - The home folder locations for **main** branch: 
+- The home folder locations for **main** branch: 
    
      S:\WasteWater Surveillance\3_Templates_References\Round_codes
    
-   - The home folder locations for **Round** branch: 
+- The home folder locations for **Round** branch: 
    
      S:\WasteWater Surveillance\4_WIP\O103-Interlabs\d_Code
    
-   - The home folder locations for **develop** branch:
+- The home folder locations for **develop** branch:
    
      S:\WasteWater Surveillance\1_QMS
    
-   Clone the remote repository to local directory for each branch working.
+Clone the remote repository to local directory for each branch working.
    
-
-3. gitignore file {#gitignore}
-
-   To tell Git which files and directories to ignore when you make a commit. To share the ignore rules with other users who clone the repository, commit the .gitignore file in to your repository.
-
-   The gitigonre content reference: https://swcarpentry.github.io/git-novice/06-ignore.html
-
-   The data/files we don't want to commit to GitHub:
-    - all the data spread sheet
-    - plots
-    - reports
-
-4. Unsolved questions
+**3. Unsolved questions**
 
    - Zombie code: cut off but might come back?
 
