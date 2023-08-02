@@ -319,7 +319,7 @@ After click “Create Project” to create a new directory, which will be all of
 The image below shows a overall git flow chart.
 ![flow](src/flow.png)
 
-**1. Switch to right branch**
+**1. Switch to corresponding branch**
 
 Since people are work on different branch so before start we need to switch to our working branch. There are two methods to switch between branch:
 
@@ -415,6 +415,9 @@ The data/files we don't want to commit to GitHub:
 - all the data spread sheet
 - plots
 - reports
+
+#### Issues
+we can use the issues tab in GitHub to create a request to people. The workflow of create a issue can refer to this: <https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart>
     
 ### Version control workflow
 **The overall workflow graph of version control**
@@ -424,7 +427,7 @@ The diagram below shows the overall version control workflow for each round.
 ![workflow](src/workflow.png)
 
 #### Main branch
-The main branch contains the base code template that will be updated during each round. There will have a workshop to compare the files using [Notepad++](#notepad) and decide the merge request before merging the subbranch to main.
+The main branch contains the base code template that will be updated during each round, so we need to upload/ push the initial files at beginning. A workshop will be hold to compare the files using [Notepad++](#notepad) and decide the merge request before merging the subbranch to main.
 
 ![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png){#notepad}
 
@@ -437,7 +440,7 @@ The round branch contains current round code, it will be update during each roun
 
 The workflow for round branch: 
 
-1. Create manual [pull request](#pullrequest) to update the round branch from main in GitHUb.
+1. Create manual [pull request](#pullrequest) to update the round branch from main in GitHub.
 2. Do the [branch workflow](#branch_workflow) steps.
 3. After finished this round code, create pull request to merge to main branch.
 
@@ -461,7 +464,7 @@ The workflow for round branch:
 For step 4, only need to create pull request. Do not need to merge it!
 ::: 
 
-#### Working location - Need to confirm
+#### Home folder location - Need to confirm
 
 - The home folder locations for **main** branch:
 
@@ -474,8 +477,7 @@ For step 4, only need to create pull request. Do not need to merge it!
 - The home folder locations for **develop** branch:
    
     //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/1_QMS
-   
-Clone the remote repository to local directory for each branch working.
+
    
 #### Unsolved questions
 - Zombie code: cut off but might come back?
