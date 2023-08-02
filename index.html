@@ -228,8 +228,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
 <span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-24dfae7ae941dafc4828" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-24dfae7ae941dafc4828">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d76fb7133f39b7b4e65c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d76fb7133f39b7b4e65c">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -528,7 +528,7 @@ Note
 <h4 data-number="2.4.1.3" class="anchored" data-anchor-id="branch_workflow"><span class="header-section-number">2.4.1.3</span> Fundamentals branch workflow</h4>
 <p><strong>Overall flow chart</strong></p>
 <p>The image below shows a overall git flow chart. <img src="src/flow.png" class="img-fluid" alt="flow"></p>
-<p><strong>1. Switch to right branch</strong></p>
+<p><strong>1. Switch to corresponding branch</strong></p>
 <p>Since people are work on different branch so before start we need to switch to our working branch. There are two methods to switch between branch:</p>
 <ul>
 <li><p>In Rstudio:</p>
@@ -642,6 +642,10 @@ Automatic merge failed; fix conflicts and then commit the result.'
 <li>reports</li>
 </ul>
 </section>
+<section id="issues" class="level4" data-number="2.4.1.7">
+<h4 data-number="2.4.1.7" class="anchored" data-anchor-id="issues"><span class="header-section-number">2.4.1.7</span> Issues</h4>
+<p>we can use the issues tab in GitHub to create a request to people. The workflow of create a issue can refer to this: <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart" class="uri">https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart</a></p>
+</section>
 </section>
 <section id="version-control-workflow" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="version-control-workflow"><span class="header-section-number">2.4.2</span> Version control workflow</h3>
@@ -655,7 +659,7 @@ Automatic merge failed; fix conflicts and then commit the result.'
 </div>
 <section id="main-branch" class="level4" data-number="2.4.2.1">
 <h4 data-number="2.4.2.1" class="anchored" data-anchor-id="main-branch"><span class="header-section-number">2.4.2.1</span> Main branch</h4>
-<p>The main branch contains the base code template that will be updated during each round. There will have a workshop to compare the files using <a href="#notepad">Notepad++</a> and decide the merge request before merging the subbranch to main.</p>
+<p>The main branch contains the base code template that will be updated during each round, so we need to upload/ push the initial files at beginning. A workshop will be hold to compare the files using <a href="#notepad">Notepad++</a> and decide the merge request before merging the subbranch to main.</p>
 <div id="notepad" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="img/premergeDiffNotepad.png" class="img-fluid figure-img"></p>
@@ -681,7 +685,7 @@ Warning
 <p>The round branch contains current round code, it will be update during each round.</p>
 <p>The workflow for round branch:</p>
 <ol type="1">
-<li>Create manual <a href="#pullrequest">pull request</a> to update the round branch from main in GitHUb.</li>
+<li>Create manual <a href="#pullrequest">pull request</a> to update the round branch from main in GitHub.</li>
 <li>Do the <a href="#branch_workflow">branch workflow</a> steps.</li>
 <li>After finished this round code, create pull request to merge to main branch.</li>
 </ol>
@@ -724,8 +728,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="working-location---need-to-confirm" class="level4" data-number="2.4.2.4">
-<h4 data-number="2.4.2.4" class="anchored" data-anchor-id="working-location---need-to-confirm"><span class="header-section-number">2.4.2.4</span> Working location - Need to confirm</h4>
+<section id="home-folder-location---need-to-confirm" class="level4" data-number="2.4.2.4">
+<h4 data-number="2.4.2.4" class="anchored" data-anchor-id="home-folder-location---need-to-confirm"><span class="header-section-number">2.4.2.4</span> Home folder location - Need to confirm</h4>
 <ul>
 <li><p>The home folder locations for <strong>main</strong> branch:</p>
 <p>//ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/3_Templates_References/Round_codes</p></li>
@@ -734,7 +738,6 @@ Warning
 <li><p>The home folder locations for <strong>develop</strong> branch:</p>
 <p>//ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/1_QMS</p></li>
 </ul>
-<p>Clone the remote repository to local directory for each branch working.</p>
 </section>
 <section id="unsolved-questions" class="level4" data-number="2.4.2.5">
 <h4 data-number="2.4.2.5" class="anchored" data-anchor-id="unsolved-questions"><span class="header-section-number">2.4.2.5</span> Unsolved questions</h4>
