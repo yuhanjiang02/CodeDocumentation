@@ -41,13 +41,11 @@ library(reticulate)#to run python in this file
 
 ## Introduction
 
-Within the interlabs program, R code performs data processing, plots and statistics generation. As an aside, an ancillary collection of spreadsheets with Excel code and python code are used in sample preparation and pre-processing.
-
-The R code ("base code") continues to evolve to serve the new requirements and exploratory analysis in the interlabs program. With the rapid advancement and frequent customizations, it was recognized the analysis process would benefit from comprehensive code tidying. As a rule-of-thumb, with each new feature development, teams should allocate a further 15-20% of time to resolve technical debts. There is currently no established tracking of technical debts besides some in-code comments and team members recollection.
+Within the OCWA interlabs program, R code processes data, and generates plots and descriptive statistics. The R code ("base code") continues to evolve to serve the new requirements and exploratory analysis in the interlabs program. An ancillary collection of spreadsheets with Excel code and python code are used in sample preparation and pre-processing.
 
 The purpose of this document is:
-1. To serve as documentation accompanying the code, and to be continually updated as the code evolves  
-2. Set out practice standards for team to collectively continue hygienic data handling & coding following the refactoring project in 2023; serve as on-boarding training for new team members
+1. To serve as documentation accompanying the base code, and to be continually updated with periodic major review & team refresher training as mandated by the QMS    
+2. Set out practice standards for the team to collectively continue hygienic data handling & coding following the refactoring project in 2023; serve as on-boarding training for new team members
 
 # Environment Structure
 
@@ -135,29 +133,30 @@ A reproducible environment for the project inside R is managed using the renv pa
 
 ### Package Dependencies
 Based on line-by-line run of the [base code ](https://github.com/InterlabsOCWA/Base_code/commit/1a4da2e5cbb78f3b97cf4cabb2dd783d574a163e), otherwise named as "WBE_Sample_Phasma-CA_20230607 - facet_fractionplusHK.Rmd", the necessary packages were determined to be (flag jh - maybe take from renv.lock/github main):  
-*ggplot2
-*tidyverse
-*fs
-*janitor
-*readxl
-*ggh4x
-*RColorBrewer
-*scales
-*writexl
-*devEMF
-*DescTools
-*ggpubr
-*officer
+* ggplot2  
+* tidyverse
+* fs
+* janitor
+* readxl
+* ggh4x
+* RColorBrewer
+* scales
+* writexl
+* devEMF
+* DescTools
+* ggpubr
+* officer
 
-If your work requires changing versions of or adding packages, please refer to [steps](#renv-setup) steps 2 and 3 as well as consult the team in a timely manner.   
 
 
 ::: {.callout-caution}
-It is highly recommended for any package update as well as the initial set-up to be done collectively with the team, as it may force update of certain packages if the versions logged in the controlled lock file are no longer available from the download source.   (https://stackoverflow.com/questions/60779096/error-installing-packages-using-renvrestore)
+If your work requires changing versions of or adding packages, please refer to [steps](#renv-setup) steps 2 and 3 as well as consult the team in a timely manner. 
+  
+Any package update as well as the initial set-up should be done in consultation with the team, as it may force update of certain packages if the versions logged in the controlled lock file are no longer available from the download source.   (https://stackoverflow.com/questions/60779096/error-installing-packages-using-renvrestore)
 :::
 
 
-The following steps are referenced from [](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv).  
+The following steps are referenced from [NYU's introduction to renv](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv/).  
 
 1) Check your version of R matches the below [flag to update periodically], using the GUI's or by inputting:
 ```{r}
@@ -167,7 +166,7 @@ version
 ```
 2) Make sure you have the renv installed to allow usage of renv commands below.  Version 1.0.0 recommended (this version is also logged in the lockfile)  
 
-3) As part of cloning the project from version controlled branch you are working on, the *renv.lock* (as well as the renv/library, .Rprofile, renv/settings.json, and renv/activate.R files) should be found in your local repository location.   Opening the cloned project at the new location, by executing the below, renv will install/compile what is needed on the system, as long as the same version of R exists between systems:
+3) As part of cloning the project from version controlled branch you are working on, the *renv.lock* (as well as the renv/library, .Rprofile, renv/settings.json, and renv/activate.R files) should be found in your local repository location.   Opening the cloned project at the new location, by executing the below, renv will prepare what is needed for your system to run the project, as long as the same version of R exists between systems:
 ```{r, eval=FALSE}
 ## Reproduce environment
 renv::restore()
@@ -204,7 +203,7 @@ A git-ignore file within the renv subdirectory instructs all other non-necessary
 
 For troubleshooting requiring package version check, besides cross-checking renv.lock files, refer to the package window in the corner of RStudio. 
 
-TBD  
+TBD  - Currently referenced from referenced from [NYU's introduction to renv](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/r-packages-with-renv/).  
 When renv’s Python integration is active, a couple extra features will activate:  
 - renv will instruct reticulate to load your project-local version of Python by default, avoiding some of the challenges with finding and selecting an appropriate version of Python on the system.  
 - Calling reticulate::py_install() will install packages into the project’s Python environment by default.  
@@ -219,7 +218,7 @@ print(sys.version)
 ```
 
 
-## Version Control
+# Version Control
 ```{r}
 #Yuhan's section
 #### II. Training/Establishing Guidelines
@@ -232,9 +231,9 @@ print(sys.version)
 #    **Deliverable: Version control workflow graphic (to incl. in Training/Guidance document)**\
 ```
 
-### Training/Establishing Guidelines
+Generic information is provided in this section, with interlabs specific practice at the next section.  If you need to run any of the steps in this section, it is recommended to do so in consultation with the team (e.g. adding a new branch, new repository).  Otherwise you should only need to follow the [project specific version control steps](#vc-project-workflow) for typical work.
 
-#### Installation and setup
+## Installation and setup
 
 **1. Install Git from website ** 
 
@@ -251,8 +250,8 @@ Go to [Git website](https://gitforwindows.org/) to download and install it.
     
 **3. Introduce yourself to Git**
 
-* Type the following in cmd:
-    `git config --global user.email "you@youremail.com"` 
+* Type the following in cmd, replacing that text in quote with your email and name, respectively:  
+    `git config --global user.email "you@youremail.com"`  
     `git config --global user.name "Your Name"`
 * See result: `git config --global --list`
     
@@ -268,13 +267,23 @@ We can use Git client (e.x. [GitKraken](https://www.gitkraken.com/)) to get a ni
 
 ![gitkraken](src/gitkrakenScreenshot.png)
 
-#### Connect to Git, GitHub and RStudio
-**1. Setup a new remote repository in GitHub**
+*Connect to Git, GitHub and RStudio* 
+
+```{r}
+#Comments for Yuhan 
+# I would suggest that we don't need to give information on setting up new repository or branches in this doc (besides a general reference link) because we don't want people starting random repository/branches different from what you set up.
+# instead can you walk through git clone process which Alex & Chris will need to use?  
+# if they git clone do they need to set up connection in RStudio (or command line)?  if not then the current connection step can be moved away alongside making new repositories and branches
+# need a brief paragraph on rollback - how to use old commit hash to bring back an older version if a new commit has severe issues
+```
+
+**5. Setup a new remote repository in GitHub**  
+A new repository may be set up for discrete projects.  (For the most part, we will be working in the base code repository at https://github.com/InterlabsOCWA/base_code)
     ![repo](src/SetRepo.gif)
 
-**2. Create branches**
+**6. Create branches**
 
-To work on different versions of the base code at one time, we need to branch off the specific branch we want to work on. It will coping all the files in the branch at that point in time.
+To work on different versions of the base code at one time, we need to branch off the specific branch we want to work on. It will copy all the files in the branch at that point in time.
 
 ::: {.callout-important}
 Remember to select which branch you want to branch off **AND** Pull it to your local after you create branch !!
@@ -296,7 +305,7 @@ There are two ways to create a new branch in both local and remote:
 For Rstudio method, you need to finish **step 3** below first.
 :::
 
-**3. Connect Rstudio to GitHub and clone the repo to local**
+**7. Connect Rstudio to GitHub and clone the repo to local**
 ![connect](src/RStudioConnectGitHub.gif)
   
 After click “Create Project” to create a new directory, which will be all of these things:
@@ -306,13 +315,13 @@ After click “Create Project” to create a new directory, which will be all of
 - an RStudio Project
 - any files you upload into remote rpository
 
-**4. Detect Git from RStudio**
+**8. Detect Git from RStudio**
 
 * Type `where git` in cmd to get the git executable path
 * From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to your Git executable.
     ![detect](src/detect.png)
 
-#### Fundamentals branch workflow {#branch_workflow}
+## Fundamentals branch workflow {#branch_workflow}
 
 **Overall flow chart**
 
@@ -321,7 +330,7 @@ The image below shows a overall git flow chart.
 
 **1. Switch to corresponding branch**
 
-Since people are work on different branch so before start we need to switch to our working branch. There are two methods to switch between branch:
+Since different people can be working on different branches, before starting our work, we need to switch to our [working branch](#vc-project-workflow). There are two methods to switch between branch:
 
 * In Rstudio:
 
@@ -368,7 +377,7 @@ When you are finished and committed, remember to **Push** these changes to the r
 You might need to pull again before push, if someone pushed their work to remote during your work.
 ::: 
    
-#### Pull Request and Merge Chances between branches {#pullrequest}
+#### Pull Request and Merge Changes between branches {#pullrequest}
 
 Each time you want to merge/pull a branch from another branch, you will need to create a pull request. Sometimes it will show up automatically in the branch web page after you push, if not you need to do it manually.
 
@@ -404,7 +413,7 @@ It will show the warning below and automatically add the two version with marker
 
 * Keep the version you want and remove the all the markers line (<<<<<<< HEAD:, ======, >>>>>>) inserted to demarcate the conflicts then save the file and do the following commit and push again.
 
-#### gitignore file {#gitignore}
+### gitignore file {#gitignore}
 
 The .gitignore file can tell Git which files and directories to ignore when you make a commit. You can commit and push the .gitinore file to share the ignore rules with other users.
 
@@ -416,17 +425,43 @@ The data/files we don't want to commit to GitHub:
 - plots
 - reports
 
-#### Issues
-we can use the issues tab in GitHub to create a request to people. The workflow of create a issue can refer to this: <https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart>
-    
-### Version control workflow
+## Version control project workflow {#vc-project-workflow}
+```{r}
+#Comments for Yuhan 
+#- need the graphic cleaned up so it makes sense to a regular reader like Alex - e.g. what does it mean CA will mainly work here?  next round could be you or I, need the description for the task not a person
+# what is JIRA-35 example feature?  can you change this example to match something we might see in interlabs.  also use our naming convention which applies to branches as well (so the double dash and space are not acceptable)
+# bottom comment - "feel free [...]" can you add the note about how the feature or develop branch gets merged?  It's a note to yourself (I think) so don't leave it for the reader)
+
+#TBD
+# explain bare min. information you need with commit message like you started with the annotation under the round dots.  Initial name is probably the least important info in the commit since git would track who pushed the change anyways?  not sure
+# explain how each dot is a commit like a save point we can revert to by knowing the commit hash e.g. commit ba9da59 
+# I moved the home folder description up right beneath the diagram.  We need a description of the normal working "place" (the git clone local - you mentioned in the general set up for setting up a new repository but can you add description of how it would be like for our project base code?  especially with branches - does the user need to git clone each branch into a separate folder, or can they switch after git cloning the main?  this needs to be very clear assuming the reader is a new student , for example).  How often are we to sync/commit to github from local?  Then, back to the network folder home locations - how often are these to be "synced" with the github versions?  Decide on a frequency and that will become part of the QMS requirement for data management.
+
+```
+
+
 **The overall workflow graph of version control**
 
 The diagram below shows the overall version control workflow for each round.
 
 ![workflow](src/workflow.png)
 
-#### Main branch
+The corresponding locations for the branches in the network drive are as follows (Flag: Need to confirm).
+
+- The home folder locations for **main** branch:
+
+    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/3_Templates_References/Round_codes
+   
+- The home folder locations for **Round** branch: 
+   
+    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/4_WIP/O103-Interlabs/d_Code
+   
+- The home folder locations for **develop** branch:
+   
+    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/1_QMS
+
+
+### Main branch
 The main branch contains the base code template that will be updated during each round, so we need to upload/ push the initial files at beginning. A workshop will be hold to compare the files using [Notepad++](#notepad) and decide the merge request before merging the subbranch to main.
 
 ![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png){#notepad}
@@ -435,7 +470,7 @@ The main branch contains the base code template that will be updated during each
 People should not switch to main branch and make changes to it during work.
 ::: 
 
-#### Round branch
+### Round branch
 The round branch contains current round code, it will be update during each round.
 
 The workflow for round branch: 
@@ -450,7 +485,7 @@ Q: need feature branch for this?
 For step 3, only need to create pull request. Do not need to merge it!
 ::: 
 
-#### Develop branch
+### Develop branch
 The code refactoring work will in this branch.
 
 The workflow for round branch: 
@@ -464,25 +499,22 @@ The workflow for round branch:
 For step 4, only need to create pull request. Do not need to merge it!
 ::: 
 
-#### Home folder location - Need to confirm
-
-- The home folder locations for **main** branch:
-
-    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/3_Templates_References/Round_codes
-   
-- The home folder locations for **Round** branch: 
-   
-    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/4_WIP/O103-Interlabs/d_Code
-   
-- The home folder locations for **develop** branch:
-   
-    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/1_QMS
 
    
 #### Unsolved questions
 - Zombie code: cut off but might come back?
 
-## Linting / Style Guide
+# Issues Tracking
+For most cases, the project issues tab in GitHub should be used to log issues (including bugs and features suggestions) and assign staff to resolve, using this [workflow](https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart) within repositories set up as projects.  
+
+![Issues tab](img/githubIssues.png)
+
+Appropriate tagging will aid in error tracing.  
+* Bugs: When resolved, staff should closed issue with sufficiently detailed comment for potential future reference, and include the git commit hash of the version pre/post-fix if appropriate.     
+* Features request: Needs and suggestions for improvement features can be logged under issues as well.  As resources allows, the feature work can be initiated as a new feature branch.  Again, upon completion, the git commit hash should be logged in the closure comment.  
+
+
+# Linting / Code Style Guide
 *General*
 The [tidyverse style](https://style.tidyverse.org/) will be the default style, and aligns with the lintr package used below.  It is recommended for all users to review the guide.  Some general format rules include:  
 * camelCase recommended (note tidyverse style guide prefers snake case but both are acceptable)
@@ -511,7 +543,7 @@ To run lintr, open Tools > Addins. From the pop-up window, select lintr from the
 The user may then use the lintr result in the Markers pane as a guide to modify code format.  Automated linting (e.g. styler package) is not recommended at this point.  More options for linting and details are available for reference at https://blog.r-hub.io/2022/03/21/code-style/ 
 :::
 
-## Refactoring 
+# Refactoring 
 - recommend every x period
 - workflow
 
