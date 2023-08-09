@@ -233,8 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">Value =</span> <span class="st">"value"</span>, <span class="at">NodeID =</span> <span class="st">"name"</span>,</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">fontSize=</span> <span class="dv">12</span>, <span class="at">nodeWidth =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-01b88bdecdd5e73d1427" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-01b88bdecdd5e73d1427">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a106c4adc95b2439d431" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a106c4adc95b2439d431">{"x":{"links":{"source":[0,1,2,2,4,4,5,6],"target":[1,2,3,4,5,6,7,7],"value":[1,1,1,1,1,1,1,1]},"nodes":{"name":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"],"group":["Emails","Raw data","Clean data","20230529_Sample_Notes.xlsm","WBE_Sample_Phasma-CA_20230511.Rmd","plots","dataframe","report"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -483,7 +483,8 @@ Note
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Comments for Yuhan </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I would suggest that we don't need to give information on setting up new repository or branches in this doc (besides a general reference link) because we don't want people starting random repository/branches different from what you set up.</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># instead can you walk through git clone process which Alex &amp; Chris will need to use?  </span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># if they git clone do they need to set up conneciton in RStudio (or command line)?  if not then the current connection step can be moved away alongside making new repositories and branches</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># if they git clone do they need to set up connection in RStudio (or command line)?  if not then the current connection step can be moved away alongside making new repositories and branches</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># need a brief paragraph on rollback - how to use old commit hash to bring back an older version if a new commit has severe issues</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>5. Setup a new remote repository in GitHub</strong><br>
 A new repository may be set up for discrete projects. (For the most part, we will be working in the base code repository at https://github.com/InterlabsOCWA/base_code) <img src="src/SetRepo.gif" class="img-fluid" alt="repo"></p>
@@ -665,7 +666,7 @@ Automatic merge failed; fix conflicts and then commit the result.'
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#TBD</span></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># explain bare min. information you need with commit message like you started with the annotation under the round dots.  Initial name is probably the least important info in the commit since git would track who pushed the change anyways?  not sure</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># explain how we can revert to previous working code through the branch or by tracking the commit id e.g. commit ba9da59 </span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># explain how each dot is a commit like a save point we can revert to by knowing the commit hash e.g. commit ba9da59 </span></span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># I moved the home folder description up right beneath the diagram.  We need a description of the normal working "place" (the git clone local - you mentioned in the general set up for setting up a new repository but can you add description of how it would be like for our project base code?  especially with branches - does the user need to git clone each branch into a separate folder, or can they switch after git cloning the main?  this needs to be very clear assuming the reader is a new student , for example).  How often are we to sync/commit to github from local?  Then, back to the network folder home locations - how often are these to be "synced" with the github versions?  Decide on a frequency and that will become part of the QMS requirement for data management.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>The overall workflow graph of version control</strong></p>
@@ -766,7 +767,39 @@ Warning
 </section>
 <section id="issues-tracking" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Issues Tracking</h1>
-<p>For most cases, the project issues tab in GitHub should be used to log issues and assign staff to resolve, using this <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart">workflow</a>.</p>
+<p>For most cases, the project issues tab in GitHub should be used to log issues (including bugs and features suggestions) and assign staff to resolve, using this <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart">workflow</a> within repositories set up as projects.</p>
+<p>Issues are repository wide (i.e.&nbsp;cannot be “created” specific to a branch). To aid tracking, the title of the issue should state the specific branch it is for. Additionally, it is encouraged to add labels to help identify type of issue and the branch it is for. A partial exception is features request which, after being created as an issue in the appropriate parent branch, should be made its own branch to differentiate it even more.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/githubIssuesCreate.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Issues creation and syntax</figcaption><p></p>
+</figure>
+</div>
+<ol type="1">
+<li><p><a href="https://github.com/InterlabsOCWA/base_code/issues">Creating an issue</a><br>
+The required syntax for issues title is as follows:<br>
+Title: <em>Branch</em>-<em>Type</em>_<em>Descriptor</em><br>
+Where Branch = <em>branch name</em> e.g.&nbsp;should primarily develop unless you are reporting a bug on the round branch Where Type = feature OR bug OR refactor, for example Where Descriptor = short human-readable descriptor of request</p></li>
+<li><p>Adding details (click on the gear icons on the right panel of the github issue page to add the following)<br>
+</p></li>
+</ol>
+<ul>
+<li><em>Label</em> appropriately by branch and any other help tags at the right panel</li>
+<li>Assign <em>Project</em> (usually the “<span class="citation" data-cites="InterlabsOCWA">@InterlabsOCWA</span>’s BaseCode”) at the right panel</li>
+<li>Assign <em>Assignee</em> as the lead staff responsible</li>
+<li>Provide sufficient context in the <em>comment</em> box in case other staff need to follow up on the issue</li>
+<li>if this is a new feature, once the issue is submitted and there is to resource to tackle the feature addition, the user should (reload the issue page) create a new branch for it under the development section, right panel. The branch should be a branch off from the develop branch, as illustrated below.<br>
+<img src="img/githubIssuesBranch.gif" class="img-fluid" alt="Issues creation and syntax"></li>
+</ul>
+<ol start="3" type="1">
+<li><p>Update as appropriate, with commit hash if it is tied to a specific upload version. By placing a commit hash, github will automatically provide a link to that committed version.</p></li>
+<li><p>Resolve and close.<br>
+</p></li>
+</ol>
+<ul>
+<li>Bugs: When resolved, staff should closed issue with sufficiently detailed comment for potential future reference, and include the git commit hash of the version pre/post-fix if appropriate. Bugs should be resolved at the develop or round branches; for merges into the main branch, consult the team or wait until the milestone merges.</li>
+<li>Features request &amp; refactoring tasks: these changes are to be reviewed by staff other than the coder to validate functionality &amp; impacts. Reviewer should close the issue once that is confirmed. The git commit hash should be logged in the closure comment.</li>
+</ul>
 </section>
 <section id="linting-code-style-guide" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Linting / Code Style Guide</h1>

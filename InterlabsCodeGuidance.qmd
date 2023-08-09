@@ -507,11 +507,33 @@ For step 4, only need to create pull request. Do not need to merge it!
 # Issues Tracking
 For most cases, the project issues tab in GitHub should be used to log issues (including bugs and features suggestions) and assign staff to resolve, using this [workflow](https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart) within repositories set up as projects.  
 
-![Issues tab](img/githubIssues.png)
+Issues are repository wide (i.e. cannot be "created" specific to a branch). To aid tracking, the title of the issue should state the specific branch it is for. Additionally, it is encouraged to add labels to help identify type of issue and the branch it is for.  A partial exception is features request which, after being created as an issue in the appropriate parent branch, should be made its own branch to differentiate it even more.  
 
-Appropriate tagging will aid in error tracing.  
-* Bugs: When resolved, staff should closed issue with sufficiently detailed comment for potential future reference, and include the git commit hash of the version pre/post-fix if appropriate.     
-* Features request: Needs and suggestions for improvement features can be logged under issues as well.  As resources allows, the feature work can be initiated as a new feature branch.  Again, upon completion, the git commit hash should be logged in the closure comment.  
+![Issues creation and syntax](img/githubIssuesCreate.png)
+
+1. [Creating an issue](https://github.com/InterlabsOCWA/base_code/issues)  
+The required syntax for issues title is as follows:  
+Title: *Branch*-*Type*_*Descriptor*  
+Where Branch = *branch name* e.g. should primarily develop unless you are reporting a bug on the round branch
+Where Type = feature OR bug OR refactor, for example
+Where Descriptor = short human-readable descriptor of request
+
+2. Adding details 
+(click on the gear icons on the right panel of the github issue page to add the following)  
+* *Label* appropriately by branch and any other help tags at the right panel
+* Assign *Project* (usually the "@InterlabsOCWA's BaseCode") at the right panel
+* Assign *Assignee* as the lead staff responsible
+* Provide sufficient context in the *comment* box in case other staff need to follow up on the issue
+* if this is a new feature, once the issue is submitted and there is to resource to tackle the feature addition, the user should (reload the issue page) create a new branch for it under the development section, right panel.  The branch should be a branch off from the develop branch, as illustrated below.     
+![Issues creation and syntax](img/githubIssuesBranch.gif)
+
+3. Update as appropriate, with commit hash if it is tied to a specific upload version.  By placing a commit hash, github will automatically provide a link to that committed version.  
+
+4. Resolve and close.  
+* Bugs: When resolved, staff should closed issue with sufficiently detailed comment for potential future reference, and include the git commit hash of the version pre/post-fix if appropriate.  Bugs should be resolved at the develop or round branches; for merges into the main branch, consult the team or wait until the milestone merges.
+* Features request & refactoring tasks: these changes are to be reviewed by staff other than the coder to validate functionality & impacts.  Reviewer should close the issue once that is confirmed.  The git commit hash should be logged in the closure comment. 
+
+
 
 
 # Linting / Code Style Guide
