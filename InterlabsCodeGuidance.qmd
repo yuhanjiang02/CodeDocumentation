@@ -171,7 +171,8 @@ There are two ways to create a new branch in both local and remote:
 ::: {.callout-note}
 For Rstudio method, you need to finish **step 3** below first.
 :::
-**1. Switch to corresponding branch**
+
+## 1. Switch to corresponding branch
 
 Since different people can be working on different branches, before starting our work, we need to switch to our [working branch](#vc-project-workflow). There are two methods to switch between branch:
 
@@ -183,7 +184,7 @@ Since different people can be working on different branches, before starting our
      
 * In Shell: type `$ git checkout <branch_name>` in terminal
 
-**2. Pull from remote**
+## 2. Pull from remote
 
 To start working on a project, pull any new changes to update local copy. If there is a merge conflict see [merge_conflict section](#merge_conflict).
 
@@ -191,12 +192,12 @@ To start working on a project, pull any new changes to update local copy. If the
 
 * In Shell: type `$ git pull` in terminal
 
-**3. Make changes and commit**
+## 3. Make changes and commit
 
 * After finishing changes, click on the **Git** tab in RStudio. It will show the files that have changed or added.
 
 ![git](src/git.png)
-
+---
 * Click on the **Commit**, it will show the window in below image. Click the staged box to stage the file you want to push to remote. You can see the difference between the files after you click the file (show blue line). Lines that have been added are green. Lines that have been removed are red.
 
 ![diff](src/diff.png)
@@ -210,9 +211,9 @@ To start working on a project, pull any new changes to update local copy. If the
 
 ::: {.callout-note}
 For the files you don't want to push to Github you can list the them in [**.gitignore** file](#gitignore).
-::: 
+:::
 
-**4. Push**
+## 4. Push
 
 When you are finished and committed, remember to **Push** these changes to the remote repository (e.g., GitHub). Should see 'HEAD -> branch' if successfully pushed. 
 
@@ -220,7 +221,7 @@ When you are finished and committed, remember to **Push** these changes to the r
 You might need to pull again before push, if someone pushed their work to remote during your work.
 ::: 
    
-#### Pull Request and Merge Changes between branches {#pullrequest}
+# Pull Request and Merge Changes between branches {#pullrequest}
 
 Each time you want to merge/pull a branch from another branch, you will need to create a pull request. Sometimes it will show up automatically in the branch web page after you push, if not you need to do it manually.
 
@@ -238,7 +239,7 @@ Each time you want to merge/pull a branch from another branch, you will need to 
 
 The manual pull request process: ![manual](src/manualpullrequest.gif)
 
-#### Merge conflict {#merge_conflict}
+# Merge conflict {#merge_conflict}
 There will be a merge conflict when you pull from the remote but have done some new work locally since the last time you pulled:
 
 * Recent commit history of origin/main: A--B--C
@@ -256,7 +257,7 @@ It will show the warning below and automatically add the two version with marker
 
 * Keep the version you want and remove the all the markers line (<<<<<<< HEAD:, ======, >>>>>>) inserted to demarcate the conflicts then save the file and do the following commit and push again.
 
-### gitignore file {#gitignore}
+# gitignore file {#gitignore}
 
 The .gitignore file can tell Git which files and directories to ignore when you make a commit. You can commit and push the .gitinore file to share the ignore rules with other users.
 
@@ -267,10 +268,6 @@ The data/files we don't want to commit to GitHub:
 - all the data spread sheet
 - plots
 - reports
-
-
-
-
    
 #### Unsolved questions
 - Zombie code: cut off but might come back?
