@@ -20,7 +20,7 @@ format:
 **2. Version control project workflow** (10.45-11.45am)
 
 - Home folder location
-- Repository file (gitignore, need to copy data file) 
+- Repository file
 - Decide on a update frequency (local to github very frequent, github to network drive)
 
 **3. General each branch workflow** (1-3pm)
@@ -58,7 +58,7 @@ Version control systems are software tools that help teams manage changes to sou
 
 ## Connect Rstudio to GitHub and clone the repo to local
 
-At the beginning, we need to use git clone to copy the remote repository we created (e.x. Base_code) to our local computer, so we can work locally.
+At the beginning, we need to use git clone to copy the remote repository we created (e.x. Base_code) to our local computer, so we can work locally. 
 
 ![connect](src/RStudioConnectGitHub.gif)
   
@@ -76,6 +76,12 @@ After click “Create Project” to create a new directory, which will be all of
 ![detect](src/detect.png)
 
 
+```{r}
+#Comments for Yuhan 
+
+# I moved the home folder description up right beneath the diagram.  We need a description of the normal working "place" (the git clone local - you mentioned in the general set up for setting up a new repository but can you add description of how it would be like for our project base code?  especially with branches - does the user need to git clone each branch into a separate folder, or can they switch after git cloning the main?  this needs to be very clear assuming the reader is a new student , for example).  How often are we to sync/commit to github from local?  Then, back to the network folder home locations - how often are these to be "synced" with the github versions?  Decide on a frequency and that will become part of the QMS requirement for data management.
+
+```
 # Version control project workflow {#vc-project-workflow}
 
 ## The overall workflow graph of version control
@@ -84,20 +90,6 @@ The diagram below shows the overall version control workflow for each round.
 
 ![workflow](src/workflow.png)
 
-## Home folder location
-The corresponding locations for the branches in the network drive are as follows (Flag: Need to confirm).
-
-- The home folder locations for **main** branch:
-
-    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/3_Templates_References/Round_codes
-   
-- The home folder locations for **Round** branch: 
-   
-    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/4_WIP/O103-Interlabs/d_Code
-   
-- The home folder locations for **develop** branch:
-   
-    //ocwfileeng/eng/Innov and Infra Services/WasteWater Surveillance/1_QMS
 
 (explain for archive purpose vs working location)
 
@@ -240,18 +232,6 @@ The data/files we don't want to commit to GitHub:
 - reports
 
 
-```{r}
-#Comments for Yuhan 
-#- need the graphic cleaned up so it makes sense to a regular reader like Alex - e.g. what does it mean CA will mainly work here?  next round could be you or I, need the description for the task not a person
-# what is JIRA-35 example feature?  can you change this example to match something we might see in interlabs.  also use our naming convention which applies to branches as well (so the double dash and space are not acceptable)
-# bottom comment - "feel free [...]" can you add the note about how the feature or develop branch gets merged?  It's a note to yourself (I think) so don't leave it for the reader)
-
-#TBD
-# explain bare min. information you need with commit message like you started with the annotation under the round dots.  Initial name is probably the least important info in the commit since git would track who pushed the change anyways?  not sure
-# explain how each dot is a commit like a save point we can revert to by knowing the commit hash e.g. commit ba9da59 
-# I moved the home folder description up right beneath the diagram.  We need a description of the normal working "place" (the git clone local - you mentioned in the general set up for setting up a new repository but can you add description of how it would be like for our project base code?  especially with branches - does the user need to git clone each branch into a separate folder, or can they switch after git cloning the main?  this needs to be very clear assuming the reader is a new student , for example).  How often are we to sync/commit to github from local?  Then, back to the network folder home locations - how often are these to be "synced" with the github versions?  Decide on a frequency and that will become part of the QMS requirement for data management.
-
-```
 
 
 
@@ -269,7 +249,7 @@ The round branch contains current round code, it will be update during each roun
 
 The workflow for round branch: 
 
-1. Create manual [pull request](#pullrequest) to update the round branch from main in GitHub.
+1. Copy the data folder into your working directory
 2. Do the [branch workflow](#branch_workflow) steps.
 3. After finished this round code, create pull request to merge to main branch.
 
