@@ -93,6 +93,43 @@ The diagram below shows the overall version control workflow for each round.
 
 (explain for archive purpose vs working location)
 
+# General each branch workflow
+## Main branch
+The main branch contains the base code template that will be updated during each round, so we need to upload/ push the initial files at beginning. A workshop will be hold to compare the files using [Notepad++](#notepad) and decide the merge request before merging the subbranch to main.
+
+![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png){#notepad}
+
+::: {.callout-warning}
+People should not switch to main branch and make changes to it during work.
+:::  
+
+## Round branch
+The round branch contains current round code, it will be update during each round.
+
+The workflow for round branch: 
+
+1. Copy the data folder into your working directory
+2. Do the [branch workflow](#branch_workflow) steps.
+3. After finished this round code, create pull request to merge to main branch.
+
+::: {.callout-warning}
+For step 3, only need to create pull request. Do not need to merge it!
+::: 
+
+## Develop branch
+The code refactoring work will in this branch.
+
+The workflow for round branch: 
+
+1. Copy the data folder into your working directory
+2. Do the [branch workflow](#branch_workflow) steps.
+3. Might need to create feature branch to add new feature to the base code.
+4. After finished this round code, create pull request to merge to main branch.
+
+::: {.callout-warning}
+For step 4, only need to create pull request. Do not need to merge it!
+::: 
+
 # Fundamentals branch workflow {#branch_workflow}
 
 ## Overall flow chart
@@ -177,7 +214,7 @@ For the files you don't want to push to Github you can list the them in [**.giti
 
 **4. Push**
 
-When you are finished and committed, remember to **Push** these changes to the remote repository (e.g., GitHub). Should see 'branch -> branch' if successfully pushed.
+When you are finished and committed, remember to **Push** these changes to the remote repository (e.g., GitHub). Should see 'branch -> branch' if successfully pushed. 
 
 ::: {.callout-note}
 You might need to pull again before push, if someone pushed their work to remote during your work.
@@ -232,46 +269,6 @@ The data/files we don't want to commit to GitHub:
 - reports
 
 
-
-
-
-### Main branch
-The main branch contains the base code template that will be updated during each round, so we need to upload/ push the initial files at beginning. A workshop will be hold to compare the files using [Notepad++](#notepad) and decide the merge request before merging the subbranch to main.
-
-![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png){#notepad}
-
-::: {.callout-warning}
-People should not switch to main branch and make changes to it during work.
-::: 
-
-### Round branch
-The round branch contains current round code, it will be update during each round.
-
-The workflow for round branch: 
-
-1. Copy the data folder into your working directory
-2. Do the [branch workflow](#branch_workflow) steps.
-3. After finished this round code, create pull request to merge to main branch.
-
-Q: need feature branch for this?
-
-::: {.callout-warning}
-For step 3, only need to create pull request. Do not need to merge it!
-::: 
-
-### Develop branch
-The code refactoring work will in this branch.
-
-The workflow for round branch: 
-
-1. Create manual [pull request](#pullrequest) to update the round branch from main in GitHUb.
-2. Do the [branch workflow](#branch_workflow) steps.
-3. Might need to create feature branch to add new feature to the base code.
-4. After finished this round code, create pull request to merge to main branch.
-
-::: {.callout-warning}
-For step 4, only need to create pull request. Do not need to merge it!
-::: 
 
 
    
