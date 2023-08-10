@@ -214,7 +214,7 @@ For the files you don't want to push to Github you can list the them in [**.giti
 
 **4. Push**
 
-When you are finished and committed, remember to **Push** these changes to the remote repository (e.g., GitHub). Should see 'branch -> branch' if successfully pushed. 
+When you are finished and committed, remember to **Push** these changes to the remote repository (e.g., GitHub). Should see 'HEAD -> branch' if successfully pushed. 
 
 ::: {.callout-note}
 You might need to pull again before push, if someone pushed their work to remote during your work.
