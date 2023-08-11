@@ -9,8 +9,10 @@ format:
 ---
 
 ### Workshop Outline
-::: {style="font-size: 18px"}
+::: {style="font-size: 24px"}
+:::: {.columns}
 
+::: {.column width="50%"}
 **1. Workshop Prep** (9.30-10.30 am)
 
 - Installation (done before workshop)
@@ -21,8 +23,9 @@ format:
 
 - Home folder location
 - Repository file
-- Decide on a update frequency (local to github very frequent, github to network drive)
+:::
 
+::: {.column width="4=50%"}
 **3. General each branch workflow** (1-3pm)
 
 - main
@@ -39,11 +42,17 @@ format:
  
 :::
 
+::::
+
+:::
+
 # Workshop Prep
 
 ## Installation and setup
 
-Finished 3.1 installation section steps 1-4 in [Code Documentation](https://interlabsocwa.github.io/CodeDocumentation/) before workshop 
+::: {style="font-size: 30px"}
+Finished 3.1 installation section steps 1-4 in [Code Documentation](https://interlabsocwa.github.io/CodeDocumentation/) before workshop
+:::
 
 ```{r}
 #Comments for Yuhan 
@@ -51,14 +60,16 @@ Finished 3.1 installation section steps 1-4 in [Code Documentation](https://inte
 ```
 ## What and why version control
 
+::: {style="font-size: 30px"}
 Version control systems are software tools that help teams manage changes to source code over time.^[https://www.atlassian.com/git/tutorials/what-is-version-control]
 
 - Improve work efficiency
 - Traceability. Easily turn back and compare previous version
-
+- Collaborate at same time
+:::
 ## Connect Rstudio to GitHub and clone the repo to local
 
-At the beginning, we need to use git clone to copy the remote repository we created (e.x. Base_code) to our local computer, so we can work locally. 
+At the beginning, we need to use git clone to copy the remote repository we created (e.x. base_code) to our local computer, so we can work locally. 
 
 ![connect](src/RStudioConnectGitHub.gif)
   
@@ -89,46 +100,80 @@ After click “Create Project” to create a new directory, which will be all of
 The diagram below shows the overall version control workflow for each round.
 
 ![workflow](src/workflow.png)
-
-
 (explain for archive purpose vs working location)
+
+## gitignore file {#gitignore}
+
+The .gitignore file can tell Git which files and directories to ignore when you make a commit. You can commit and push the .gitinore file to share the ignore rules with other users.
+
+The .gitigonre content writing reference: <https://swcarpentry.github.io/git-novice/06-ignore.html>
+   
+The data/files we don't want to commit to GitHub:
+
+- all the data spread sheet
+- plots
+- reports
+- Rproj
+
+
 
 # General each branch workflow
 ## Main branch
-The main branch contains the base code template that will be updated during each round, so we need to upload/ push the initial files at beginning. A workshop will be hold to compare the files using [Notepad++](#notepad) and decide the merge request before merging the subbranch to main.
+The main branch contains the base code template that will be updated at the end each round, so we need to upload/push the initial files at beginning. After all files settle done, we should not touch this branch. At the end of the round, a workshop will be hold to compare the files in different branches using **Notepad++** and decide the merge request before merging the subbranch to main.
 
-![Cross-checking in Notepad++ prior merge](img/premergeDiffNotepad.png){#notepad}
+![main](src/main.png)
+Screenshot for branch in GitHub and Local
 
 ::: {.callout-warning}
 People should not switch to main branch and make changes to it during work.
 :::  
 
 ## Round branch
-The round branch contains current round code, it will be update during each round.
+The round branch contains current round code. For each round, we will create a round branch from main. At the end of this round, create pull request to merge to main branch (Only need to create pull request. Do not need to merge it!).
 
-The workflow for round branch: 
 
-1. Copy the data folder into your working directory
-2. Do the [branch workflow](#branch_workflow) steps.
-3. After finished this round code, create pull request to merge to main branch.
+![round](src/round.png)
 
-::: {.callout-warning}
-For step 3, only need to create pull request. Do not need to merge it!
-::: 
+### The workflow in round branch:
+
+:::: {.columns}
+::: {.column width="50%"}
+
+1. Make sure you are in round branch
+2. Copy the data folders into your working directory
+3. Pull the current files in remote repository to local
+4. Edit the code and commit (save) your changes to local repo
+5. Push your commit to remote repo
+:::
+
+::: {.column width="4=50%"}
+Might need to create **feature** branch based on the issues:
+
+1. Create new feature branch from the issue
+2. Do the same steps 1-5 above
+3. After complete the feature branch, create Pull request to merge back to the round branch
+:::
+
+::::
+
+Screenshot for branch in GitHub and Local
 
 ## Develop branch
-The code refactoring work will in this branch.
+The code refactoring work will in this branch. At the end of this round, create pull request to merge to main branch (Only need to create pull request. Do not need to merge it!).
 
-The workflow for round branch: 
+### The workflow for round branch: 
 
-1. Copy the data folder into your working directory
+1. Make sure you are in round branch
+2. Copy the data folder into your working directory
+3. Do the [branch workflow](#branch_workflow) steps.
+
+Might need to create feature branch based on the issues:
+
+1. Create new feature branch from the issue
 2. Do the [branch workflow](#branch_workflow) steps.
-3. Might need to create feature branch to add new feature to the base code.
-4. After finished this round code, create pull request to merge to main branch.
+3. After complete the feature branch, create Pull request to merge back to the round branch
+4. May have [code review](https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/) after the pull request
 
-::: {.callout-warning}
-For step 4, only need to create pull request. Do not need to merge it!
-::: 
 
 # Fundamentals branch workflow {#branch_workflow}
 
@@ -157,20 +202,23 @@ Remember to select which branch you want to branch off **AND** Pull it to your l
 :::
     
 There are two ways to create a new branch in both local and remote:
-   
-  - From GitHub:
-   
-    ![gitbranch](src/GitHubBranch.gif)
-   
-   - From Rstudio:
-     
-     Switch to the branch you want to branch off ([see switch branch section in ](#branch_workflow)in branch workflow) then create branch followed by below image.
+
+:::: {.columns}
+::: {.column width="50%"}
+- From GitHub:
+![gitbranch](src/GitHubBranch.gif)
+:::
+
+::: {.column width="4=50%"}
+- From Rstudio:
+
+  Switch to the branch you want to branch off ([see switch branch section](#branch_workflow) in branch workflow) then create branch followed by below image.
       
      ![Rbranch](src/RBranch.png)
-     
-::: {.callout-note}
-For Rstudio method, you need to finish **step 3** below first.
 :::
+
+::::
+   
 
 ## 1. Switch to corresponding branch
 
@@ -221,7 +269,7 @@ When you are finished and committed, remember to **Push** these changes to the r
 You might need to pull again before push, if someone pushed their work to remote during your work.
 ::: 
    
-# Pull Request and Merge Changes between branches {#pullrequest}
+## Pull Request and Merge Changes between branches - Edit Later {#pullrequest}
 
 Each time you want to merge/pull a branch from another branch, you will need to create a pull request. Sometimes it will show up automatically in the branch web page after you push, if not you need to do it manually.
 
@@ -239,7 +287,7 @@ Each time you want to merge/pull a branch from another branch, you will need to 
 
 The manual pull request process: ![manual](src/manualpullrequest.gif)
 
-# Merge conflict {#merge_conflict}
+## Merge conflict {#merge_conflict}
 There will be a merge conflict when you pull from the remote but have done some new work locally since the last time you pulled:
 
 * Recent commit history of origin/main: A--B--C
@@ -257,28 +305,19 @@ It will show the warning below and automatically add the two version with marker
 
 * Keep the version you want and remove the all the markers line (<<<<<<< HEAD:, ======, >>>>>>) inserted to demarcate the conflicts then save the file and do the following commit and push again.
 
-# gitignore file {#gitignore}
 
-The .gitignore file can tell Git which files and directories to ignore when you make a commit. You can commit and push the .gitinore file to share the ignore rules with other users.
-
-The .gitigonre content writing reference: <https://swcarpentry.github.io/git-novice/06-ignore.html>
    
-The data/files we don't want to commit to GitHub:
-
-- all the data spread sheet
-- plots
-- reports
-   
-#### Unsolved questions
+## Unsolved questions
 - Zombie code: cut off but might come back?
 
-# Issues Tracking
+## Issues Tracking
 For most cases, the project issues tab in GitHub should be used to log issues (including bugs and features suggestions) and assign staff to resolve, using this [workflow](https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart) within repositories set up as projects.  
 
 Issues are repository wide (i.e. cannot be "created" specific to a branch). To aid tracking, the title of the issue should state the specific branch it is for. Additionally, it is encouraged to add labels to help identify type of issue and the branch it is for.  A partial exception is features request which, after being created as an issue in the appropriate parent branch, should be made its own branch to differentiate it even more.  
 
 ![Issues creation and syntax](img/githubIssuesCreate.png)
 
+---
 1. [Creating an issue](https://github.com/InterlabsOCWA/base_code/issues)  
 The required syntax for issues title is as follows:  
 Title: *Branch*-*Type*_*Descriptor*  
