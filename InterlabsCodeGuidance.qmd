@@ -71,14 +71,18 @@ Version control systems are software tools that help teams manage changes to sou
 
 At the beginning, we need to use git clone to copy the remote repository we created (e.x. base_code) to our local computer, so we can work locally. 
 
+::: {.callout-important}
+Note: Git clone from Rstudio not command line, so it will generate the .Rproj automatically.
+::: 
+
 ![connect](src/RStudioConnectGitHub.gif)
   
-After click “Create Project” to create a new directory, which will be all of these things:
+After click **“Create Project”** to create a new directory with same remote repository name on your computer, which will be all of these things:
   
-- a folder with same remote repository name on your computer
 - a .gitignore file
+- a .Rhistory file
 - an RStudio Project
-- any files you upload into remote repository
+- any files already uploaded into the remote repository
 
 ## Detect Git from RStudio
 
@@ -100,29 +104,51 @@ After click “Create Project” to create a new directory, which will be all of
 The diagram below shows the overall version control workflow for each round.
 
 ![workflow](src/workflow.png)
-(explain for archive purpose vs working location)
+
+## Folder Location
+**GitHub location: **
+
+Website: https://github.com/InterlabsOCWA/base_code
+
+**Local location:**
+
+Anywhere you like!
+
+**Archive folder location: **
+
+* main: /3_Templates_References/Round_codes
+* round: /4_WIP/O103-Interlabs/d_Code 
+* develop: /1_QMS
+
+![flow](src/flow.png)
+## Commit
+Commit is like a save point to save your current work locally.
+
+commit hash - for future roll back
+e.g. commit a4517d
+
 
 ## gitignore file {#gitignore}
 
-The .gitignore file can tell Git which files and directories to ignore when you make a commit. You can commit and push the .gitinore file to share the ignore rules with other users.
+The .gitignore file can tell Git which files and directories to ignore when you make a commit. We can commit and push the .gitinore file to share the ignore rules.
 
 The .gitigonre content writing reference: <https://swcarpentry.github.io/git-novice/06-ignore.html>
    
 The data/files we don't want to commit to GitHub:
 
-- all the data spread sheet
-- plots
-- reports
-- Rproj
+- Rproj (keep it locally)
+- all the data spreadsheet - Not sure, might be different 
 
-
+![datafolder](src/datafolder.png)
 
 # General each branch workflow
 ## Main branch
-The main branch contains the base code template that will be updated at the end each round, so we need to upload/push the initial files at beginning. After all files settle done, we should not touch this branch. At the end of the round, a workshop will be hold to compare the files in different branches using **Notepad++** and decide the merge request before merging the subbranch to main.
+The main branch contains the base code template that will be updated at the end each round, so we need to upload/push the initial files at beginning. 
+
+* After all files settle done, we should not touch this branch. 
+* At the end of the round, a workshop will be hold to compare the files in different branches using **Notepad++/ Pull Request** and decide the merge request before merging the subbranch to main.
 
 ![main](src/main.png)
-Screenshot for branch in GitHub and Local
 
 ::: {.callout-warning}
 People should not switch to main branch and make changes to it during work.
@@ -139,8 +165,8 @@ The round branch contains current round code. For each round, we will create a r
 :::: {.columns}
 ::: {.column width="50%"}
 
-1. Make sure you are in round branch
-2. Copy the data folders into your working directory
+1. Make sure you are in round branch 
+2. Copy all the code need data folders into your working directory
 3. Pull the current files in remote repository to local
 4. Edit the code and commit (save) your changes to local repo
 5. Push your commit to remote repo
@@ -156,22 +182,21 @@ Might need to create **feature** branch based on the issues:
 
 ::::
 
-Screenshot for branch in GitHub and Local
 
 ## Develop branch
 The code refactoring work will in this branch. At the end of this round, create pull request to merge to main branch (Only need to create pull request. Do not need to merge it!).
 
-### The workflow for round branch: 
+### The workflow for develop branch: 
 
-1. Make sure you are in round branch
+1. Make sure you are in develop branch
 2. Copy the data folder into your working directory
 3. Do the [branch workflow](#branch_workflow) steps.
 
-Might need to create feature branch based on the issues:
+Might need to create **feature** branch based on the issues:
 
 1. Create new feature branch from the issue
 2. Do the [branch workflow](#branch_workflow) steps.
-3. After complete the feature branch, create Pull request to merge back to the round branch
+3. After complete the feature branch, create Pull request to merge back to the develop branch
 4. May have [code review](https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/) after the pull request
 
 
@@ -190,7 +215,7 @@ We will need a repository to store all the files.
 
 At the beginning of the project, we need to create a remote repository in GitHub. 
 
-For the most part, we will be working in the Base_code repository at <https://github.com/InterlabsOCWA/base_code>
+For the most part, we will be working in the base_code repository at <https://github.com/InterlabsOCWA/base_code>
 
 
 ## Create branches
@@ -204,6 +229,7 @@ Remember to select which branch you want to branch off **AND** Pull it to your l
 There are two ways to create a new branch in both local and remote:
 
 :::: {.columns}
+
 ::: {.column width="50%"}
 - From GitHub:
 ![gitbranch](src/GitHubBranch.gif)
@@ -212,9 +238,9 @@ There are two ways to create a new branch in both local and remote:
 ::: {.column width="4=50%"}
 - From Rstudio:
 
-  Switch to the branch you want to branch off ([see switch branch section](#branch_workflow) in branch workflow) then create branch followed by below image.
+Switch to the branch you want to branch off ([see switch branch section](#branch_workflow) in branch workflow) then create branch followed by below image.
       
-     ![Rbranch](src/RBranch.png)
+![Rbranch](src/RBranch.png)
 :::
 
 ::::
@@ -254,12 +280,15 @@ To start working on a project, pull any new changes to update local copy. If the
     
 * You can view the history of your commit after click the left corner **History** beside the change. You can also view the commit history in other Git client app. Or check your past commits though type `git log` in terminal.
 
-    
-* Check on the state of the Git world: type `git status` in terminal
-
 ::: {.callout-note}
 For the files you don't want to push to Github you can list the them in [**.gitignore** file](#gitignore).
 :::
+
+## Git state 
+
+* Check on the state of the Git world: type `git status` in terminal
+
+
 
 ## 4. Push
 
@@ -274,8 +303,8 @@ You might need to pull again before push, if someone pushed their work to remote
 Each time you want to merge/pull a branch from another branch, you will need to create a pull request. Sometimes it will show up automatically in the branch web page after you push, if not you need to do it manually.
 
 * For the first auto case, you will see a notice to create a pull request (see the image below). Then click on the button that says **Compare and pull request** to go next step. 
-![pull_auto](src/pullrequest.png)
-* For the manual case, first need to click the **Pull request** tab. Then click the button that says **New pull request**. It will show up the **Compare changes** page, you need to decide the pull direction. The compare branch is the one you want to pull from. After decide the branches, click **Create pull request** button and go next step.
+
+* For the manual case, first need to click the **Pull request** tab. Then click the button that says **New pull request**. It will show up the **Compare changes** page, you need to decide the pull direction. The compare branch is the one you want to pull from. Base is the branch will be changed. After decide the branches, click **Create pull request** button and go next step.
 
 * Now both case are in the same **Open a pull request** page, and click on **Create pull request** to compare and merge them.
 
@@ -306,27 +335,23 @@ It will show the warning below and automatically add the two version with marker
 * Keep the version you want and remove the all the markers line (<<<<<<< HEAD:, ======, >>>>>>) inserted to demarcate the conflicts then save the file and do the following commit and push again.
 
 
-   
-## Unsolved questions
-- Zombie code: cut off but might come back?
-
-## Issues Tracking
+# Issues Tracking
 For most cases, the project issues tab in GitHub should be used to log issues (including bugs and features suggestions) and assign staff to resolve, using this [workflow](https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart) within repositories set up as projects.  
 
 Issues are repository wide (i.e. cannot be "created" specific to a branch). To aid tracking, the title of the issue should state the specific branch it is for. Additionally, it is encouraged to add labels to help identify type of issue and the branch it is for.  A partial exception is features request which, after being created as an issue in the appropriate parent branch, should be made its own branch to differentiate it even more.  
 
 ![Issues creation and syntax](img/githubIssuesCreate.png)
 
----
-1. [Creating an issue](https://github.com/InterlabsOCWA/base_code/issues)  
+## 1. [Creating an issue](https://github.com/InterlabsOCWA/base_code/issues)  
 The required syntax for issues title is as follows:  
 Title: *Branch*-*Type*_*Descriptor*  
 Where Branch = *branch name* e.g. should primarily develop unless you are reporting a bug on the round branch
 Where Type = feature OR bug OR refactor, for example
 Where Descriptor = short human-readable descriptor of request
 
-2. Adding details 
-(click on the gear icons on the right panel of the github issue page to add the following)  
+## 2. Adding details 
+(click on the gear icons on the right panel of the github issue page to add the following)
+
 * *Label* appropriately by branch and any other help tags at the right panel
 * Assign *Project* (usually the "@InterlabsOCWA's BaseCode") at the right panel
 * Assign *Assignee* as the lead staff responsible
@@ -334,11 +359,16 @@ Where Descriptor = short human-readable descriptor of request
 * if this is a new feature, once the issue is submitted and there is to resource to tackle the feature addition, the user should (reload the issue page) create a new branch for it under the development section, right panel.  The branch should be a branch off from the develop branch, as illustrated below.     
 ![Issues creation and syntax](img/githubIssuesBranch.gif)
 
-3. Update as appropriate, with commit hash if it is tied to a specific upload version.  By placing a commit hash, github will automatically provide a link to that committed version.  
+## 3. Update
 
-4. Resolve and close.  
+Update as appropriate, with commit hash if it is tied to a specific upload version.  By placing a commit hash, github will automatically provide a link to that committed version.  
+
+## 4. Resolve and close.  
 * Bugs: When resolved, staff should closed issue with sufficiently detailed comment for potential future reference, and include the git commit hash of the version pre/post-fix if appropriate.  Bugs should be resolved at the develop or round branches; for merges into the main branch, consult the team or wait until the milestone merges.
 * Features request & refactoring tasks: these changes are to be reviewed by staff other than the coder to validate functionality & impacts.  Reviewer should close the issue once that is confirmed.  The git commit hash should be logged in the closure comment. 
+
+# Unsolved questions
+- Zombie code: cut off but might come back?
 
 # References
 
