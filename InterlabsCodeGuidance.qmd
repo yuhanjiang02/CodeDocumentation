@@ -13,9 +13,9 @@ format:
 :::: {.columns}
 
 ::: {.column width="50%"}
+*Installation (done before workshop)*  
+  
 **1. Workshop Prep** (9.30-10.30 am)
-
-- Installation (done before workshop)
 - What and why version control
 - Connection and clone
 
@@ -25,15 +25,16 @@ format:
 - Repository file
 :::
 
+
 ::: {.column width="4=50%"}
-**3. General each branch workflow** (1-3pm)
+**3. What happens in each branch** (1-3pm)
 
 - main
-- round - tell story
-- develop - tell story, code review step (may skip)
-- feature related to issue
+- round
+- develop 
+- feature/issue
 
-**4. Fundamentals branch workflow** (3.30-4.30pm) (may skip)
+**4. Version Control actions** (3.30-4.30pm) 
  
 - switch branch
 - pull from remote (include merge conflict)
@@ -51,7 +52,7 @@ format:
 ## Installation and setup
 
 ::: {style="font-size: 30px"}
-Finished 3.1 installation section steps 1-4 in [Code Documentation](https://interlabsocwa.github.io/CodeDocumentation/) before workshop
+Finished 3.1 installation section steps 1-4 in [Code Documentation](https://interlabsocwa.github.io/CodeDocumentation/#version-control) before workshop
 :::
 
 ```{r}
@@ -66,7 +67,11 @@ Version control systems are software tools that help teams manage changes to sou
 - Improve work efficiency
 - Traceability. Easily turn back and compare previous version
 - Collaborate at same time
+
+This workshop will introduce implementing version control using git and github with RStudio as the GUI.
 :::
+
+
 ## Connect Rstudio to GitHub and clone the repo to local
 
 At the beginning, we need to use git clone to copy the remote repository we created (e.x. base_code) to our local computer, so we can work locally. 
@@ -91,12 +96,6 @@ After click **“Create Project”** to create a new directory with same remote 
 ![detect](src/detect.png)
 
 
-```{r}
-#Comments for Yuhan 
-
-# I moved the home folder description up right beneath the diagram.  We need a description of the normal working "place" (the git clone local - you mentioned in the general set up for setting up a new repository but can you add description of how it would be like for our project base code?  especially with branches - does the user need to git clone each branch into a separate folder, or can they switch after git cloning the main?  this needs to be very clear assuming the reader is a new student , for example).  How often are we to sync/commit to github from local?  Then, back to the network folder home locations - how often are these to be "synced" with the github versions?  Decide on a frequency and that will become part of the QMS requirement for data management.
-
-```
 # Version control project workflow {#vc-project-workflow}
 
 ## The overall workflow graph of version control
@@ -106,26 +105,47 @@ The diagram below shows the overall version control workflow for each round.
 ![workflow](src/workflow.png)
 
 ## Folder Location
-**GitHub location: **
-
-Website: https://github.com/InterlabsOCWA/base_code
-
-**Local location:**
-
-Anywhere you like!
-
-**Archive folder location: **
-
+::: {.column width="39%"}
+1. **Remote: **
+Github Website: https://github.com/InterlabsOCWA/base_code
+:::  
+::: {.column width="27%"}
+2. **Repository, Index:  **
+Git staging area, or  
+the "invisible" .git folder within your local location  
+No direct manipulation here, git act as stage manager  
+:::
+::: {.column width="33%"}
+3. **Local Workspace:**
+Anywhere you like!  
+Plus, the **Archive folder location:**
 * main: /3_Templates_References/Round_codes
 * round: /4_WIP/O103-Interlabs/d_Code 
 * develop: /1_QMS
+:::
 
 ![flow](src/flow.png)
-## Commit
-Commit is like a save point to save your current work locally.
 
-commit hash - for future roll back
-e.g. commit a4517d
+::: {.notes}
+Working directory is your code directory
+Local repository is .git folder in Working directory
+Remote repository is bare repository on server or in the filesystem
+:::
+
+## Commit
+Commit are "saves" snapshots of your work locally (separate from "minor" quick-saves e.g. in RStudio).  Typically, commit once you've validated changed code works, or after substantial changes (which you might need to roll back from).
+
+::: {layout-ncol=2}
+![Save points load selection](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTetFiXFFYebqSevAQ4rJ3URBlU2g2VXkDsBQjLCJinfUTGBI2l_P5IE4dsAnmpX4nCWMg&usqp=CAU){#fig-hanno}
+
+![commit history on github](src/commitHash.png){#fig-hanno}
+:::
+
+
+<span style="color:green;">**Commit hash**</span> (a 40-digit "id code", typically used through its shorted 7-digit form) lets you specify the "load file"/version e.g. when rolling back
+
+<span style="color:blue;">**Commit message**</span> is a description of that commit's changes which must be provided by the committing user.  Commits are as useful as the details we provide in the message. 
+
 
 
 ## gitignore file {#gitignore}
@@ -141,7 +161,7 @@ The data/files we don't want to commit to GitHub:
 
 ![datafolder](src/datafolder.png)
 
-# General each branch workflow
+# What happens in each branch?
 ## Main branch
 The main branch contains the base code template that will be updated at the end each round, so we need to upload/push the initial files at beginning. 
 
@@ -200,11 +220,11 @@ Might need to create **feature** branch based on the issues:
 4. May have [code review](https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/) after the pull request
 
 
-# Fundamentals branch workflow {#branch_workflow}
+# Version Control actions {#branch_workflow}
 
 ## Overall flow chart
 
-The image below shows a overall git flow chart.
+The image below shows a overall git flow chart, git action commands traverse the different work locations.
 ![flow](src/flow.png)
 
 ## Repository
