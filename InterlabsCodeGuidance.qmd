@@ -15,8 +15,9 @@ format:
 ::: {.column width="50%"}
 *Installation (done before workshop)*  
   
-**1. Workshop Prep** (9.30-10.30 am)
-- What and why version control
+**1. Workshop Prep** (9.30-10.30 am)  
+  
+- What and why version control  
 - Connection and clone
 
 **2. Version control project workflow** (10.45-11.45am)
@@ -87,6 +88,7 @@ After click **“Create Project”** to create a new directory with same remote 
 - a .gitignore file
 - a .Rhistory file
 - an RStudio Project
+- renv directory and renv.lock file (package version control)  
 - any files already uploaded into the remote repository
 
 ## Detect Git from RStudio
@@ -94,6 +96,21 @@ After click **“Create Project”** to create a new directory with same remote 
 * Type `where git` in cmd to get the git executable path
 * From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to your Git executable.
 ![detect](src/detect.png)
+
+## Package version control Renv
+* Current base code library loading has been stripped down to necessary (used) packages only 
+* The renv package is used to help us maintain package synchronicity across all project users
+  + each project has its own isolated library of R packages inside a subdirectory **renv/library**, so you can upgrade/change package in one project without potentially breaking other projects.
+  + the **renv.lock** file registers the package versions used for the project it is in 
+  
+Set-up steps are in the [documentation](https://interlabsocwa.github.io/CodeDocumentation/#package-dependencies) and [CRAN](https://cran.r-project.org/web/packages/renv/vignettes/renv.html), but in essence:  
+1. open cloned project in your local workspace, if it has renv & renv.lock,  
+  
+2. when the project is opened locally, renv should automatically bootstrap & install itself.  It will then prompt user to install the packages (the appropriate versions logged for the project) by running `renv::restore` in the console   
+  
+::: {.callout-caution}
+If your work requires changing versions of packages, please refer to [documentation](https://interlabsocwa.github.io/CodeDocumentation/#package-dependencies).  Consult the team in a timely manner, and log as an [issue](#issues) for future reconciliation.
+::: 
 
 
 # Version control project workflow {#vc-project-workflow}
@@ -132,7 +149,7 @@ Local repository is .git folder in Working directory
 Remote repository is bare repository on server or in the filesystem
 :::
 
-## Commit
+## Commit{#commit}
 Commit are "saves" snapshots of your work locally (separate from "minor" quick-saves e.g. in RStudio).  Typically, commit once you've validated changed code works, or after substantial changes (which you might need to roll back from).
 
 ::: {layout-ncol=2}
@@ -212,13 +229,34 @@ The code refactoring work will in this branch. At the end of this round, create 
 2. Copy the data folder into your working directory
 3. Do the [branch workflow](#branch_workflow) steps.
 
-Might need to create **feature** branch based on the issues:
+For each refactor or feature creation cycle, create **feature** branch based on the [issues](#issues):
 
 1. Create new feature branch from the issue
 2. Do the [branch workflow](#branch_workflow) steps.
 3. After complete the feature branch, create Pull request to merge back to the develop branch
 4. May have [code review](https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/) after the pull request
 
+## Issues (enhancements, bugs) -> Feature sub-branches {#issues}
+Log issues (including bugs and features suggestions) and assign staff to resolve in the github [Issues tab]((https://github.com/InterlabsOCWA/base_code/issues).  Issues automatically get "sticky-noted" on the [project board](https://github.com/users/InterlabsOCWA/projects/2/views/3?filterQuery=-status%3ATodo).
+
+![Issues inventory](src/issuesListKanban.png)
+Issues are repository wide (i.e. cannot be "created" specific to a branch). To aid tracking, the title of the issue should state the specific branch it is for.   
+
+Title: *Branch*-*Type*_*Descriptor*  
+Where Branch = *branch name* e.g. should primarily develop unless you are reporting a bug on the round branch
+Where Type = feature OR bug OR refactor, for example
+Where Descriptor = short human-readable descriptor of request
+
+## Creating an issue and associated feature branch
+* Provide appropriate name, details, then,  
+**click on the gear icons on the right panel of the github issue page to add the following)**  
+* *Label* appropriately by branch and any other help tags at the right panel
+* Assign *Project* (usually "@InterlabsOCWA's BaseCode"), *Assignee* at the right panel
+* Provide sufficient context in the *comment* for others to be able to follow up  
+* if this is a new feature, once the issue is submitted and there is no resource to tackle the feature addition, the user should (reload the issue page) create a new branch for it under the development section, right panel).  The branch should be a branch off from the develop branch, as illustrated below.     
+![Issues creation and syntax](img/githubIssuesBranch.gif)
+  
+*when updating, provide commit hash if it is tied to a specific upload version- github will automatically link to that committed version.  
 
 # Version Control actions {#branch_workflow}
 
@@ -246,17 +284,21 @@ To work on different versions/add new feature to the code, we need to branch off
 Remember to select which branch you want to branch off **AND** Pull it to your local after you create branch !!
 :::
     
-There are two ways to create a new branch in both local and remote:
+There are three ways to create a new branch in both local and remote:
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- From GitHub:
+- 1) From GitHub:
 ![gitbranch](src/GitHubBranch.gif)
+  
+  
+- 3) From GitHub Issues  
+**more details in issues/features section**
 :::
 
 ::: {.column width="4=50%"}
-- From Rstudio:
+- 2) From Rstudio:
 
 Switch to the branch you want to branch off ([see switch branch section](#branch_workflow) in branch workflow) then create branch followed by below image.
       
@@ -355,39 +397,8 @@ It will show the warning below and automatically add the two version with marker
 * Keep the version you want and remove the all the markers line (<<<<<<< HEAD:, ======, >>>>>>) inserted to demarcate the conflicts then save the file and do the following commit and push again.
 
 
-# Issues Tracking
-For most cases, the project issues tab in GitHub should be used to log issues (including bugs and features suggestions) and assign staff to resolve, using this [workflow](https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart) within repositories set up as projects.  
 
-Issues are repository wide (i.e. cannot be "created" specific to a branch). To aid tracking, the title of the issue should state the specific branch it is for. Additionally, it is encouraged to add labels to help identify type of issue and the branch it is for.  A partial exception is features request which, after being created as an issue in the appropriate parent branch, should be made its own branch to differentiate it even more.  
-
-![Issues creation and syntax](img/githubIssuesCreate.png)
-
-## 1. [Creating an issue](https://github.com/InterlabsOCWA/base_code/issues)  
-The required syntax for issues title is as follows:  
-Title: *Branch*-*Type*_*Descriptor*  
-Where Branch = *branch name* e.g. should primarily develop unless you are reporting a bug on the round branch
-Where Type = feature OR bug OR refactor, for example
-Where Descriptor = short human-readable descriptor of request
-
-## 2. Adding details 
-(click on the gear icons on the right panel of the github issue page to add the following)
-
-* *Label* appropriately by branch and any other help tags at the right panel
-* Assign *Project* (usually the "@InterlabsOCWA's BaseCode") at the right panel
-* Assign *Assignee* as the lead staff responsible
-* Provide sufficient context in the *comment* box in case other staff need to follow up on the issue
-* if this is a new feature, once the issue is submitted and there is to resource to tackle the feature addition, the user should (reload the issue page) create a new branch for it under the development section, right panel.  The branch should be a branch off from the develop branch, as illustrated below.     
-![Issues creation and syntax](img/githubIssuesBranch.gif)
-
-## 3. Update
-
-Update as appropriate, with commit hash if it is tied to a specific upload version.  By placing a commit hash, github will automatically provide a link to that committed version.  
-
-## 4. Resolve and close.  
-* Bugs: When resolved, staff should closed issue with sufficiently detailed comment for potential future reference, and include the git commit hash of the version pre/post-fix if appropriate.  Bugs should be resolved at the develop or round branches; for merges into the main branch, consult the team or wait until the milestone merges.
-* Features request & refactoring tasks: these changes are to be reviewed by staff other than the coder to validate functionality & impacts.  Reviewer should close the issue once that is confirmed.  The git commit hash should be logged in the closure comment. 
-
-# Unsolved questions
+# Unsolved questions, your inputs
 - Zombie code: cut off but might come back?
 
 # References

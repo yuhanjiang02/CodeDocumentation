@@ -343,7 +343,12 @@ YJ, JH
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><em>Installation (done before workshop)</em></p>
-<p><strong>1. Workshop Prep</strong> (9.30-10.30 am) - What and why version control - Connection and clone</p>
+<p><strong>1. Workshop Prep</strong> (9.30-10.30 am)</p>
+<ul>
+<li>What and why version control<br>
+</li>
+<li>Connection and clone</li>
+</ul>
 <p><strong>2. Version control project workflow</strong> (10.45-11.45am)</p>
 <ul>
 <li>Home folder location</li>
@@ -413,6 +418,8 @@ YJ, JH
 <li>a .gitignore file</li>
 <li>a .Rhistory file</li>
 <li>an RStudio Project</li>
+<li>renv directory and renv.lock file (package version control)<br>
+</li>
 <li>any files already uploaded into the remote repository</li>
 </ul>
 </section>
@@ -422,6 +429,35 @@ YJ, JH
 <li>Type <code>where git</code> in cmd to get the git executable path</li>
 <li>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to your Git executable. <img data-src="src/detect.png" alt="detect"></li>
 </ul>
+</section>
+<section id="package-version-control-renv" class="slide level2">
+<h2>Package version control Renv</h2>
+<ul>
+<li>Current base code library loading has been stripped down to necessary (used) packages only</li>
+<li>The renv package is used to help us maintain package synchronicity across all project users
+<ul>
+<li>each project has its own isolated library of R packages inside a subdirectory <strong>renv/library</strong>, so you can upgrade/change package in one project without potentially breaking other projects.</li>
+<li>the <strong>renv.lock</strong> file registers the package versions used for the project it is in</li>
+</ul></li>
+</ul>
+<p>Set-up steps are in the <a href="https://interlabsocwa.github.io/CodeDocumentation/#package-dependencies">documentation</a> and <a href="https://cran.r-project.org/web/packages/renv/vignettes/renv.html">CRAN</a>, but in essence:<br>
+1. open cloned project in your local workspace, if it has renv &amp; renv.lock,</p>
+<ol start="2" type="1">
+<li>when the project is opened locally, renv should automatically bootstrap &amp; install itself. It will then prompt user to install the packages (the appropriate versions logged for the project) by running <code>renv::restore</code> in the console</li>
+</ol>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution</strong></p>
+</div>
+<div class="callout-content">
+<p>If your work requires changing versions of packages, please refer to <a href="https://interlabsocwa.github.io/CodeDocumentation/#package-dependencies">documentation</a>. Consult the team in a timely manner, and log as an <a href="#/issues">issue</a> for future reconciliation.</p>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="vc-project-workflow" class="title-slide slide level1 center">
@@ -512,8 +548,8 @@ Plus, the <strong>Archive folder location:</strong></li>
 
 <img data-src="src/datafolder.png" class="r-stretch quarto-figure-center"><p class="caption">datafolder</p></section></section>
 <section>
-<section id="general-each-branch-workflow" class="title-slide slide level1 center">
-<h1>General each branch workflow</h1>
+<section id="what-happens-in-each-branch" class="title-slide slide level1 center">
+<h1>What happens in each branch?</h1>
 
 </section>
 <section id="main-branch" class="slide level2">
@@ -571,22 +607,44 @@ Plus, the <strong>Archive folder location:</strong></li>
 <li>Copy the data folder into your working directory</li>
 <li>Do the <a href="#/branch_workflow">branch workflow</a> steps.</li>
 </ol>
-<p>Might need to create <strong>feature</strong> branch based on the issues:</p>
+<p>For each refactor or feature creation cycle, create <strong>feature</strong> branch based on the <a href="#/issues">issues</a>:</p>
 <ol type="1">
 <li>Create new feature branch from the issue</li>
 <li>Do the <a href="#/branch_workflow">branch workflow</a> steps.</li>
 <li>After complete the feature branch, create Pull request to merge back to the develop branch</li>
 <li>May have <a href="https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/">code review</a> after the pull request</li>
 </ol>
+</section>
+<section id="issues" class="slide level2">
+<h2>Issues (enhancements, bugs) -&gt; Feature sub-branches</h2>
+<p>Log issues (including bugs and features suggestions) and assign staff to resolve in the github [Issues tab]((https://github.com/InterlabsOCWA/base_code/issues). Issues automatically get “sticky-noted” on the <a href="https://github.com/users/InterlabsOCWA/projects/2/views/3?filterQuery=-status%3ATodo">project board</a>.</p>
+<p><img data-src="src/issuesListKanban.png" alt="Issues inventory"> Issues are repository wide (i.e.&nbsp;cannot be “created” specific to a branch). To aid tracking, the title of the issue should state the specific branch it is for.</p>
+<p>Title: <em>Branch</em>-<em>Type</em>_<em>Descriptor</em><br>
+Where Branch = <em>branch name</em> e.g.&nbsp;should primarily develop unless you are reporting a bug on the round branch Where Type = feature OR bug OR refactor, for example Where Descriptor = short human-readable descriptor of request</p>
+</section>
+<section id="creating-an-issue-and-associated-feature-branch" class="slide level2">
+<h2>Creating an issue and associated feature branch</h2>
+<ul>
+<li>Provide appropriate name, details, then,<br>
+<strong>click on the gear icons on the right panel of the github issue page to add the following)</strong><br>
+</li>
+<li><em>Label</em> appropriately by branch and any other help tags at the right panel</li>
+<li>Assign <em>Project</em> (usually “<span class="citation" data-cites="InterlabsOCWA">@InterlabsOCWA</span>’s BaseCode”), <em>Assignee</em> at the right panel</li>
+<li>Provide sufficient context in the <em>comment</em> for others to be able to follow up<br>
+</li>
+<li>if this is a new feature, once the issue is submitted and there is no resource to tackle the feature addition, the user should (reload the issue page) create a new branch for it under the development section, right panel). The branch should be a branch off from the develop branch, as illustrated below.<br>
+<img data-src="img/githubIssuesBranch.gif" alt="Issues creation and syntax"></li>
+</ul>
+<p>*when updating, provide commit hash if it is tied to a specific upload version- github will automatically link to that committed version.</p>
 </section></section>
 <section>
 <section id="branch_workflow" class="title-slide slide level1 center">
-<h1>Fundamentals branch workflow</h1>
+<h1>Version Control actions</h1>
 
 </section>
 <section id="overall-flow-chart" class="slide level2">
 <h2>Overall flow chart</h2>
-<p>The image below shows a overall git flow chart. <img data-src="src/flow.png" alt="flow"></p>
+<p>The image below shows a overall git flow chart, git action commands traverse the different work locations. <img data-src="src/flow.png" alt="flow"></p>
 </section>
 <section id="repository" class="slide level2">
 <h2>Repository</h2>
@@ -614,15 +672,23 @@ Plus, the <strong>Archive folder location:</strong></li>
 </div>
 </div>
 </div>
-<p>There are two ways to create a new branch in both local and remote:</p>
+<p>There are three ways to create a new branch in both local and remote:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
+<li><ol type="1">
 <li>From GitHub: <img data-src="src/GitHubBranch.gif" alt="gitbranch"></li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>From GitHub Issues<br>
+<strong>more details in issues/features section</strong></li>
+</ol></li>
 </ul>
 </div><div class="column" style="width:4=50%;">
 <ul>
+<li><ol start="2" type="1">
 <li>From Rstudio:</li>
+</ol></li>
 </ul>
 <p>Switch to the branch you want to branch off (<a href="#/branch_workflow">see switch branch section</a> in branch workflow) then create branch followed by below image.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -737,44 +803,8 @@ Automatic merge failed; fix conflicts and then commit the result.'
 <li>Keep the version you want and remove the all the markers line (&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:, ======, &gt;&gt;&gt;&gt;&gt;&gt;) inserted to demarcate the conflicts then save the file and do the following commit and push again.</li>
 </ul>
 </section></section>
-<section>
-<section id="issues-tracking" class="title-slide slide level1 center">
-<h1>Issues Tracking</h1>
-<p>For most cases, the project issues tab in GitHub should be used to log issues (including bugs and features suggestions) and assign staff to resolve, using this <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart">workflow</a> within repositories set up as projects.</p>
-<p>Issues are repository wide (i.e.&nbsp;cannot be “created” specific to a branch). To aid tracking, the title of the issue should state the specific branch it is for. Additionally, it is encouraged to add labels to help identify type of issue and the branch it is for. A partial exception is features request which, after being created as an issue in the appropriate parent branch, should be made its own branch to differentiate it even more.</p>
-
-<img data-src="img/githubIssuesCreate.png" class="r-stretch quarto-figure-center"><p class="caption">Issues creation and syntax</p></section>
-<section id="creating-an-issue" class="slide level2">
-<h2>1. <a href="https://github.com/InterlabsOCWA/base_code/issues">Creating an issue</a></h2>
-<p>The required syntax for issues title is as follows:<br>
-Title: <em>Branch</em>-<em>Type</em>_<em>Descriptor</em><br>
-Where Branch = <em>branch name</em> e.g.&nbsp;should primarily develop unless you are reporting a bug on the round branch Where Type = feature OR bug OR refactor, for example Where Descriptor = short human-readable descriptor of request</p>
-</section>
-<section id="adding-details" class="slide level2">
-<h2>2. Adding details</h2>
-<p>(click on the gear icons on the right panel of the github issue page to add the following)</p>
-<ul>
-<li><em>Label</em> appropriately by branch and any other help tags at the right panel</li>
-<li>Assign <em>Project</em> (usually the “<span class="citation" data-cites="InterlabsOCWA">@InterlabsOCWA</span>’s BaseCode”) at the right panel</li>
-<li>Assign <em>Assignee</em> as the lead staff responsible</li>
-<li>Provide sufficient context in the <em>comment</em> box in case other staff need to follow up on the issue</li>
-<li>if this is a new feature, once the issue is submitted and there is to resource to tackle the feature addition, the user should (reload the issue page) create a new branch for it under the development section, right panel. The branch should be a branch off from the develop branch, as illustrated below.<br>
-<img data-src="img/githubIssuesBranch.gif" alt="Issues creation and syntax"></li>
-</ul>
-</section>
-<section id="update" class="slide level2">
-<h2>3. Update</h2>
-<p>Update as appropriate, with commit hash if it is tied to a specific upload version. By placing a commit hash, github will automatically provide a link to that committed version.</p>
-</section>
-<section id="resolve-and-close." class="slide level2">
-<h2>4. Resolve and close.</h2>
-<ul>
-<li>Bugs: When resolved, staff should closed issue with sufficiently detailed comment for potential future reference, and include the git commit hash of the version pre/post-fix if appropriate. Bugs should be resolved at the develop or round branches; for merges into the main branch, consult the team or wait until the milestone merges.</li>
-<li>Features request &amp; refactoring tasks: these changes are to be reviewed by staff other than the coder to validate functionality &amp; impacts. Reviewer should close the issue once that is confirmed. The git commit hash should be logged in the closure comment.</li>
-</ul>
-</section></section>
-<section id="unsolved-questions" class="title-slide slide level1 center">
-<h1>Unsolved questions</h1>
+<section id="unsolved-questions-your-inputs" class="title-slide slide level1 center">
+<h1>Unsolved questions, your inputs</h1>
 <ul>
 <li>Zombie code: cut off but might come back?</li>
 </ul>
