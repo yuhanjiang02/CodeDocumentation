@@ -174,7 +174,7 @@ The .gitigonre content writing reference: <https://swcarpentry.github.io/git-nov
 The data/files we don't want to commit to GitHub:
 
 - Rproj (keep it locally)
-- all the data spreadsheet - Not sure, might be different 
+- all the input and output data reveals results (e.x. the folders below)
 
 ![datafolder](src/datafolder.png)
 
@@ -188,7 +188,7 @@ The main branch contains the base code template that will be updated at the end 
 ![main](src/main.png)
 
 ::: {.callout-warning}
-People should not switch to main branch and make changes to it during work.
+People should not switch to main branch [(switch branch method)](#switch_branch) and make changes to it during work. 
 :::  
 
 ## Round branch
@@ -308,7 +308,7 @@ Switch to the branch you want to branch off ([see switch branch section](#branch
 ::::
    
 
-## 1. Switch to corresponding branch
+## 1. Switch to corresponding branch {#switch_branch}
 
 Since different people can be working on different branches, before starting our work, we need to switch to our [working branch](#vc-project-workflow). There are two methods to switch between branch:
 
@@ -327,6 +327,8 @@ To start working on a project, pull any new changes to update local copy. If the
 * In Rstudio: Click the **Pull** bottom in the **Git** tab section
 
 * In Shell: type `$ git pull` in terminal
+
+![pullProblems](src/pullProblems.png)
 
 ## 3. Make changes and commit
 
@@ -348,8 +350,25 @@ For the files you don't want to push to Github you can list the them in [**.giti
 
 ## Git state 
 
-* Check on the state of the Git world: type `git status` in terminal
+Check on the state of the Git world: type `git status` in terminal, it will show:
 
+* Which branch you are in and the state of your branch:
+
+  On branch workshop-presentation
+    
+  Your branch is up to date with 'origin/workshop-presentation'.
+
+* Changes not staged for commit:
+
+  (use "git add/rm <file>..." to update what will be committed)
+  
+  (use "git restore <file>..." to discard changes in working directory)
+
+* Untracked files:
+
+  (use "git add <file>..." to include in what will be committed)
+  
+* no changes added to commit (use "git add" and/or "git commit -a")
 
 
 ## 4. Push
@@ -396,7 +415,21 @@ It will show the warning below and automatically add the two version with marker
 
 * Keep the version you want and remove the all the markers line (<<<<<<< HEAD:, ======, >>>>>>) inserted to demarcate the conflicts then save the file and do the following commit and push again.
 
+## Action Summary
+### clone: 
+Copy remote repository to local
 
+### pull: 
+Update remote work to local
+
+### commit: 
+Save changes to local repository 
+
+### push:  
+Update local work to remote
+
+### status: 
+Check local status
 
 # Unsolved questions, your inputs
 - Zombie code: cut off but might come back?

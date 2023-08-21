@@ -8,7 +8,7 @@
 <link href="InterlabsCodeGuidance_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="InterlabsCodeGuidance_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="InterlabsCodeGuidance_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.323">
+  <meta name="generator" content="quarto-1.3.340">
 
   <meta name="author" content="YJ, JH">
   <title>Workshop for Version Control</title>
@@ -519,7 +519,7 @@ Plus, the <strong>Archive folder location:</strong></li>
 <div id="fig-hanno" class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTetFiXFFYebqSevAQ4rJ3URBlU2g2VXkDsBQjLCJinfUTGBI2l_P5IE4dsAnmpX4nCWMg&amp;usqp=CAU.png"></p>
-<p></p><figcaption>Figure&nbsp;1: Save points load selection</figcaption><p></p>
+<figcaption>Figure&nbsp;1: Save points load selection</figcaption>
 </figure>
 </div>
 </div>
@@ -527,7 +527,7 @@ Plus, the <strong>Archive folder location:</strong></li>
 <div id="fig-hanno" class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="src/commitHash.png"></p>
-<p></p><figcaption>Figure&nbsp;2: commit history on github</figcaption><p></p>
+<figcaption>Figure&nbsp;2: commit history on github</figcaption>
 </figure>
 </div>
 </div>
@@ -543,7 +543,7 @@ Plus, the <strong>Archive folder location:</strong></li>
 <p>The data/files we don’t want to commit to GitHub:</p>
 <ul>
 <li>Rproj (keep it locally)</li>
-<li>all the data spreadsheet - Not sure, might be different</li>
+<li>all the input and output data reveals results (e.x. the folders below)</li>
 </ul>
 
 <img data-src="src/datafolder.png" class="r-stretch quarto-figure-center"><p class="caption">datafolder</p></section></section>
@@ -569,7 +569,7 @@ Plus, the <strong>Archive folder location:</strong></li>
 <p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>People should not switch to main branch and make changes to it during work.</p>
+<p>People should not switch to main branch <a href="#/switch_branch">(switch branch method)</a> and make changes to it during work.</p>
 </div>
 </div>
 </div>
@@ -694,13 +694,13 @@ Where Branch = <em>branch name</em> e.g.&nbsp;should primarily develop unless yo
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="src/RBranch.png"></p>
-<p></p><figcaption>Rbranch</figcaption><p></p>
+<figcaption>Rbranch</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="switch-to-corresponding-branch" class="slide level2">
+<section id="switch_branch" class="slide level2">
 <h2>1. Switch to corresponding branch</h2>
 <p>Since different people can be working on different branches, before starting our work, we need to switch to our <a href="#/vc-project-workflow">working branch</a>. There are two methods to switch between branch:</p>
 <ul>
@@ -717,7 +717,8 @@ Where Branch = <em>branch name</em> e.g.&nbsp;should primarily develop unless yo
 <li><p>In Rstudio: Click the <strong>Pull</strong> bottom in the <strong>Git</strong> tab section</p></li>
 <li><p>In Shell: type <code>$ git pull</code> in terminal</p></li>
 </ul>
-</section>
+
+<img data-src="src/pullProblems.png" class="r-stretch quarto-figure-center"><p class="caption">pullProblems</p></section>
 <section id="make-changes-and-commit" class="slide level2">
 <h2>3. Make changes and commit</h2>
 <ul>
@@ -751,8 +752,17 @@ Where Branch = <em>branch name</em> e.g.&nbsp;should primarily develop unless yo
 </section>
 <section id="git-state" class="slide level2">
 <h2>Git state</h2>
+<p>Check on the state of the Git world: type <code>git status</code> in terminal, it will show:</p>
 <ul>
-<li>Check on the state of the Git world: type <code>git status</code> in terminal</li>
+<li><p>Which branch you are in and the state of your branch:</p>
+<p>On branch workshop-presentation</p>
+<p>Your branch is up to date with ‘origin/workshop-presentation’.</p></li>
+<li><p>Changes not staged for commit:</p>
+<p>(use “git add/rm <file>…” to update what will be committed)</file></p>
+<p>(use “git restore <file>…” to discard changes in working directory)</file></p></li>
+<li><p>Untracked files:</p>
+<p>(use “git add <file>…” to include in what will be committed)</file></p></li>
+<li><p>no changes added to commit (use “git add” and/or “git commit -a”)</p></li>
 </ul>
 </section>
 <section id="push" class="slide level2">
@@ -802,6 +812,19 @@ Automatic merge failed; fix conflicts and then commit the result.'
 <img data-src="src/mergeconflict.png" class="r-stretch quarto-figure-center"><p class="caption">marker</p><ul>
 <li>Keep the version you want and remove the all the markers line (&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:, ======, &gt;&gt;&gt;&gt;&gt;&gt;) inserted to demarcate the conflicts then save the file and do the following commit and push again.</li>
 </ul>
+</section>
+<section id="action-summary" class="slide level2">
+<h2>Action Summary</h2>
+<h3 id="clone">clone:</h3>
+<p>Copy remote repository to local</p>
+<h3 id="pull">pull:</h3>
+<p>Update remote work to local</p>
+<h3 id="commit-1">commit:</h3>
+<p>Save changes to local repository</p>
+<h3 id="push-1">push:</h3>
+<p>Update local work to remote</p>
+<h3 id="status">status:</h3>
+<p>Check local status</p>
 </section></section>
 <section id="unsolved-questions-your-inputs" class="title-slide slide level1 center">
 <h1>Unsolved questions, your inputs</h1>
